@@ -1,8 +1,11 @@
 * Fonctionnalités
 
 - création du terrain
+- affichage du terrain
 - creation du joueur
-- déplacement
+- affichage du joueur
+- déplacement du joueur
 - creation des PNJ
 - création d'objets
-- attaquer
+- attaque du personnage
+- attaque des PNJ
