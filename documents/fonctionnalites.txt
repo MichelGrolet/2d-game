@@ -1,8 +1,8 @@
 * Fonctionnalités
 
-- creation du joueur
-- creation des PNJ
-- déplacement
 - création du terrain
+- creation du joueur
+- déplacement
+- creation des PNJ
 - création d'objets
 - attaquer
