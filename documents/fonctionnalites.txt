@@ -1,6 +1,8 @@
--creation du joueur
--creation des PNJ
--déplacement
--création du terrain
--création d'objets
--attaquer
+* Fonctionnalités version 1
+
+- creation du joueur
+- creation des PNJ
+- déplacement
+- création du terrain
+- création d'objets
+- attaquer
