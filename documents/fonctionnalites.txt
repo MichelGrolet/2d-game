@@ -1,4 +1,4 @@
-* Fonctionnalités version 1
+* Fonctionnalités
 
 - creation du joueur
 - creation des PNJ
