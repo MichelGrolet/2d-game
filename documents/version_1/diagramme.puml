@@ -1,0 +1,17 @@
+@startuml
+
+class Labyrinthe {
+
+}
+
+class Case {
+
+}
+
+class Jeu {
+
+}
+
+
+
+@enduml
