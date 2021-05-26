@@ -3,8 +3,17 @@
 class Labyrinthe {
 
 }
+Labyrinthe "1" --> "*" Case : cases
 
-class Case {
+interface Case {
+
+}
+
+class Mur implements Case {
+
+}
+
+class Sol implements Case {
 
 }
 
