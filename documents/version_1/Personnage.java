@@ -1,3 +1,7 @@
+/**
+ * Classe qui représente un personnage
+ *
+ */
 public class Personnage {
     /**
     * Coordonnee x du personnage
