@@ -18,7 +18,8 @@ class Sol implements Case {
 }
 
 class Personnage {
-
+    - x : Int
+    - y : Int
 }
 
 abstract class Monstre {
