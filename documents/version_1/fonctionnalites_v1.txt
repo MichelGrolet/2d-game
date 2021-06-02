@@ -1,8 +1,21 @@
 * Fonctionnalités version 1
 
-- fonctionnalité 1 : création des cases, murs et sols.
+- fonctionnalité 1 : création du terrain 
+  - creation du terrain de jeu qui corrrespond a un labyrinthe.
+  - critères de validation :
+      - 1 : on doit pouvoir ouvrir une interface ou on voit le labyrinthe.
+      - 2 : il y a des murs et des passages vides
+      - 3 : le terrain mesure 10 x 10 cases
 
-- fonctionnalité 2 : création du terrain (10 x 10 cases)
-  - on doit pouvoir ouvrir une interface ou on voit le labyrinthe.
+- fonctionnalité 2 : creation du personnage
+  - création du personnage
+  - critères de validation :
+    - 1 : le personnage doit s'afficher dans le labyrinthe
+    - 2 : il apparait a un endroit prédéfini (milieu ?)
 
-- fonctionnalité 3 :
+- fonctionnalité 3 : deplacement du personnage
+  - le personnage peut se déplacer dans le terrain
+  - critères de validation :
+    - 1 : le personnage peut se déplacer dans chaque direction
+    - 2 : il est stoppé par les murs
+  
