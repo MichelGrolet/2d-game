@@ -1,7 +1,11 @@
 public class Jeu {
 	
 	//création du personnage
-	Personnage perso = new Personnage(0,0);
+	Personnage perso;
+	
+	public Jeu() {
+		this.perso = new Personnage(0,0);
+	}
 	
 	/**
 	 * permet le déplacmeent du personnage
