@@ -1,11 +1,15 @@
 * Fonctionnalités version 1
 
+<<<<<<< HEAD
+- fonctionnalité 1 : création des classes Jeu et Personnage
+=======
 - fonctionnalité 1 : création du terrain 
   - creation du terrain de jeu qui corrrespond a un labyrinthe.
   - critères de validation :
       - 1 : on doit pouvoir ouvrir une interface ou on voit le labyrinthe.
       - 2 : il y a des murs et des passages vides
       - 3 : le terrain mesure 10 x 10 cases
+>>>>>>> 7ef966a0db0524ecdf0944cf3f33bc198b6d8f50
 
 - fonctionnalité 2 : creation du personnage
   - création du personnage
