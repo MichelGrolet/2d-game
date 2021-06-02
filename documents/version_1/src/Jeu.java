@@ -1,6 +1,8 @@
+package src;
+
 public class Jeu {
 	
-	//création du personnage
+	//creation du personnage
 	Personnage perso;
 	
 	public Jeu() {
@@ -22,5 +24,9 @@ public class Jeu {
 		}else if(direction.equals("bas")) {
 			this.perso.setY(1);
 		}
+	}
+	
+	public Personnage getPersonnage() {
+		return(this.perso);
 	}
 }
