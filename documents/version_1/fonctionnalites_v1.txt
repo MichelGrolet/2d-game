@@ -1,6 +1,6 @@
 * Fonctionnalités version 1
 
-- fonctionnalité 1 : création des cases, murs et sols.
+- fonctionnalité 1 : création des classes Jeu et Personnage
 
 - fonctionnalité 2 : création du terrain (10 x 10 cases)
   - on doit pouvoir ouvrir une interface ou on voit le labyrinthe.
