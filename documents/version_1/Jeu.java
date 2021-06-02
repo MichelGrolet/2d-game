@@ -8,6 +8,7 @@ public class Jeu {
 	 * @param direction, correpond a la direction voulu
 	 */
 	public void deplacer(String direction) {
+		//on regarde dans quelle direction veut se deplacer le personnage
 		if (direction.equals("gauche")) {
 			this.perso.setX(-1);
 		}else if(direction.equals("droite")) {
