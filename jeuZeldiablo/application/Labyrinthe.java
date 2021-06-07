@@ -30,6 +30,10 @@ public class Labyrinthe {
 		return this.cases[i][j];
 	}
 	
+	public Case[][] getTabCase(){
+		return this.cases;
+	}
+	
 	public ArrayList<Case> getCasesLibres() {
 		ArrayList<Case> lc = new ArrayList<Case>();
 		for(int i=0; i<taille; i++) {
