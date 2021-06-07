@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.awt.*;
 
 /**
-* Classe de test de case
+* Classe de test de Case
 */
 
 public class TestCase{
@@ -24,6 +24,9 @@ public class TestCase{
         assertEquals("Le y de caseT devrait etre 5",5,res2);
     }
 
+    /**
+    * Test si les getters fonctionnent
+    */
     @Test
     public void testGetter(){
         Case caseT=new Case(2,3);
@@ -35,6 +38,9 @@ public class TestCase{
         assertEquals("Le y de caseT devrait etre 3",3,res2);
     }
 
+    /**
+    * Test si le constructeur fonctionne avec des parametres negatifs
+    */
     @Test
     public void testConstructeurNegatif(){
         Case case1=new Case(-2,5);

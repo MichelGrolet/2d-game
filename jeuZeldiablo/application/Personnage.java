@@ -3,7 +3,7 @@ package application;
 import moteurJeu.moteur.Commande;
 
 /**
- * Classe qui représente un personnage
+ * Classe qui represente un personnage
  *
  */
 public class Personnage {

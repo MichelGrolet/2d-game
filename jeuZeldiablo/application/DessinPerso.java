@@ -3,6 +3,7 @@ package application;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 import moteurJeu.moteur.*;
 
@@ -50,6 +51,10 @@ public class DessinPerso implements DessinJeu {
 			crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
 					TAILLE_CASE);
 			break;
+		case "MONSTRE":
+			crayon.setColor(Color.red);
+			crayon.fillArc(x*TAILLE_CASE, y*TAILLE_CASE, TAILLE_CASE, TAILLE_CASE, 0, 360);
+			break;
 		default:
 			throw new AssertionError("objet inexistant");
 		}
@@ -59,8 +64,13 @@ public class DessinPerso implements DessinJeu {
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
 	public void dessiner(BufferedImage im) {
+		// Dessine le personnage
 		Personnage pj = jeu.getPersonnage();
 		this.dessinerObjet("PJ", pj.getX(), pj.getY(), im);
+		// Dessine les monstres
+		ArrayList<Monstre> monstres = jeu.getMonstres();
+		for (Monstre m : monstres) {
+			this.dessinerObjet("MONSTRE", m.getX(), m.getY(), im);
+		}
 	}
-
 }
