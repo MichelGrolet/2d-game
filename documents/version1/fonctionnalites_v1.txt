@@ -22,4 +22,3 @@
   - critères de validation :
     - 1 : le personnage peut se déplacer dans chaque direction
     - 2 : il est stoppé par les murs
-  

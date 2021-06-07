@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import moteurJeu.moteur.DessinAbstract;
-
 /**
  * un afficheur graphique associe au JeuTest fourni
  * 

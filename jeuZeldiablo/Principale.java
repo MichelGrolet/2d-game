@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 import application.*;
-import moteurJeu.moteur.MoteurGraphique;
 
 public class Principale {
 	public static void main(String[] args) throws InterruptedException {
