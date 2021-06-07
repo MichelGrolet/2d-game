@@ -1,4 +1,3 @@
-
 /**
  * Classe qui représente un personnage
  *

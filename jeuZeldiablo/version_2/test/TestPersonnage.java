@@ -1,7 +1,6 @@
-package test;
+package version_2.test;
 
-import src.*;
-
+import version_2.application.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -13,6 +12,6 @@ public class TestPersonnage{
     @Test
     public void testConstructeurNegatif() {
         Personnage p = new Personnage();
-        assertEquals("edzsfre", true, true)
+        assertTrue("edzsfre", true);
     }
 }

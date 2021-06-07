@@ -1,4 +1,4 @@
-package src;
+package version_2.application;
 
 /**
  * Classe qui représente un personnage

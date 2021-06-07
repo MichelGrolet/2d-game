@@ -52,9 +52,9 @@ local.properties
 
 .idea
 out
-documents/version_1/.classpath
-documents/version_1/.project
+jeuZeldiablo/version_1/.classpath
+jeuZeldiablo/version_1/.project
 documents/.classpath
 documents/.project
-documents/version_2/.classpath
-documents/version_2/.project
+jeuZeldiablo/version_2/.classpath
+jeuZeldiablo/version_2/.project

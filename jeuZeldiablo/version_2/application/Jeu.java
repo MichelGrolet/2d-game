@@ -1,4 +1,4 @@
-
+package version_2.application;
 
 import moteurJeu.moteur.CClavier;
 import moteurJeu.moteur.CSouris;

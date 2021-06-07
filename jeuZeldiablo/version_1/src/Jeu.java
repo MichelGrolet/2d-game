@@ -1,6 +1,4 @@
-package src;
-
-import moteurJeu.moteur.JeuAbstract;
+import package moteurJeu.moteur/*;
 
 public class Jeu implements JeuAbstract{
 	
