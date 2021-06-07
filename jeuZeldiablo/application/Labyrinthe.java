@@ -1,7 +1,6 @@
 public class Labyrinthe {
 	private static int taille = 10;
 	private Case[][] cases;
-	private Liste<Case> cases;
 	
 	public Labyrinthe() {
 		for(int i=0; i<taille; i++) {
