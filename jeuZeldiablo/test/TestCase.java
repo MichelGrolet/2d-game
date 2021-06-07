@@ -19,7 +19,6 @@ public class TestCase{
 
         int res1=caseT.getX();
         int res2=caseT.getY();
-        Color coul=caseT.getColor();
 
         assertEquals("Le x de caseT devrait etre 2",2,res1);
         assertEquals("Le y de caseT devrait etre 5",5,res2);
