@@ -63,7 +63,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	}
 	
 	public Labyrinthe getLabyrinthe() {
-		return(this.getLabyrinthe());
+		return this.getLabyrinthe();
 	}
 
 	/**

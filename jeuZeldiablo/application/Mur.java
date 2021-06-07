@@ -12,8 +12,5 @@ public class Mur extends Case{
     */
     public Mur(int x,int y){
         super(x,y);
-
-        //Couleur du sol : noir
-        this.couleur = Color.BLACK;
     }
 }

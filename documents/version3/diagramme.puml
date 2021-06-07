@@ -12,13 +12,20 @@ Labyrinthe "1" --> "*" Case : - cases
 class Case {
     - x : int
     - y : int
-    - couleur : Color
+    - libre : boolean
     + Case(int x, int y)
+    + boolean : getLibre()
+    + int : getX()
+    + int : getY()
 }
 
-class Mur extends Case {}
+class Mur extends Case {
+    + Color getCouleur();
+}
 
-class Sol extends Case {}
+class Sol extends Case {
+    + Color getCouleur();
+}
 
 class Personnage {
     - x : Int
@@ -53,6 +60,8 @@ class JeuPerso implements Jeu {
     + Personnage getPj()
     + void deplacerMonstres()
     + void genererMonstres(int nbMonstres)
+    + ArrayList<Case> GetCasesLibres()
+    + Labyrinthe getLabyrinthe()
 }
 JeuPerso "1" --> "1" Labyrinthe : - labyrinthe
 JeuPerso "1" --> "1" Personnage : - pj
