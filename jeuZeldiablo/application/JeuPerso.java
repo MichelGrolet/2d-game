@@ -28,10 +28,22 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 */
 	public void genererMonstres(int x) {
 		for (int i = 0; i <= x; i++) {
-			ArrayList<Case> casesLibres = this.lab.getCasesLibres();
+			ArrayList<Case> casesLibres = this.getCasesLibres();		
 			Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
 			Monstre nMonstre = new Monstre(spawnMonstre.getX(),spawnMonstre.getY());
 		}
+	}
+	
+	public ArrayList<Case> getCasesLibres(){
+		ArrayList<Case> casesLibres = this.lab.getCasesLibres();
+		Case casePerso = new Case(this.perso.getX(),this.perso.getY());
+		ArrayList<Case> casesMonstres = new ArrayList<Case>();
+		for(int i= 0; i<this.monstres.size(); i++) {
+			casesMonstres.add(new Case(this.monstres.get(i).getX(),this.monstres.get(i).getY()));
+		}
+		casesLibres.remove(casePerso);
+		casesLibres.removeAll(casesMonstres);
+		return(casesLibres);
 	}
 	
 	/**
