@@ -4,12 +4,12 @@ import moteurJeu.moteur.*;
 
 import java.awt.image.BufferedImage;
 
-public class Jeu implements JeuAbstract{
+public class JeuPerso implements moteurJeu.moteur.Jeu{
 	
 	//creation du personnage
 	Personnage perso;
 	
-	public Jeu() {
+	public JeuPerso() {
 		this.perso = new Personnage();
 	}
 	
@@ -40,14 +40,13 @@ public class Jeu implements JeuAbstract{
 	}
 
 	@Override
-	public String evoluer(CClavier clavier, CSouris souris) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public boolean etreFini() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void evoluer(Commande commandeUser) {
+		this.getPersonnage().deplacer(commandeUser);
 	}
 }
