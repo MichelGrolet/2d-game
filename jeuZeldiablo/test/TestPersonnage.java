@@ -1,6 +1,6 @@
-package version_2.test;
+package test;
 
-import version_2.application.*;
+import application.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 

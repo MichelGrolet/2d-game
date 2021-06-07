@@ -1,4 +1,4 @@
-package version_2.application;
+package application;
 
 import java.awt.Color;
 import java.awt.Graphics2D;

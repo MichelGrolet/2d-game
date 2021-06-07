@@ -1,4 +1,4 @@
-package version_2.application;
+package application;
 
 /**
  * Classe qui représente un personnage
@@ -20,22 +20,9 @@ public class Personnage {
     * @param x entier pour la coordonnee x
     * @param y entier pour la coordonnee y
     */
-    public Personnage(int x,int y){
-        //Si le parametre est negatif, on instancie a zero
-        if(x<0){
-            this.x=0;
-        }
-        else{
-            this.x=x;
-        }
-
-        //Si le parametre est negatif, on instancie a zero
-        if(x<0){
-            this.y=0;
-        }
-        else{
-            this.y=y;
-        }
+    public Personnage(){
+        this.x = 0;
+        this.y = 0;
     }
 
     /**
