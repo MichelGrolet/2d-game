@@ -1,7 +1,5 @@
 package application;
 
-import java.awt.*;
-
 /**
 * Classe representant une case du labyrinthe,
 * pouvant etre un mur ou un sol
@@ -16,11 +14,6 @@ public class Case{
     * Coordonnee y de la case
     */
     protected int y;
-
-    /**
-    * Couleur de la case
-    */
-    protected Color couleur;
     
     /**
      * Place accesible ou non

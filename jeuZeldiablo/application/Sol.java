@@ -1,8 +1,5 @@
 package application;
 
-import java.awt.*;
-import java.util.*;
-
 /**
 * Classe representant du sol
 * herite de Case
@@ -19,13 +16,5 @@ public class Sol extends Case{
         this.libre = true;
         //Couleur du sol : gris
         this.couleur = Color.GRAY;
-    }
-
-    /**
-    * Retourne la couleur du sol
-    * @return une couleur
-    */
-    public Color getColor(){
-        return this.couleur;
     }
 }
