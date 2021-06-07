@@ -16,7 +16,6 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		this.perso = new Personnage();
 		this.lab = new Labyrinthe();
 		this.monstres = new ArrayList<>();
-		genererMonstres(2);
 	}
 
 	/**
@@ -24,11 +23,14 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 * @param x le nombre de monstre a generer
 	 */
 	public void genererMonstres(int x) {
-		for (int i = 0; i <= x; i++) {
-			ArrayList<Case> casesLibres = this.getCasesLibres();		
-			Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
-			monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
+		if(x > 0) {
+			for (int i = 0; i < x; i++) {
+				ArrayList<Case> casesLibres = this.getCasesLibres();		
+				Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
+				monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
+			}
 		}
+		
 	}
 
 	/**
