@@ -42,7 +42,10 @@ public class Case{
             this.y=y;
         }
     }
-    
+    /**
+     * Permet de savoir si la case est libre
+     * @return true si libre
+     */
     public boolean getLibre() {
     	return(this.libre);
     }
