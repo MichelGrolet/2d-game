@@ -1,8 +1,6 @@
 package application;
 
 import moteurJeu.moteur.*;
-
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
@@ -18,7 +16,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public JeuPerso() {
 		this.perso = new Personnage();
 		this.lab = new Labyrinthe();
-		this.monstres = new ArrayList<Monstre>();
+		this.monstres = new ArrayList<>();
 		genererMonstres(2);
 	}
 
@@ -30,7 +28,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		for (int i = 0; i <= x; i++) {
 			ArrayList<Case> casesLibres = this.getCasesLibres();		
 			Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
-			Monstre nMonstre = new Monstre(spawnMonstre.getX(),spawnMonstre.getY());
+			monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
 		}
 	}
 	
@@ -41,9 +39,9 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public ArrayList<Case> getCasesLibres(){
 		ArrayList<Case> casesLibres = this.lab.getCasesLibres();
 		Case casePerso = new Case(this.perso.getX(),this.perso.getY());
-		ArrayList<Case> casesMonstres = new ArrayList<Case>();
-		for(int i= 0; i<this.monstres.size(); i++) {
-			casesMonstres.add(new Case(this.monstres.get(i).getX(),this.monstres.get(i).getY()));
+		ArrayList<Case> casesMonstres = new ArrayList<>();
+		for (Monstre monstre : this.monstres) {
+			casesMonstres.add(new Case(monstre.getX(), monstre.getY()));
 		}
 		casesLibres.remove(casePerso);
 		casesLibres.removeAll(casesMonstres);
@@ -67,7 +65,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	}
 	
 	public Labyrinthe getLabyrinthe() {
-		return this.getLabyrinthe();
+		return this.lab;
 	}
 
 	/**
@@ -75,8 +73,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 * @return un string qui indique la poition du personnage
 	 */
 	public String toString() {
-		String res = this.perso.toString()+"\n";
-		return(res);
+		return this.perso.toString()+"\n";
 	}
 
 	@Override
