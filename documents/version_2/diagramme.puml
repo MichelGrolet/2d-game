@@ -1,0 +1,50 @@
+@startuml
+
+class Labyrinthe {
+
+}
+Labyrinthe "1" --> "*" Case : cases
+
+interface Case {
+
+}
+
+class Mur implements Case {
+
+}
+
+class Sol implements Case {
+
+}
+
+class Personnage {
+    - x : Int
+    - y : Int
+}
+
+abstract class Monstre {
+
+}
+
+class Fantome extends Monstre {
+
+}
+
+class Mechant extends Monstre {
+
+}
+
+class Jeu {
+
+}
+Jeu "1" --> "1" Labyrinthe : labyrinthe
+Jeu "1" --> "1" Personnage : personnage
+Jeu "1" --> "*" Monstre : monstres
+
+class Main {
+
+}
+
+class 
+
+@enduml
