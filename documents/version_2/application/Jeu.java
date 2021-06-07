@@ -1,4 +1,4 @@
-
+package application;
 
 import moteurJeu.moteur.CClavier;
 import moteurJeu.moteur.CSouris;

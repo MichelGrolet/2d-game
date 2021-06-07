@@ -1,4 +1,4 @@
-
+package application;
 /**
  * Classe qui représente un personnage
  *
