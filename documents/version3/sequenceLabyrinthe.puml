@@ -1,0 +1,18 @@
+@startuml
+participant "La: Labyrinthe" as Foo1
+participant "cases: Case[][]" as Foo2
+participant "Nc: Case" as nc
+
+loop "indice i"
+loop "indice j"
+
+create nc
+Foo1 -> nc: new Case()
+Foo1 -> Foo2 : cases[i][j] = Nc
+activate Foo2
+Foo2 --> Foo1
+deactivate Foo2
+
+end
+end
+@enduml
