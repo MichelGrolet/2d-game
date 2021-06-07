@@ -1,4 +1,3 @@
-package src;
 
 /**
  * Classe qui représente un personnage

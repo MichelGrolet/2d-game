@@ -4,14 +4,14 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import moteurJeu.DessinJeu;
+import moteurJeu.moteur.DessinAbstract;
 
 /**
  * un afficheur graphique associe au JeuTest fourni
  * 
  * @author vthomas
  */
-public class DessinPerso implements DessinJeu {
+public class DessinPerso implements DessinAbstract {
 
 	/**
 	 * constante pour gerer la taille des cases
@@ -59,8 +59,8 @@ public class DessinPerso implements DessinJeu {
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
 	public void dessiner(BufferedImage im) {
-		Personnage pj = jeu.getPj();
-		this.dessinerObjet("PJ", pj.x, pj.y, im);
+		Personnage pj = jeu.getPersonnage();
+		this.dessinerObjet("PJ", pj.getX(), pj.getY(), im);
 	}
 
 }
