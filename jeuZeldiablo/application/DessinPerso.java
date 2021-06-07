@@ -47,6 +47,11 @@ public class DessinPerso implements DessinJeu {
 					TAILLE_CASE);
 			break;
 		case "MUR":
+			crayon.setColor(Color.black);
+			crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
+					TAILLE_CASE);
+			break;
+		case "SOL":
 			crayon.setColor(Color.gray);
 			crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
 					TAILLE_CASE);
@@ -64,13 +69,23 @@ public class DessinPerso implements DessinJeu {
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
 	public void dessiner(BufferedImage im) {
-		// Dessine le personnage
-		Personnage pj = jeu.getPersonnage();
-		this.dessinerObjet("PJ", pj.getX(), pj.getY(), im);
+
+
+		// Dessine les murs
+		ArrayList<Case> cases = jeu.getLabyrinthe().getCasesLibres();
+		for (Case c : cases) {
+			if (c.getLibre()) this.dessinerObjet("SOL", c.getX(), c.getY(), im);
+			else this.dessinerObjet("MUR", c.getX(), c.getY(), im);
+		}
+
 		// Dessine les monstres
 		ArrayList<Monstre> monstres = jeu.getMonstres();
 		for (Monstre m : monstres) {
 			this.dessinerObjet("MONSTRE", m.getX(), m.getY(), im);
 		}
+
+		// Dessine le personnage
+		Personnage pj = jeu.getPersonnage();
+		this.dessinerObjet("PJ", pj.getX(), pj.getY(), im);
 	}
 }
