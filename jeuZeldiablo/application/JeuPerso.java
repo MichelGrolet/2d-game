@@ -34,6 +34,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		}
 	}
 	
+	/**
+	 * permet de connaitre les cases libres du jeu, c est a dire les cases sans joueur, monstres ou murs
+	 * @return la liste de cases libres
+	 */
 	public ArrayList<Case> getCasesLibres(){
 		ArrayList<Case> casesLibres = this.lab.getCasesLibres();
 		Case casePerso = new Case(this.perso.getX(),this.perso.getY());
