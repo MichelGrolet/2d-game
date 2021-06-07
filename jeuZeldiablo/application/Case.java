@@ -64,6 +64,9 @@ public class Case{
     */
     public int getY(){
         return this.y;
-
+    }
+    
+    public boolean equals(Case c) {
+    	return(c.getX( )== this.x && c.getY() == this.y);
     }
 }
