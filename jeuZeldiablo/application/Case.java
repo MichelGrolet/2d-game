@@ -44,4 +44,20 @@ public class Case{
             this.y=y;
         }
     }
+
+    /**
+    * Retourne la coordonnee x de la case
+    * @return un int
+    */
+    public int getX(){
+        return this.x;
+    }
+
+    /**
+    * Retourne la coordonnee y de la case
+    * @return un int
+    */
+    public int getY(){
+        return this.y;
+    }
 }
