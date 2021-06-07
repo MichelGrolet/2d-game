@@ -15,7 +15,8 @@ public class Sol extends Case{
     */
     public Sol(int x,int y){
         super(x,y);
-
+        
+        this.libre = true;
         //Couleur du sol : gris
         this.couleur = Color.GRAY;
     }

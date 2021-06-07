@@ -21,6 +21,11 @@ public class Case{
     * Couleur de la case
     */
     protected Color couleur;
+    
+    /**
+     * Place accesible ou non
+     */
+    protected boolean libre;
 
     /**
     * Constructeur d'une case de sol
@@ -43,5 +48,9 @@ public class Case{
         else{
             this.y=y;
         }
+    }
+    
+    public boolean getLibre() {
+    	return(this.libre);
     }
 }
