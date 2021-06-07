@@ -8,7 +8,7 @@ import moteurJeu.moteur.*;
 
 /**
  * un afficheur graphique associe au JeuTest fourni
- * 
+ *
  * @author vthomas
  */
 public class DessinPerso implements DessinJeu {
@@ -25,7 +25,7 @@ public class DessinPerso implements DessinJeu {
 
 	/**
 	 * appelle constructeur parent
-	 * 
+	 *
 	 * @param j
 	 *            le jeutest a afficher
 	 */

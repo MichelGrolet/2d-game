@@ -64,7 +64,7 @@ public class Personnage {
             this.y=y;
         }
     }
-    
+
     public String toString() {
     	return("Le personage est en "+this.getX()+", "+this.getY());
     }
@@ -83,26 +83,26 @@ public class Personnage {
 			if (this.x >100) {
 				this.x = 100;
 			}
-				
+
 		}
-		
+
 		if (c.haut)
 		{
 			this.y--;
 			if (this.y < 0) {
 				this.x = 0;
 			}
-				
+
 		}
-		
+
 		if (c.bas)
 		{
 			this.y++;
 			if (this.x >100) {
 				this.x = 100;
 			}
-				
+
 		}
-		
+
 	}
 }

@@ -5,14 +5,14 @@ import moteurJeu.moteur.*;
 import java.awt.image.BufferedImage;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
-	
+
 	//creation du personnage
 	Personnage perso;
-	
+
 	public JeuPerso() {
 		this.perso = new Personnage();
 	}
-	
+
 	/**
 	 * permet le déplacement du personnage
 	 * @param direction, correpond a la direction voulu
@@ -29,11 +29,11 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			this.perso.setY(1);
 		}
 	}
-	
+
 	public Personnage getPersonnage() {
 		return(this.perso);
 	}
-	
+
 	public String toString() {
 		String res = this.perso.toString()+"\n";
 		return(res);
