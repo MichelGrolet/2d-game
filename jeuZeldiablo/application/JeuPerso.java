@@ -4,7 +4,6 @@ import moteurJeu.moteur.*;
 import java.util.ArrayList;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
-
 	
 	Personnage perso;
 	Labyrinthe lab;
@@ -31,7 +30,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
 		}
 	}
-	
+
 	/**
 	 * permet de connaitre les cases libres du jeu, c est a dire les cases sans joueur, monstres ou murs
 	 * @return la liste de cases libres
@@ -63,7 +62,11 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public Personnage getPersonnage() {
 		return(this.perso);
 	}
-	
+
+	/**
+	 * retourne le labyrinthe associe
+	 * @return labyrinthe associe
+	 */
 	public Labyrinthe getLabyrinthe() {
 		return this.lab;
 	}
