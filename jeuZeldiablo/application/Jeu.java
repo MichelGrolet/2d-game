@@ -1,8 +1,8 @@
 package application;
 
-import moteurJeu.moteur.CClavier;
-import moteurJeu.moteur.CSouris;
-import moteurJeu.moteur.JeuAbstract;
+import moteurJeu.moteur.*;
+
+import java.awt.image.BufferedImage;
 
 public class Jeu implements JeuAbstract{
 	
