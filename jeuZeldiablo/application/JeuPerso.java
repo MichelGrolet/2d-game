@@ -49,6 +49,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public Personnage getPersonnage() {
 		return(this.perso);
 	}
+	
+	public Labyrinthe getLabyrinthe() {
+		return(this.getLabyrinthe());
+	}
 
 	/**
 	 * retourne la position du personnage
