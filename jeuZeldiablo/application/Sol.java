@@ -1,3 +1,6 @@
+package application;
+
+import java.awt.*;
 import java.util.*;
 
 /**
@@ -14,6 +17,6 @@ public class Sol extends Case{
         super(x,y);
 
         //Couleur du sol : gris
-        this.color=Color.GRAY;
+        this.couleur = Color.GRAY;
     }
 }
