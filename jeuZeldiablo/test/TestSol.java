@@ -19,9 +19,11 @@ public class TestSol{
 
         int res1=sol.getX();
         int res2=sol.getY();
+        boolean re3=caseT.getLibre();
 
         assertEquals("Le x de sol devrait etre 2",2,res1);
         assertEquals("Le y de sol devrait etre 5",5,res2);
+        assertTrue("Devrait etre libre",res3);
     }
 
     /**

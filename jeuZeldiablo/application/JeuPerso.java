@@ -4,9 +4,19 @@ import moteurJeu.moteur.*;
 import java.util.ArrayList;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
-	
+	/**
+	* Personnage principal 
+	*/
 	Personnage perso;
+
+	/**
+	* Le terrain dans lequel evolue les entites
+	*/
 	Labyrinthe lab;
+
+	/**
+	* Une liste des monstres
+	*/
 	ArrayList<Monstre> monstres;
 
 	/**
