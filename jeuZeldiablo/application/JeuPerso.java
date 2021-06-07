@@ -1,18 +1,18 @@
 package application;
 
-import moteurJeu.moteur.CClavier;
-import moteurJeu.moteur.CSouris;
-import moteurJeu.moteur.JeuAbstract;
+import moteurJeu.moteur.*;
 
-public class Jeu implements JeuAbstract{
-	
+import java.awt.image.BufferedImage;
+
+public class JeuPerso implements moteurJeu.moteur.Jeu{
+
 	//creation du personnage
 	Personnage perso;
-	
-	public Jeu() {
+
+	public JeuPerso() {
 		this.perso = new Personnage();
 	}
-	
+
 	/**
 	 * permet le déplacement du personnage
 	 * @param direction, correpond a la direction voulu
@@ -29,25 +29,24 @@ public class Jeu implements JeuAbstract{
 			this.perso.setY(1);
 		}
 	}
-	
+
 	public Personnage getPersonnage() {
 		return(this.perso);
 	}
-	
+
 	public String toString() {
 		String res = this.perso.toString()+"\n";
 		return(res);
 	}
 
 	@Override
-	public String evoluer(CClavier clavier, CSouris souris) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public boolean etreFini() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void evoluer(Commande commandeUser) {
+		this.getPersonnage().deplacer(commandeUser);
 	}
 }

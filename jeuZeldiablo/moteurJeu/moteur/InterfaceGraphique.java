@@ -2,77 +2,71 @@ package moteurJeu.moteur;
 
 import javax.swing.JFrame;
 
-
 /**
- * cree une interface graphique avec son controleur et son afficheur
- * @author Graou
- *
+ * cree une interface graphique avec son controleur et son afficheur.
+ * <p>
+ * Cette classe est en charge de reunir et de mettre en relation les differents
+ * composants.
+ * 
+ * @author vthomas
  */
-public class InterfaceGraphique  {
+public class InterfaceGraphique {
 
-	
 	/**
 	 * le Panel lie a la JFrame
 	 */
 	private PanelDessin panel;
-	
+
 	/**
 	 * le controleur lie a la JFrame
 	 */
-	CClavier clavier;
-	CSouris souris;
+	private Controleur controleur;
 
-	
 	/**
-	 * la construction de l'interface grpahique
-	 * - construit la JFrame
-	 * - construit les Attributs
+	 * la construction de l'interface grpahique - construit la JFrame -
+	 * construit les Attributs
 	 * 
-	 * @param afficheurUtil l'afficheur a utiliser dans le moteur
+	 * @param afficheurUtil
+	 *            l'afficheur a utiliser dans le moteur
 	 * 
 	 */
-	public InterfaceGraphique(DessinAbstract afficheurUtil,int x,int y)
-	{
-		//creation JFrame
-		JFrame f=new JFrame();
+	public InterfaceGraphique(DessinJeu afficheurUtil, int x, int y) {
+		// creation JFrame
+		JFrame f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		// creation panel
-		this.panel=new PanelDessin(x, y,afficheurUtil);
+		this.panel = new PanelDessin(x, y, afficheurUtil);
 		f.setContentPane(this.panel);
-		
-		//ajoute la souris au panel
-		this.souris=new CSouris();
-		this.panel.addMouseListener(souris);
-		this.panel.addMouseMotionListener(souris);
-		
-		
-		//ajout du controleur
-		CClavier controlleurGraph=new CClavier();
-		this.clavier=controlleurGraph;
-		this.panel.addKeyListener(controlleurGraph);	
-		
-		//recuperation du focus
+
+		// ajout du controleur
+		Controleur controlleurGraph = new Controleur();
+		this.controleur = controlleurGraph;
+		this.panel.addKeyListener(controlleurGraph);
+
+		// recuperation du focus
 		f.pack();
-		f.setVisible(true);
 		f.getContentPane().setFocusable(true);
 		f.getContentPane().requestFocus();
+
+		f.setVisible(true);
+
 	}
-	
-	
+
 	/**
 	 * retourne le controleur de l'affichage construit
+	 * 
 	 * @return
 	 */
-	public CClavier getControleur() {
-		return clavier;
+	public Controleur getControleur() {
+		return controleur;
 	}
 
 	/**
 	 * demande la mise a jour du dessin
 	 */
 	public void dessiner() {
-		this.panel.dessinerJeu();	
+		this.panel.dessinerJeu();
 	}
-	
+
 }

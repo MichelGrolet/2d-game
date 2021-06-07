@@ -4,14 +4,14 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import moteurJeu.moteur.DessinAbstract;
+import moteurJeu.moteur.*;
 
 /**
  * un afficheur graphique associe au JeuTest fourni
- * 
+ *
  * @author vthomas
  */
-public class DessinPerso implements DessinAbstract {
+public class DessinPerso implements DessinJeu {
 
 	/**
 	 * constante pour gerer la taille des cases
@@ -21,15 +21,15 @@ public class DessinPerso implements DessinAbstract {
 	/**
 	 * lien vers le jeu a afficher
 	 */
-	private Jeu jeu;
+	private JeuPerso jeu;
 
 	/**
 	 * appelle constructeur parent
-	 * 
+	 *
 	 * @param j
 	 *            le jeutest a afficher
 	 */
-	public DessinPerso(Jeu j) {
+	public DessinPerso(JeuPerso j) {
 		this.jeu = j;
 	}
 
