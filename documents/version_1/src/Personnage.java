@@ -75,4 +75,8 @@ public class Personnage {
             this.y=y;
         }
     }
+    
+    public String toString() {
+    	return("Le personage est en "+this.getX()+", "+this.getY());
+    }
 }

@@ -29,4 +29,9 @@ public class Jeu {
 	public Personnage getPersonnage() {
 		return(this.perso);
 	}
+	
+	public String toString() {
+		String res = this.perso.toString()+"\n";
+		return(res);
+	}
 }
