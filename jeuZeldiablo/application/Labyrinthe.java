@@ -11,4 +11,8 @@ public class Labyrinthe {
 			}
 		}
 	}
+	
+	public Case[][] getCase(){
+		return this.cases;
+	}
 }

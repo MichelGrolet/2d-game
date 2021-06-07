@@ -1,22 +1,30 @@
 * Fonctionnalités version 3
 
-- fonctionnalité 1 : création du terrain et affichage responsables : Louis Gabin
-  - creation du terrain de jeu qui corrrespond a un labyrinthe.
-  - critères de validation :
-      - 1 : on doit pouvoir ouvrir une interface ou on voit le labyrinthe.
-      - 2 : il y a des murs et des passages vides
-      - 3 : le terrain mesure 10 x 10 cases
+- fonctionnalité 1 : création du terrain et affichage, responsables : Louis Gabin
   - création d'une case
   - critères de validation :
     - 1 : la case doit s'afficher dans le labyrinthe
     - 2 : pattern défini
     - 3 : case d'une couleur
-
-- fonctionnalité 2 : création et génération des monstres responsables : Michel Théo
+  - creation du terrain de jeu qui corrrespond a un labyrinthe.
   - critères de validation :
-    - 1 : la case doit s'afficher dans le labyrinthe
-    - 2 : pattern défini
-    - 3 : case d'une couleu
+      - 1 : on doit pouvoir ouvrir une interface ou on voit le labyrinthe.
+      - 2 : il y a des murs et des passages vides
+      - 3 : le terrain mesure 10 x 10 cases
+  
 
+- fonctionnalité 2 : génération des monstres, responsable : Michel 
+  - génération des monstres dans le labyrinthe
+  - critères de validation :
+    - 1 : les monstres apparaissent aléatoires dans le labyrinthe
+    - 2 : ils apparaissent uniquement sur des cases vides (hors mur, joueur et monstres déjà apparus)
+    - 3 : ils apparaissent sous la forme de rond rouge
+    
+- fonctionnalité 3 : déplacements aléatoire des monstres, responsable : Théo
+  - déplacement aléatoire des monstres dans le labyrinthe
+  - critères de validation :
+    - 1 : a chaque evolution du jeu, les monstres tentent de se déplacer et éventuellemnt se déplacent donc
+    - 2 : les monstres sont bloqués par les mur
+    - 3 : l'interface graphique se met à jour si les monstres se déplacent
 
   
