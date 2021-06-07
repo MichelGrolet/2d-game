@@ -4,7 +4,7 @@ class Main {}
 
 class Labyrinthe {
     - {static} taille : int
-    + labyrinthe()
+    + Labyrinthe()
 }
 Labyrinthe "1" --> "*" Case : - cases
 
