@@ -10,7 +10,7 @@ public class Jeu {
 	}
 	
 	/**
-	 * permet le déplacmeent du personnage
+	 * permet le déplacement du personnage
 	 * @param direction, correpond a la direction voulu
 	 */
 	public void deplacer(String direction) {
