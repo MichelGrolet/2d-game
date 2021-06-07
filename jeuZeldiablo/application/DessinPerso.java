@@ -17,12 +17,12 @@ public class DessinPerso implements DessinJeu {
 	/**
 	 * constante pour gerer la taille des cases
 	 */
-	private static int TAILLE_CASE = 25;
+	private static final int TAILLE_CASE = 25;
 
 	/**
 	 * lien vers le jeu a afficher
 	 */
-	private JeuPerso jeu;
+	private final JeuPerso jeu;
 
 	/**
 	 * appelle constructeur parent
@@ -41,27 +41,26 @@ public class DessinPerso implements DessinJeu {
 	private void dessinerObjet(String s, int x, int y, BufferedImage im) {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		switch (s) {
-		case "PJ":
-			crayon.setColor(Color.blue);
-			crayon.fillOval(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-					TAILLE_CASE);
-			break;
-		case "MUR":
-			crayon.setColor(Color.black);
-			crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-					TAILLE_CASE);
-			break;
-		case "SOL":
-			crayon.setColor(Color.gray);
-			crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-					TAILLE_CASE);
-			break;
-		case "MONSTRE":
-			crayon.setColor(Color.red);
-			crayon.fillArc(x*TAILLE_CASE, y*TAILLE_CASE, TAILLE_CASE, TAILLE_CASE, 0, 360);
-			break;
-		default:
-			throw new AssertionError("objet inexistant");
+			case "PJ" -> {
+				crayon.setColor(Color.blue);
+				crayon.fillOval(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
+						TAILLE_CASE);
+			}
+			case "MUR" -> {
+				crayon.setColor(Color.black);
+				crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
+						TAILLE_CASE);
+			}
+			case "SOL" -> {
+				crayon.setColor(Color.gray);
+				crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
+						TAILLE_CASE);
+			}
+			case "MONSTRE" -> {
+				crayon.setColor(Color.red);
+				crayon.fillArc(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE, TAILLE_CASE, 0, 360);
+			}
+			default -> throw new AssertionError("objet inexistant");
 		}
 	}
 
@@ -69,8 +68,6 @@ public class DessinPerso implements DessinJeu {
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
 	public void dessiner(BufferedImage im) {
-
-
 		// Dessine les murs
 		ArrayList<Case> cases = jeu.getLabyrinthe().getCasesLibres();
 		for (Case c : cases) {
