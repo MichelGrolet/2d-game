@@ -8,9 +8,11 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 
 	//creation du personnage
 	Personnage perso;
+	Labyrinthe lab;
 
 	public JeuPerso() {
 		this.perso = new Personnage();
+		this.lab = new Labyrinthe();
 	}
 
 	/**
