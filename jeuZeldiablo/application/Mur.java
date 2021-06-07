@@ -1,8 +1,5 @@
 package application;
 
-import java.awt.*;
-import java.util.*;
-
 /**
 * Classe representant un mur
 * herite de Case
@@ -18,13 +15,5 @@ public class Mur extends Case{
 
         //Couleur du sol : noir
         this.couleur = Color.BLACK;
-    }
-
-    /**
-    * Retourne la couleur du mur
-    * @return une couleur
-    */
-    public Color getColor(){
-        return this.couleur;
     }
 }
