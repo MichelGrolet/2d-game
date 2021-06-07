@@ -7,11 +7,14 @@ import java.util.ArrayList;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
 
-	//creation du personnage
+	
 	Personnage perso;
 	Labyrinthe lab;
 	ArrayList<Monstre> monstres;
 
+	/**
+	 * Constructeur du personnage
+	 */
 	public JeuPerso() {
 		this.perso = new Personnage();
 		this.lab = new Labyrinthe();
@@ -19,6 +22,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		genererMonstres(2);
 	}
 
+	/**
+	 * genere un certains nombres de Monstres
+	 * @param x le nombre de monstre a generer
+	 */
 	public void genererMonstres(int x) {
 		for (int i = 0; i <= x; i++) {
 			ArrayList<Case> casesLibres = this.lab.getCasesLibres();
@@ -27,14 +34,26 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		}
 	}
 	
+	/**
+	 * retourne la liste des monstres
+	 * @return liste de monstre
+	 */
 	public ArrayList<Monstre> getMonstres(){
 		return(this.monstres);
 	}
 	
+	/**
+	 * retourne le personnage
+	 * @return le personnage
+	 */
 	public Personnage getPersonnage() {
 		return(this.perso);
 	}
 
+	/**
+	 * retourne la position du personnage
+	 * @return un string qui indique la poition du personnage
+	 */
 	public String toString() {
 		String res = this.perso.toString()+"\n";
 		return(res);
