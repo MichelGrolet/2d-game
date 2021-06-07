@@ -1,6 +1,8 @@
 package src;
 
-public class Jeu {
+import moteurJeu.moteur.JeuAbstract;
+
+public class Jeu implements JeuAbstract{
 	
 	//creation du personnage
 	Personnage perso;
