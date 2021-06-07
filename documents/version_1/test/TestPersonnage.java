@@ -12,7 +12,7 @@ import org.junit.Test;
 public class TestPersonnage{
     @Test
     public void testConstructeurNegatif() {
-        Personnage p = new Personnage();
-        assertEquals("edzsfre", true, true)
+        Personnage p = new Personnage(0, 0);
+        assertEquals("edzsfre", true, true);
     }
 }
