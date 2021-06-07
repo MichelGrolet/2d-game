@@ -1,0 +1,17 @@
+@startuml
+
+autonumber
+
+JeuPerso -> JeuPerso : genererMonstres()
+activate JeuPerso
+loop over JeuPerso
+    JeuPerso -> Labyrinthe : getCasesLibres()
+    activate Labyrinthe
+    Labyrinthe --> JeuPerso : casesLibres
+    deactivate Labyrinthe
+    JeuPerso -> Monstre **: create
+end loop
+JeuPerso --> JeuPerso
+deactivate JeuPerso
+
+@enduml

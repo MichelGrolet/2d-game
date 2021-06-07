@@ -5,6 +5,7 @@ class Main {}
 class Labyrinthe {
     - {static} taille : int
     + Labyrinthe()
+    + ArrayList<Case> GetCasesLibres()
 }
 Labyrinthe "1" --> "*" Case : - cases
 
@@ -29,13 +30,13 @@ class Personnage {
     + String toString()
 }
 
-abstract class Monstre {}
+class Monstre {
+    - x : int
+    - y : int
+    + Monstre(int x, int y)
+}
 
-class Fantome extends Monstre {}
-
-class Mechant extends Monstre {}
-
-interface JeuPerso {
+interface Jeu {
     + void evoluer()
     + boolean etreFini()
 }
@@ -50,6 +51,8 @@ class JeuPerso implements Jeu {
     + void evoluer(Commande commande)
     + boolean etreFini()
     + Personnage getPj()
+    + void deplacerMonstres()
+    + void genererMonstres(int nbMonstres)
 }
 JeuPerso "1" --> "1" Labyrinthe : - labyrinthe
 JeuPerso "1" --> "1" Personnage : - pj
