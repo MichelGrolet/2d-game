@@ -20,6 +20,11 @@ class Sol implements Case {
 class Personnage {
     - x : Int
     - y : Int
+    - {static} LIMIT_X : int
+    - {static} LIMIT_X : int
+    + Personnage()
+    + void deplacer(Commande c)
+    + String toString()
 }
 
 abstract class Monstre {
@@ -45,6 +50,21 @@ class Main {
 
 }
 
-class 
+class JeuPerso implements DessinJeu {
+    + JeuPerso()
+    + String toString()
+    + void evoluer(Commande commande)
+    + boolean etreFini()
+    + Personnage getPj()
+}
+JeuPerso "1" -> "1" Personnage : pj
+class DessinPerso implements DessinJeu {
+    - {static} int tailleCase
+    + DessinPerso(JeuPerso j)
+    + void dessinerObjet(String s, int x, int y, BufferedImage im)
+    + void dessiner(BufferedImage im)
+}
+DessinPerso "1" -> "1" JeuPerso : jeu
+
 
 @enduml
