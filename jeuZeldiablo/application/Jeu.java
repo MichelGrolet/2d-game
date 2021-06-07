@@ -10,7 +10,7 @@ public class Jeu implements JeuAbstract{
 	Personnage perso;
 	
 	public Jeu() {
-		this.perso = new Personnage(0,0);
+		this.perso = new Personnage();
 	}
 	
 	/**
