@@ -12,7 +12,7 @@ public class Labyrinthe {
 		}
 	}
 	
-	public Case[][] getCase(){
-		return this.cases;
+	public Case getCase(int i, int j){
+		return this.cases[i][j];
 	}
 }
