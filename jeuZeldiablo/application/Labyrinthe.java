@@ -8,7 +8,6 @@ public class Labyrinthe {
 			for(int j=0; j<taille; j++) {
 				cases[i][j] = new Sol();
 			}
-			cases.add(new Sol());
 		}
 	}
 }
