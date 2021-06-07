@@ -53,4 +53,21 @@ public class Case{
     public boolean getLibre() {
     	return(this.libre);
     }
+
+    /**
+    * Retourne la coordonnee x de la case
+    * @return un int
+    */
+    public int getX(){
+        return this.x;
+    }
+
+    /**
+    * Retourne la coordonnee y de la case
+    * @return un int
+    */
+    public int getY(){
+        return this.y;
+
+    }
 }
