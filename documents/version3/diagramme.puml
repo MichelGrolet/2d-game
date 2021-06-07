@@ -1,43 +1,39 @@
 @startuml
 
-class Labyrinthe {
+class Main {}
 
+class Labyrinthe {
+    - {static} taille : int
+    + labyrinthe()
 }
 Labyrinthe "1" --> "*" Case : cases
 
-interface Case {
-
+abstract class Case {
+    - x : int
+    - y : int
+    - couleur : Color
+    + Case(int x, int y)
 }
 
-class Mur implements Case {
+class Mur implements Case {}
 
-}
-
-class Sol implements Case {
-
-}
+class Sol implements Case {}
 
 class Personnage {
     - x : Int
     - y : Int
     - {static} LIMIT_X : int
-    - {static} LIMIT_X : int
+    - {static} LIMIT_Y : int
     + Personnage()
     + void deplacer(Commande c)
     + String toString()
 }
 
-abstract class Monstre {
+abstract class Monstre {}
 
-}
+class Fantome extends Monstre {}
 
-class Fantome extends Monstre {
-
-}
-
-class Mechant extends Monstre {
-
-}
+class Mechant extends Monstre {}
 
 interface JeuPerso {
     + void evoluer()
@@ -48,14 +44,6 @@ interface DessinJeu {
     + void dessiner()
 }
 
-Jeu "1" --> "1" Labyrinthe : labyrinthe
-Jeu "1" --> "1" Personnage : pj
-Jeu "1" --> "*" Monstre : monstres
-
-class Main {
-
-}
-
 class Jeu implements DessinJeu {
     + Jeu()
     + String toString()
@@ -63,6 +51,9 @@ class Jeu implements DessinJeu {
     + boolean etreFini()
     + Personnage getPj()
 }
+Jeu "1" --> "1" Labyrinthe : labyrinthe
+Jeu "1" --> "1" Personnage : pj
+Jeu "1" --> "*" Monstre : monstres
 
 class DessinPerso implements JeuPerso {
     - {static} int tailleCase
