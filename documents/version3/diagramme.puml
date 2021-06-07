@@ -4,20 +4,20 @@ class Main {}
 
 class Labyrinthe {
     - {static} taille : int
-    + labyrinthe()
+    + Labyrinthe()
 }
 Labyrinthe "1" --> "*" Case : - cases
 
-abstract class Case {
+class Case {
     - x : int
     - y : int
     - couleur : Color
     + Case(int x, int y)
 }
 
-class Mur implements Case {}
+class Mur extends Case {}
 
-class Sol implements Case {}
+class Sol extends Case {}
 
 class Personnage {
     - x : Int
