@@ -22,9 +22,13 @@ public class Personnage extends Entite{
     	return("Le personage est en "+this.getX()+", "+this.getY());
     }
 
+    /**
+     *  permet au personnage de se deplacer
+     * @param c, commande jouer par l'ultilisateur
+     * @param libres, liste de cases accesibles
+     */
 	public void seDeplacer(Commande c, ArrayList<Case> libres) {
 		ArrayList<Case> caseValide = this.deplacementAutour(libres);
-		System.out.println(caseValide);
 		if (c.gauche)
 		{
 			for(Case cas : caseValide) {
