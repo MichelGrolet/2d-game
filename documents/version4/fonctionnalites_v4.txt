@@ -1,0 +1,24 @@
+* Fonctionnalités version 4
+
+- [Gabin] fonctionnalité 1 : ajout des murs et des collisions contre les murs et les entités.
+  - il faut pouvoir afficher les murs et il faut que les entités ne puissent pas marcher dessus
+  - critères de validation :
+    - 1 : on doit voir des murs sur le labyrinthe
+    - 2 : le personnage et les monstres ne doivent pas pouvoir apparaitre sur un mur
+    - 3 : le personnage et les monstres ne doivent pas pouvoir se déplacer sur un mur
+    - 4 : deux entités ne peuvent pas etre sur la même case.
+
+- [Theo & Michel] fonctionnalité 2 : déplacements vers le joueur des monstres, responsable : Théo
+  - déplacement vers le joueur des monstres dans le labyrinthe
+  - critères de validation :
+    - 1 : a chaque evolution du jeu, les monstres tentent de se déplacer et éventuellemnt se déplacent donc
+    - 2 : les monstres sont bloqués par les mur
+    - 3 : l'interface graphique se met à jour si les monstres se déplacent
+
+- [Louis] fonctionnalité 3 : combat entre le personnage et les monstres
+  - les deux doivent pouvoir initier des combats et faire perdre des pv à leur adversaire
+  - critères de validation :
+    - 1 : si le joueur attaque, il fait des dégâts à tous les monstres autour de lui.
+    - 2 : les monstres doivent perdre de la vie ou mourir
+    - 3 : le joueur attaque quand il appuie sur espace
+    - 4 : quand un monstre est à coté d'un joueur, il tape le joueur après un certain delai.
