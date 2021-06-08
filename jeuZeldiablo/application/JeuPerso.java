@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
-	* Personnage principal 
+	* Personnage principal
 	*/
 	private Personnage perso;
 
@@ -46,13 +46,13 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				x = this.getCasesLibres().size();
 			}
 			for (int i = 0; i < x; i++) {
-				ArrayList<Case> casesLibres = this.getCasesLibres();		
+				ArrayList<Case> casesLibres = this.getCasesLibres();
 				Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
 				this.monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
 			}
 		}
 	}
-	
+
 	/**
 	 * permet de faire apparaitre un monstre
 	 * @param m, monstre a faire apparaitre
@@ -71,13 +71,18 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		}
 		return res;
 	}
-	
+
 	/**
 	 * permet au jeu de deplacer les monstres
 	 */
 	public void deplacerMonstres() {
 		for(Monstre m : monstres) {
-			m.seDeplacer(m.deplacementAutour(this.getCasesLibres()),this.perso);
+			if(m.getX()==this.perso.getX()+1 || m.getX()==this.perso.getX()-1
+					|| m.getY()==this.perso.getY()+1 || m.getY()==this.perso.getY()-1) {
+				m.attaquer(this.perso);
+			}else {
+				m.seDeplacer(m.deplacementAutour(this.getCasesLibres()),this.perso);
+			}
 		}
 	}
 
@@ -96,7 +101,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		casesLibres.removeAll(casesMonstres);
 		return(casesLibres);
 	}
-	
+
 	/**
 	 * retourne la liste des monstres
 	 * @return liste de monstre
@@ -104,7 +109,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public ArrayList<Monstre> getMonstres(){
 		return(this.monstres);
 	}
-	
+
 	/**
 	 * retourne le personnage
 	 * @return le personnage
@@ -137,17 +142,19 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 
 	@Override
 	public void evoluer(Commande commandeUser) {
-		this.getPersonnage().seDeplacer(commandeUser,this.getCasesLibres());
-		timer++;
-		if (this.timer == 20) {
-			this.deplacerMonstres();
-			this.timer = 0;
-		}
-		if(commandeUser.attaque) {
-			for(int i=0; i<this.monstres.size(); i++) {
-				this.getPersonnage().attaquer(this.monstres.get(i));
-				if(this.monstres.get(i).etreMort()) {
-					this.monstres.remove(this.monstres.get(i));
+		if(!this.perso.etreMort()) {
+			this.getPersonnage().seDeplacer(commandeUser);
+			timer++;
+			if (this.timer == 20) {
+				this.deplacerMonstres();
+				this.timer = 0;
+			}
+			if(commandeUser.attaque) {
+				for(int i=0; i<this.monstres.size(); i++) {
+					this.getPersonnage().attaquer(this.monstres.get(i));
+					if(this.monstres.get(i).etreMort()) {
+						this.monstres.remove(this.monstres.get(i));
+					}
 				}
 			}
 		}
