@@ -171,6 +171,8 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public void evoluer(Commande commandeUser) {
 		if(!this.perso.etreMort()) {
 			this.getPersonnage().seDeplacer(commandeUser, this.getPersonnage().deplacementAutour(this));
+			Sol s = (Sol) this.lab.getCase(this.getPersonnage().getX(), this.getPersonnage().getY());
+			s.declencherEffet(this.getPersonnage());
 			timer++;
 			if (this.timer == 10) {
 				this.deplacerMonstres();

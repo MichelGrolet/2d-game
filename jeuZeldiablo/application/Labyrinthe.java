@@ -105,6 +105,7 @@ public class Labyrinthe {
 						this.cases[i][j]=new Mur(i,j);
 					}
 				}
+				this.cases[3][1]=new CasePiege(3, 1);
 				break;
 
 			//Schema vertical

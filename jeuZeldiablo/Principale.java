@@ -6,7 +6,7 @@ import moteurJeu.moteur.MoteurGraphique;
 public class Principale {
 	public static void main(String[] args) throws InterruptedException {
 		// creation du jeu particulier et de son afficheur
-		JeuPerso jeu = new JeuPerso(2);
+		JeuPerso jeu = new JeuPerso(0);
 		DessinPerso aff = new DessinPerso(jeu);
 
 		// classe qui lance le moteur de jeu generique
