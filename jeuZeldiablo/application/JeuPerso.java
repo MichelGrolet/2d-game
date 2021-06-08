@@ -148,5 +148,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			this.deplacerMonstres();
 			this.timer = 0;
 		}
+		if(commandeUser.attaque) {
+			for(int i=0; i<this.monstres.size(); i++) {
+				this.getPersonnage().attaquer(this.monstres.get(i));
+			}
+		}
 	}
 }
