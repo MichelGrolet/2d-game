@@ -27,13 +27,8 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	 * Constructeur du personnage
 	 */
-<<<<<<< HEAD
 	public JeuPerso() {
 		this.perso = new Personnage(1,1);
-=======
-	public JeuPerso() throws InterruptedException {
-		this.perso = new Personnage(0,0);
->>>>>>> af5bd3d375e15fb8948da9f8c354f93c1088a508
 		this.lab = new Labyrinthe();
 		this.lab.genererMur(2);
 		this.monstres = new ArrayList<>();
