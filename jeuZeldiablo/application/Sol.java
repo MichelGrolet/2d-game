@@ -40,8 +40,12 @@ public class Sol extends Case{
         return this.active;
     }
 
+    /**
+    * Dessine la case
+    * @param g Graphics2D
+    */
     public void dessiner(Graphics2D g) {
-        g.setColor(Color.white);
+        g.setColor(Color.WHITE);
         g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
     }
 }

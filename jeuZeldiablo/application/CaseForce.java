@@ -34,4 +34,19 @@ public abstract class CaseForce extends CaseSpeciale{
     public void effet(Personnage joueur){
         joueur.setPuissance(joueur.getPuissance()+BOOST);
     }
+
+    /**
+    * Dessine la case
+    * @param g Graphics2D
+    */
+    public void dessiner(Graphics2D g) {
+        if(this.getActive()){
+            g.setColor(Color.WHITE);
+            g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
+        }
+        else{
+            g.setColor(Color.PINK);
+            g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
+        }
+    }
 }

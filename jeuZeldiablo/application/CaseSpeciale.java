@@ -33,4 +33,11 @@ public abstract class CaseSpeciale extends Sol{
     * @param joueur le joueur qui subit l'effet
     */
     public abstract void effet(Personnage joueur);
+
+    /**
+    * Dessine la case
+    * @param g Graphics2D
+    */
+    public void dessiner(Graphics2D g) {
+    }
 }
