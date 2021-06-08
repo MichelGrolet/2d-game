@@ -2,6 +2,8 @@ package moteurJeu.moteur;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * classe qui represente un controleur en lien avec un KeyListener
@@ -96,10 +98,25 @@ public class Controleur implements KeyListener {
 
 	@Override
 	/**
-	 * ne fait rien
+	 * permet d'attaquer
 	 */
 	public void keyTyped(KeyEvent e) {
-
+		if(Character.isSpaceChar(e.getKeyChar())) {
+			Timer t = new Timer();
+			this.commandeEnCours.attaque = true;
+			this.commandeARetourner.attaque = true;
+			TimerTask tt = new TimerTask() {
+				
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					Controleur.this.commandeEnCours.attaque = false;
+					Controleur.this.commandeARetourner.attaque = false;
+				}
+			};
+			t.schedule(tt, 1000);
+			
+		}
 	}
 
 }
