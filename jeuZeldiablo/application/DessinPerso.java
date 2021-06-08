@@ -55,5 +55,8 @@ public class DessinPerso implements DessinJeu {
 
 		// Dessine le personnage
 		jeu.getPersonnage().dessiner(crayon);
+
+		// Dessine les cases speciales
+
 	}
 }
