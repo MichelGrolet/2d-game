@@ -46,7 +46,7 @@ class Entite {
     - x : Int
     - y : Int
     - pv : int
-    - points d'a
+    - puissance : int
     + Entite(JeuPerso jeu)
     + void attaquer(Entite e)
     + void subirDegats()
@@ -56,6 +56,8 @@ class Entite {
     + int getY()
     + void setX(int x)
     + void setY(int y)
+    + void setPv(int x)
+    + void setPuissance(int x)
     + ArrayList<Case> deplacementAutour(ArrayList<Case> libres)
 }
 
@@ -66,17 +68,22 @@ class Personnage extends Entite {
 }
 
 class Monstre extends Entite {
+    - vitesse : int
     + Monstre(int x, int y)
     + void seDeplacer(ArrayList<Case> libres, Personnage p)
 }
 
 class Fantome extends Monstre {
+    + Fantome(int x, int y)
+    + ArrayList<Case> deplacementAutour(ArrayList<Case> libres)
 }
 
 class Orc extends Monstre {
+    + Orc(int x, int y)
 }
 
 class Gobelin extends Monstre {
+    + Gobelin(int x, int y)
 }
 
 interface Jeu {
