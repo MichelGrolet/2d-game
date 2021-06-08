@@ -28,13 +28,14 @@ class Sol extends Case {
     + Color getCouleur();
 }
 
-abstract class Entite {
+class Entite {
     - x : Int
     - y : Int
     - pv : int
     + Entite(JeuPerso jeu)
     + attaquer(Entite e)
     + subirDegats()
+    + ArrayList<Case> deplacementsPossibles(ArrayList<Case> libres)
 }
 
 class Personnage extends Entite {
@@ -45,7 +46,7 @@ class Personnage extends Entite {
 
 class Monstre extends Entite {
     + Monstre(int x, int y)
-    + void seDeplacer(ArrayList<Case> libres)
+    + void seDeplacer(ArrayList<Case> libres, Personnage p)
 }
 
 interface Jeu {
@@ -65,7 +66,7 @@ class JeuPerso implements Jeu {
     + Personnage getPj()
     + void deplacerMonstres()
     + void genererMonstres(int nbMonstres)
-    + ArrayList<Case> GetCasesLibres()
+    + ArrayList<Case> getCasesLibres()
     + Labyrinthe getLabyrinthe()
 }
 JeuPerso "1" --> "1" Labyrinthe : - labyrinthe

@@ -91,7 +91,7 @@ public class Labyrinthe {
 		switch(choix){
 			//Schema horizontal
 			case 0:
-				for(int j=2;j<TAILLE-2;j++){
+				for(int j=2;j<TAILLE-2;j+=2){
 					for(int i=2;i<TAILLE-2;i++){
 						this.cases[i][j]=new Mur(i,j);
 					}
@@ -109,7 +109,7 @@ public class Labyrinthe {
 
 			//Schema point
 			case 2:
-				for(int i=2;i<TAILLE-2;i++){
+				for(int i=2;i<TAILLE-2;i+=2){
 					for(int j=2;j<TAILLE-2;j++){
 						this.cases[i][j]=new Mur(i,j);
 					}

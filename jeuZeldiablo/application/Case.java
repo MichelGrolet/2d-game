@@ -41,9 +41,6 @@ public class Case{
         else{
             this.y=y;
         }
-
-        //Instancie a libre
-        this.libre=true;
     }
     /**
      * Permet de savoir si la case est libre
