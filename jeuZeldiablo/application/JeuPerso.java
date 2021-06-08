@@ -143,7 +143,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	@Override
 	public void evoluer(Commande commandeUser) {
 		if(!this.perso.etreMort()) {
-			this.getPersonnage().seDeplacer(commandeUser);
+			this.getPersonnage().seDeplacer(commandeUser, this.getCasesLibres());
 			timer++;
 			if (this.timer == 20) {
 				this.deplacerMonstres();
