@@ -46,9 +46,20 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				x = this.getCasesLibres().size();
 			}
 			for (int i = 0; i < x; i++) {
+				int typeM = (int) Math.floor(Math.random()*3);
 				ArrayList<Case> casesLibres = this.getCasesLibres();
 				Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
-				this.monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
+				switch (typeM) {
+				case 1 ->{
+					this.monstres.add(new Gobelin(spawnMonstre.getX(),spawnMonstre.getY()));
+					}
+				case 2 ->{
+					this.monstres.add(new Orc(spawnMonstre.getX(),spawnMonstre.getY()));
+					}
+				case 3 ->{
+					this.monstres.add(new Fantome(spawnMonstre.getX(),spawnMonstre.getY()));
+					}
+				}
 			}
 		}
 	}
@@ -158,7 +169,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	@Override
 	public void evoluer(Commande commandeUser) {
 		if(!this.perso.etreMort()) {
-			this.getPersonnage().seDeplacer(commandeUser, this);
+			this.getPersonnage().seDeplacer(commandeUser, this.getPersonnage().deplacementAutour(this));
 			timer++;
 			if (this.timer == 10) {
 				this.deplacerMonstres();

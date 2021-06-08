@@ -37,12 +37,12 @@ public class Personnage extends Entite{
     /**
      *  permet au personnage de se deplacer
      * @param c, commande jouer par l'ultilisateur
+     * @param j, jeu en cours
      */
-	public void seDeplacer(Commande c, JeuPerso j) {
-		ArrayList<Case> caseValide = this.deplacementAutour(j);
+	public void seDeplacer(Commande c, ArrayList<Case> libres) {
 		if (c.gauche)
 		{
-			for(Case cas : caseValide) {
+			for(Case cas : libres) {
 				if(cas.getX() == this.x-1 && cas.getY() == this.y) {
 					this.x--;
 					if (this.x < 0) {
@@ -56,7 +56,7 @@ public class Personnage extends Entite{
 
 		if (c.droite)
 		{
-			for(Case cas : caseValide) {
+			for(Case cas : libres) {
 				if(cas.getX() == this.x+1 && cas.getY() == this.y) {
 					this.x++;
 					if (this.x >100) {
@@ -69,7 +69,7 @@ public class Personnage extends Entite{
 
 		if (c.haut)
 		{
-			for(Case cas : caseValide) {
+			for(Case cas : libres) {
 				if(cas.getX() == this.x && cas.getY() == this.y-1) {
 					this.y--;
 					if (this.y < 0) {
@@ -82,7 +82,7 @@ public class Personnage extends Entite{
 
 		if (c.bas)
 		{
-			for(Case cas : caseValide) {
+			for(Case cas : libres) {
 				if(cas.getX() == this.x && cas.getY() == this.y+1) {
 					this.y++;
 					if (this.x >100) {
