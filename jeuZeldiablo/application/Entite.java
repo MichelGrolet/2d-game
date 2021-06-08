@@ -90,8 +90,10 @@ public class Entite {
       * @param e l'entite vise
       */
      public void attaquer(Entite e) {
-    	 if(e.getX()==this.getX()-1 || e.getX()==this.getX()+1 
-    			 || e.getY()==this.getY()+1 || e.getY()==this.getY()-1) {
+    	 if((e.getX()==this.getX()-1 && e.getY()==this.getY())|| 
+    			 (e.getX()==this.getX()+1 && e.getY()==this.getY())
+    			 || (e.getY()==this.getY()+1 && e.getX()==this.getX()) || 
+    			 (e.getY()==this.getY()-1 && e.getX()==this.getX())) {
         	 e.subirDegats();
     	 }
      }
