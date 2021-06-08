@@ -7,7 +7,7 @@
     - 2 : on ne doit pas voir les pièges du labyrinthe, mais ils doivent etre présents
     - 3 : on doit avoir plusieurs labyrinthes
 
-- fonctionnalité 2 : creation de différents types de monstres (fantôme,orc,truc rapide)
+- fonctionnalité 2 : creation de différents types de monstres (fantôme,orc,gobelin)
   - ajout de type de monstres
   - critères de validation :
     - il faut pouvoir les créer dans le labyrinthe
