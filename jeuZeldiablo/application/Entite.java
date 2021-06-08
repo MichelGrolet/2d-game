@@ -22,7 +22,7 @@ public abstract class Entite {
 	}
 	
    /**
-    * Retourne la coordonnee x du personnage
+    * Retourne la coordonnee x de l'entite
     * @return un entier
     */
     public int getX(){
@@ -30,7 +30,7 @@ public abstract class Entite {
     }
 
     /**
-    * Retourne la coordonnee y du personnage
+    * Retourne la coordonnee y de l'entite
     * @return un entier
     */
     public int getY(){
