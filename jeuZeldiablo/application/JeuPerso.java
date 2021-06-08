@@ -77,7 +77,12 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 */
 	public void deplacerMonstres() {
 		for(Monstre m : monstres) {
-			m.seDeplacer(m.deplacementAutour(this.getCasesLibres()),this.perso);
+			if(m.getX()==this.perso.getX()+1 || m.getX()==this.perso.getX()-1 
+					|| m.getY()==this.perso.getY()+1 || m.getY()==this.perso.getY()-1) {
+				m.attaquer(this.perso);
+			}else {
+				m.seDeplacer(m.deplacementAutour(this.getCasesLibres()),this.perso);
+			}
 		}
 	}
 
@@ -137,17 +142,19 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 
 	@Override
 	public void evoluer(Commande commandeUser) {
-		this.getPersonnage().seDeplacer(commandeUser);
-		timer++;
-		if (this.timer == 20) {
-			this.deplacerMonstres();
-			this.timer = 0;
-		}
-		if(commandeUser.attaque) {
-			for(int i=0; i<this.monstres.size(); i++) {
-				this.getPersonnage().attaquer(this.monstres.get(i));
-				if(this.monstres.get(i).etreMort()) {
-					this.monstres.remove(this.monstres.get(i));
+		if(!this.perso.etreMort()) {
+			this.getPersonnage().seDeplacer(commandeUser);
+			timer++;
+			if (this.timer == 20) {
+				this.deplacerMonstres();
+				this.timer = 0;
+			}
+			if(commandeUser.attaque) {
+				for(int i=0; i<this.monstres.size(); i++) {
+					this.getPersonnage().attaquer(this.monstres.get(i));
+					if(this.monstres.get(i).etreMort()) {
+						this.monstres.remove(this.monstres.get(i));
+					}
 				}
 			}
 		}
