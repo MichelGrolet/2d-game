@@ -34,61 +34,29 @@ public class DessinPerso implements DessinJeu {
 	}
 
 	/**
-	 * dessiner un objet consiste a dessiner sur l'image suivante methode
-	 * redefinie de Afficheur
-	 */
-	private void dessinerObjet(String s, int x, int y, BufferedImage im) {
-		Graphics2D crayon = (Graphics2D) im.getGraphics();
-		switch (s) {
-			case "PJ" -> {
-				crayon.setColor(Color.blue);
-				crayon.fillOval(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-						TAILLE_CASE);
-				crayon.setColor(Color.black);
-				crayon.drawString(""+this.jeu.getPersonnage().getPv(), x* TAILLE_CASE+(TAILLE_CASE/2), y* TAILLE_CASE+(TAILLE_CASE/2));
-			}
-			case "MUR" -> {
-				crayon.setColor(Color.black);
-				crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-						TAILLE_CASE);
-			}
-			case "SOL" -> {
-				crayon.setColor(Color.white);
-				crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-						TAILLE_CASE);
-			}
-			case "MONSTRE" -> {
-				crayon.setColor(Color.red);
-				crayon.fillArc(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE, TAILLE_CASE, 0, 360);
-			}
-			default -> throw new AssertionError("objet inexistant");
-		}
-	}
-
-	/**
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
 	public void dessiner(BufferedImage im) {
+		Graphics2D crayon = (Graphics2D) im.getGraphics();
+
 		// Dessine les murs
 		Case[][] cases = jeu.getLabyrinthe().getTabCase();
 		for (Case[] ligne : cases) {
 			for(Case c : ligne) {
-				if (c.getLibre()) {
-					this.dessinerObjet("SOL", c.getX(), c.getY(), im);
-				}else {
-					this.dessinerObjet("MUR", c.getX(), c.getY(), im);
-				}
+				c.dessiner(crayon);
 			}
 		}
 
 		// Dessine les monstres
 		ArrayList<Monstre> monstres = jeu.getMonstres();
 		for (Monstre m : monstres) {
-			this.dessinerObjet("MONSTRE", m.getX(), m.getY(), im);
+			m.dessiner(crayon);
 		}
 
 		// Dessine le personnage
-		Personnage pj = jeu.getPersonnage();
-		this.dessinerObjet("PJ", pj.getX(), pj.getY(), im);
+		jeu.getPersonnage().dessiner(crayon);
+
+		// Dessine les cases speciales
+
 	}
 }

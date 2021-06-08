@@ -21,12 +21,15 @@ class Case {
     + boolean equals()
     + int : getX()
     + int : getY()
+    + void dessiner(Graphics2D g)
 }
 
 class Mur extends Case {
+    + dessiner(Graphics2D g)
 }
 
 class Sol extends Case {
+    + dessiner(Graphics2D g)
 }
 
 abstract class CaseSpeciale extends Sol {

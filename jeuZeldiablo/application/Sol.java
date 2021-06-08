@@ -1,5 +1,7 @@
 package application;
 
+import java.awt.*;
+
 /**
 * Classe representant du sol
 * herite de Case
@@ -36,5 +38,10 @@ public class Sol extends Case{
     */
     public boolean getActive(){
         return this.active;
+    }
+
+    public void dessiner(Graphics2D g) {
+        g.setColor(Color.white);
+        g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
     }
 }

@@ -7,17 +7,17 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	* Personnage principal
 	*/
-	private Personnage perso;
+	private final Personnage perso;
 
 	/**
 	* Le terrain dans lequel evolue les entites
 	*/
-	private Labyrinthe lab;
+	private final Labyrinthe lab;
 
 	/**
 	* Une liste des monstres
 	*/
-	private ArrayList<Monstre> monstres;
+	private final ArrayList<Monstre> monstres;
 
 	/**
 	 * permet d'identifier quand on appelle deplacerMonstres
