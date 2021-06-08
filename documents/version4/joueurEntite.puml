@@ -1,0 +1,12 @@
+@startuml
+participant "J1: Entite" as j
+participant "Zombie: Entite" as m
+-> j : attaquer(Zombie)
+activate j
+j -> m : subirDegats()
+activate m
+m --> j
+deactivate m
+<-- j
+deactivate j
+@enduml
