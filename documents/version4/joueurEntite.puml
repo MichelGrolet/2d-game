@@ -1,9 +1,9 @@
 @startuml
-participant "J1: Personnage" as j
-participant "Zombie: Monstre" as m
+participant "J1: Entite" as j
+participant "Zombie: Entite" as m
 -> j : attaquer(Zombie)
 activate j
-j -> m : subirDegat()
+j -> m : subirDegats()
 activate m
 m --> j
 deactivate m
