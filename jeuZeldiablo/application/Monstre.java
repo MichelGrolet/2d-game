@@ -2,6 +2,7 @@ package application;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
 
 public class Monstre extends Entite {
     private int x,y;
