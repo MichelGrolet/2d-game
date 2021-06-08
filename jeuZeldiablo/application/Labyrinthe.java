@@ -7,7 +7,7 @@ public class Labyrinthe {
 	* Constante qui determine la taille de la grille
 	* qui est un carre
 	*/
-	private static int TAILLE = 21;
+	public static int TAILLE = 21;
 
 	/**
 	* Tableau de Case a deux dimensions
