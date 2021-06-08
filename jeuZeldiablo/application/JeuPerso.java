@@ -7,26 +7,30 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	* Personnage principal 
 	*/
-	Personnage perso;
+	private Personnage perso;
 
 	/**
 	* Le terrain dans lequel evolue les entites
 	*/
-	Labyrinthe lab;
+	private Labyrinthe lab;
 
 	/**
 	* Une liste des monstres
 	*/
-	ArrayList<Monstre> monstres;
+	private ArrayList<Monstre> monstres;
+
+	private int timer;
 
 	/**
 	 * Constructeur du personnage
 	 */
-	public JeuPerso() {
+	public JeuPerso() throws InterruptedException {
 		this.perso = new Personnage(0,0);
 		this.lab = new Labyrinthe();
 		this.lab.genererMur(2);
 		this.monstres = new ArrayList<>();
+		this.genererMonstres(3);
+		this.timer = 0;
 	}
 
 	/**
@@ -48,8 +52,6 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	
 	/**
 	 * permet de faire apparaitre un monstre
-	 * @param x, coordonne x
-	 * @param y, coordonne y
 	 * @param m, monstre a faire apparaitre
 	 * @return true si et seulement si le monstre est apparu
 	 */
@@ -132,5 +134,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	@Override
 	public void evoluer(Commande commandeUser) {
 		this.getPersonnage().seDeplacer(commandeUser);
+		timer++;
+		if (this.timer == 20) {
+			this.deplacerMonstres();
+			this.timer = 0;
+		}
 	}
 }
