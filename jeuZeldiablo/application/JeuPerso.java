@@ -46,7 +46,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	}
 	
 	/**
-	 * permet de faire appartaitre un monstre
+	 * permet de faire apparaitre un monstre
 	 * @param x, coordonne x
 	 * @param y, coordonne y
 	 * @param m, monstre a faire apparaitre
@@ -64,6 +64,15 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			}
 		}
 		return(res);
+	}
+	
+	/**
+	 * permet au jeu de deplacer les monstres
+	 */
+	public void deplacerMonstres() {
+		for(int i = 0; i <this.monstres.size();i++) {
+			this.monstres.get(i).seDeplacer(this.getCasesLibres(),this.perso);
+		}
 	}
 	/**
 	 * permet de connaitre les cases libres du jeu, c est a dire les cases sans joueur, monstres ou murs
