@@ -5,8 +5,10 @@ class Main {}
 class Labyrinthe {
     - {static} taille : int
     + Labyrinthe()
-    + ArrayList<Case> GetCasesLibres()
+    + Case getCase(int x, int y)
+    + ArrayList<Case> getCasesLibres()
     + void genererMurs(int choix)
+    + Case[][] getTabCase()
 }
 Labyrinthe "1" --> "*" Case : - cases
 
@@ -16,6 +18,7 @@ class Case {
     - libre : boolean
     + Case(int x, int y)
     + boolean : getLibre()
+    + boolean equals()
     + int : getX()
     + int : getY()
 }
@@ -33,9 +36,15 @@ class Entite {
     - y : Int
     - pv : int
     + Entite(JeuPerso jeu)
-    + attaquer(Entite e)
-    + subirDegats()
-    + ArrayList<Case> deplacementsPossibles(ArrayList<Case> libres)
+    + void attaquer(Entite e)
+    + void subirDegats()
+    + boolean etreMort()
+    + int getPv()
+    + int getX()
+    + int getY()
+    + void setX(int x)
+    + void setY(int y)
+    + ArrayList<Case> deplacementAutour(ArrayList<Case> libres)
 }
 
 class Personnage extends Entite {
@@ -59,6 +68,7 @@ interface DessinJeu {
 }
 
 class JeuPerso implements Jeu {
+    - timer : int
     + JeuPerso()
     + String toString()
     + void evoluer(Commande commande)
@@ -68,6 +78,8 @@ class JeuPerso implements Jeu {
     + void genererMonstres(int nbMonstres)
     + ArrayList<Case> getCasesLibres()
     + Labyrinthe getLabyrinthe()
+    + ArrayList<Monstre> getMonstres()
+    + boolean faireApparaitre(Monstre m)
 }
 JeuPerso "1" --> "1" Labyrinthe : - labyrinthe
 JeuPerso "1" --> "1" Personnage : - pj
