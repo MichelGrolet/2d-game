@@ -13,7 +13,7 @@ public class Mur extends Case{
     public Mur(int x,int y){
         super(x,y);
         
-        //Instancie a libre
+        //Instancie a non libre
         this.libre=false;
     }
 }
