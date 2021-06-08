@@ -40,13 +40,40 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			for (int i = 0; i < x; i++) {
 				ArrayList<Case> casesLibres = this.getCasesLibres();		
 				Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
-				monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
-		
+				this.monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
 			}
 		}
-		
 	}
-
+	
+	/**
+	 * permet de faire apparaitre un monstre
+	 * @param x, coordonne x
+	 * @param y, coordonne y
+	 * @param m, monstre a faire apparaitre
+	 * @return true si et seulement si le monstre est apparu
+	 */
+	public boolean faireApparaitre(Monstre m) {
+		ArrayList<Case> casesLibres = this.getCasesLibres();
+		Case c = new Case(m.getX(),m.getY());
+		boolean res = false;
+		int i = 0;
+		while(!res) {
+			if(casesLibres.get(i).equals(c)) {
+				this.monstres.add(m);
+				res = true;
+			}
+		}
+		return(res);
+	}
+	
+	/**
+	 * permet au jeu de deplacer les monstres
+	 */
+	public void deplacerMonstres() {
+		for(int i = 0; i <this.monstres.size();i++) {
+			this.monstres.get(i).seDeplacer(this.getCasesLibres(),this.perso);
+		}
+	}
 	/**
 	 * permet de connaitre les cases libres du jeu, c est a dire les cases sans joueur, monstres ou murs
 	 * @return la liste de cases libres

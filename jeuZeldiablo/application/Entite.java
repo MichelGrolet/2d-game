@@ -1,6 +1,6 @@
 package application;
 
-public abstract class Entite {
+public class Entite {
    /**
 	* Coordonnee x de l'entite
 	*/
@@ -87,6 +87,9 @@ public abstract class Entite {
       * @param e l'entite vise
       */
      public void attaquer(Entite e) {
-    	 e.subirDegats();
+    	 if(e.getX()==this.getX()-1 || e.getX()==this.getX()+1 
+    			 || e.getY()==this.getY()+1 || e.getY()==this.getY()-1) {
+        	 e.subirDegats();
+    	 }
      }
 }
