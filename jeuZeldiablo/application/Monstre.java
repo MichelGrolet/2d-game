@@ -24,14 +24,14 @@ public class Monstre extends Entite {
     public void seDeplacer(ArrayList<Case> libres, Personnage p) {
         int prochainX = this.x;
         int prochainY = this.y;
-        double meilleureDistance = 20;
-
+        double distanceAct = Math.sqrt((p.getX()-this.x)*(p.getX()-this.x) + (p.getY()-this.y)*(p.getY()-this.y));
         for (Case c : libres) {
-            double dist = Math.sqrt((p.getX()-this.x)*(p.getX()-this.x) + (p.getY()-this.y)*(p.getY()-this.y));
-            if (dist<meilleureDistance) {
+            double dist = Math.sqrt((p.getX()-c.getX())*(p.getX()-c.getX()) + (p.getY()-c.getY())*(p.getY()-c.getY()));
+            if (dist<distanceAct) {
                 prochainX = c.getX();
                 prochainY = c.getY();
-                meilleureDistance = dist;
+                System.out.println(dist);
+                break;
             }
         }
 
