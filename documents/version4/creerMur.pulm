@@ -1,0 +1,6 @@
+@startuml
+autonumber
+
+main -> Labyrinthe: creerMur()
+main <-- Labyrinthe
+@enduml
