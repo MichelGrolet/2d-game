@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 import moteurJeu.moteur.Commande;
@@ -24,6 +25,14 @@ public class Personnage extends Entite{
     public String toString() {
     	return("Le personage est en "+this.getX()+", "+this.getY());
     }
+
+    public void dessiner(Graphics2D g) {
+		g.setColor(Color.blue);
+		g.fillOval(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE,
+				DessinPerso.TAILLE_CASE);
+		g.setColor(Color.black);
+		g.drawString(""+this.getPv(), x* DessinPerso.TAILLE_CASE+(DessinPerso.TAILLE_CASE/2), y* DessinPerso.TAILLE_CASE+(DessinPerso.TAILLE_CASE/2));
+	}
 
     /**
      *  permet au personnage de se deplacer

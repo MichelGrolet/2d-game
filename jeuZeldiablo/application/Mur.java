@@ -1,5 +1,7 @@
 package application;
 
+import java.awt.*;
+
 /**
 * Classe representant un mur
 * herite de Case
@@ -15,5 +17,10 @@ public class Mur extends Case{
         
         //Instancie a non libre
         this.libre=false;
+    }
+    
+    public void dessiner(Graphics2D g) {
+        g.setColor(Color.black);
+        g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
     }
 }
