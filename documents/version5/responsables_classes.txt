@@ -1,0 +1,7 @@
+Gabin : Sol,CaseSpeciale,CasePiege
+
+Louis : CaseForce,Entite
+
+Michel : DessinPerso
+
+Théo : JeuPerso
