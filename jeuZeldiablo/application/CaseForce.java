@@ -1,5 +1,7 @@
 package application;
 
+import java.awt.*;
+
 /**
 * Classe abstraite representant une case speciale(piege,boost,etc...)
 */

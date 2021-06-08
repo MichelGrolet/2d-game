@@ -47,16 +47,17 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			}
 			for (int i = 0; i < x; i++) {
 				int typeM = (int) Math.floor(Math.random()*3);
+				System.out.println(typeM);
 				ArrayList<Case> casesLibres = this.getCasesLibres();
 				Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
 				switch (typeM) {
-				case 1 ->{
+				case 0 ->{
 					this.monstres.add(new Gobelin(spawnMonstre.getX(),spawnMonstre.getY()));
 					}
-				case 2 ->{
+				case 1 ->{
 					this.monstres.add(new Orc(spawnMonstre.getX(),spawnMonstre.getY()));
 					}
-				case 3 ->{
+				case 2 ->{
 					this.monstres.add(new Fantome(spawnMonstre.getX(),spawnMonstre.getY()));
 					}
 				}

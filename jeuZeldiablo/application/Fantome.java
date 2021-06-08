@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Fantome extends Monstre {
@@ -40,5 +41,10 @@ public class Fantome extends Monstre {
             }
         }
         return casesAutour;
+    }
+
+    public void dessiner(Graphics2D g) {
+        g.setColor(Color.decode("#847363"));
+        g.fillArc(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, 0, 360);
     }
 }

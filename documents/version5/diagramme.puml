@@ -35,14 +35,17 @@ class Sol extends Case {
 abstract class CaseSpeciale extends Sol {
     + {abstract} void effet()
     + declencherEffet()
+     + void dessiner(Graphics2D g)
 }
 
 class CasePiege extends CaseSpeciale {
      + void effet()
+     + void dessiner(Graphics2D g)
 }
 
 class CaseForce extends CaseSpeciale {
      + void effet()
+     + void dessiner(Graphics2D g)
 }
 
 class Entite {
@@ -79,14 +82,17 @@ class Monstre extends Entite {
 class Fantome extends Monstre {
     + Fantome(int x, int y)
     + ArrayList<Case> deplacementAutour(ArrayList<Case> libres)
+    + void dessiner(Graphics2D g)
 }
 
 class Orc extends Monstre {
     + Orc(int x, int y)
+    + void dessiner(Graphics2D g)
 }
 
 class Gobelin extends Monstre {
     + Gobelin(int x, int y)
+    + void dessiner(Graphics2D g)
 }
 
 interface Jeu {
