@@ -77,7 +77,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 */
 	public void deplacerMonstres() {
 		for(Monstre m : monstres) {
-			m.seDeplacer(m.deplacementAutour(),this.perso);
+			m.seDeplacer(m.deplacementAutour(this.getCasesLibres()),this.perso);
 		}
 	}
 
