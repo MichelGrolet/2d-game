@@ -22,7 +22,7 @@ public class TestCaseForce{
 
         assertEquals("Le x de caseF devrait etre 2",2,res1);
         assertEquals("Le y de caseF devrait etre 5",5,res2);
-        assertTrue("Devrait etre non active",res3);
+        assertFalse("Devrait etre non active",res3);
     }
 
     /**

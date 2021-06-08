@@ -22,7 +22,7 @@ public class TestCasePiege{
 
         assertEquals("Le x de caseP devrait etre 2",2,res1);
         assertEquals("Le y de caseP devrait etre 5",5,res2);
-        assertTrue("Devrait etre non active",res3);
+        assertFalse("Devrait etre non active",res3);
     }
 
     /**

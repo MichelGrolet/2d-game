@@ -10,10 +10,7 @@ public abstract class CaseSpeciale extends Sol{
     * @param y coordonnee y de la case
     */
     public CaseSpeciale(int x,int y){
-        super(x,y);
-
-        //Instancie a activable
-        this.active=false;
+        super(x,y); 
     }
 
     /**
