@@ -53,7 +53,7 @@ public class DessinPerso implements DessinJeu {
 						TAILLE_CASE);
 			}
 			case "SOL" -> {
-				crayon.setColor(Color.gray);
+				crayon.setColor(Color.white);
 				crayon.fillRect(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
 						TAILLE_CASE);
 			}
