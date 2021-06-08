@@ -23,7 +23,7 @@ public class TestMur{
 
         assertEquals("Le x de mur devrait etre 2",2,res1);
         assertEquals("Le y de mur devrait etre 5",5,res2);
-        assertTrue("Devrait etre libre",res3);
+        assertFalse("Ne devrait pas etre libre",res3);
     }
 
     /**
