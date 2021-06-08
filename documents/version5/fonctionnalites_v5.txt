@@ -1,13 +1,17 @@
 * Fonctionnalités version 5
 
-- fonctionnalité 1 : ajout de pièges et de case déclencheur
+- [gabin & louis] fonctionnalité 1 : ajout de pièges et de case déclencheur
   - ajout de cases pièges
   - critères de validation :
     - 1 : on doit voir les murs du labyrinthe
     - 2 : on ne doit pas voir les pièges du labyrinthe, mais ils doivent etre présents
     - 3 : on doit avoir plusieurs labyrinthes
 
+<<<<<<< HEAD
 - fonctionnalité 2 : creation de différents types de monstres (fantôme,orc,gobelin)
+=======
+- [theo & michel] fonctionnalité 2 : creation de différents types de monstres (fantôme,orc,truc rapide)
+>>>>>>> a05bf3af41b4afd5d89eab8bbecf3289881970c2
   - ajout de type de monstres
   - critères de validation :
     - il faut pouvoir les créer dans le labyrinthe

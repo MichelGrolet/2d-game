@@ -1,0 +1,111 @@
+@startuml
+
+class Main {}
+
+class Labyrinthe {
+    - {static} taille : int
+    + Labyrinthe()
+    + Case getCase(int x, int y)
+    + ArrayList<Case> getCasesLibres()
+    + void genererMurs(int choix)
+    + Case[][] getTabCase()
+}
+Labyrinthe "1" --> "*" Case : - cases
+
+class Case {
+    - x : int
+    - y : int
+    - libre : boolean
+    + Case(int x, int y)
+    + boolean : getLibre()
+    + boolean equals()
+    + int : getX()
+    + int : getY()
+}
+
+class Mur extends Case {
+}
+
+class Sol extends Case {
+}
+
+abstract class CaseSpeciale extends Sol {
+    + {abstract} void effet()
+    + declencherEffet()
+}
+
+class CasePiege extends CaseSpeciale {
+     + void effet()
+}
+
+class CaseForce extends CaseSpeciale {
+     + void effet()
+}
+
+class Entite {
+    - x : Int
+    - y : Int
+    - pv : int
+    + Entite(JeuPerso jeu)
+    + void attaquer(Entite e)
+    + void subirDegats()
+    + boolean etreMort()
+    + int getPv()
+    + int getX()
+    + int getY()
+    + void setX(int x)
+    + void setY(int y)
+    + ArrayList<Case> deplacementAutour(ArrayList<Case> libres)
+}
+
+class Personnage extends Entite {
+    + Personnage()
+    + String toString()
+    + void seDeplacer(Commande c)
+}
+
+class Monstre extends Entite {
+    + Monstre(int x, int y)
+    + void seDeplacer(ArrayList<Case> libres, Personnage p)
+}
+
+class Fantome extends Monstre {
+
+}
+
+interface Jeu {
+    + void evoluer()
+    + boolean etreFini()
+}
+
+interface DessinJeu {
+    + void dessiner()
+}
+
+class JeuPerso implements Jeu {
+    - timer : int
+    + JeuPerso()
+    + String toString()
+    + void evoluer(Commande commande)
+    + boolean etreFini()
+    + Personnage getPj()
+    + void deplacerMonstres()
+    + void genererMonstres(int nbMonstres)
+    + ArrayList<Case> getCasesLibres()
+    + Labyrinthe getLabyrinthe()
+    + ArrayList<Monstre> getMonstres()
+    + boolean faireApparaitre(Monstre m)
+}
+JeuPerso "1" --> "1" Labyrinthe : - labyrinthe
+JeuPerso "1" --> "1" Personnage : - pj
+JeuPerso "1" --> "*" Monstre : - monstres
+
+class DessinPerso implements DessinJeu {
+    - {static} int tailleCase
+    + DessinPerso(Jeu j)
+    + void dessinerObjet(String s, int x, int y, BufferedImage im)
+    + void dessiner(BufferedImage im)
+}
+DessinPerso "1" -> "1" JeuPerso : - jeu
+
+@enduml
