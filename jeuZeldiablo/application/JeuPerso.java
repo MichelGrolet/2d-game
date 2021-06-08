@@ -23,7 +23,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 * Constructeur du personnage
 	 */
 	public JeuPerso() {
-		this.perso = new Personnage(0,0);
+		this.perso = new Personnage(1,1);
 		this.lab = new Labyrinthe();
 		this.lab.genererMur(2);
 		this.monstres = new ArrayList<>();

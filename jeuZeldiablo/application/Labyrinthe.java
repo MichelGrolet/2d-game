@@ -88,7 +88,16 @@ public class Labyrinthe {
 			this.cases[TAILLE-1][j]=new Mur(TAILLE-1,j);
 		}
 
-		switch(choix){
+		//Si le parametre est mauvais, on choisi aleatoirement
+		int alea;
+		if(choix<0 || choix>2){
+			alea=((int)Math.floor(Math.random()*3));
+		}
+		else{
+			alea=choix;
+		}
+
+		switch(alea){
 			//Schema horizontal
 			case 0:
 				for(int j=2;j<TAILLE-2;j+=2){
@@ -101,7 +110,7 @@ public class Labyrinthe {
 			//Schema vertical
 			case 1:
 				for(int i=2;i<TAILLE-2;i+=2){
-					for(int j=2;j<TAILLE-2;j+=2){
+					for(int j=2;j<TAILLE-2;j++){
 						this.cases[i][j]=new Mur(i,j);
 					}
 				}
@@ -110,7 +119,7 @@ public class Labyrinthe {
 			//Schema point
 			case 2:
 				for(int i=2;i<TAILLE-2;i+=2){
-					for(int j=2;j<TAILLE-2;j++){
+					for(int j=2;j<TAILLE-2;j+=2){
 						this.cases[i][j]=new Mur(i,j);
 					}
 				}
