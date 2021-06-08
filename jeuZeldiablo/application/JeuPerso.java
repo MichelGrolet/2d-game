@@ -19,6 +19,9 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	*/
 	private ArrayList<Monstre> monstres;
 
+	/**
+	 * permet d'identifier quand on appelle deplacerMonstres
+	 */
 	private int timer;
 
 	/**
@@ -66,17 +69,18 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				res = true;
 			}
 		}
-		return(res);
+		return res;
 	}
 	
 	/**
 	 * permet au jeu de deplacer les monstres
 	 */
 	public void deplacerMonstres() {
-		for(int i = 0; i <this.monstres.size();i++) {
-			this.monstres.get(i).seDeplacer(this.getCasesLibres(),this.perso);
+		for(Monstre m : monstres) {
+			m.seDeplacer(m.deplacementAutour(),this.perso);
 		}
 	}
+
 	/**
 	 * permet de connaitre les cases libres du jeu, c est a dire les cases sans joueur, monstres ou murs
 	 * @return la liste de cases libres
