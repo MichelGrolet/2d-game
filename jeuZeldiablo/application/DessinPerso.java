@@ -44,6 +44,8 @@ public class DessinPerso implements DessinJeu {
 				crayon.setColor(Color.blue);
 				crayon.fillOval(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
 						TAILLE_CASE);
+				crayon.setColor(Color.black);
+				crayon.drawString(""+this.jeu.getPersonnage().getPv(), x* TAILLE_CASE+(TAILLE_CASE/2), y* TAILLE_CASE+(TAILLE_CASE/2));
 			}
 			case "MUR" -> {
 				crayon.setColor(Color.black);
