@@ -17,6 +17,7 @@ public class TestLabyrinthe {
 	/**
 	* Test les differents pattern de labyrinthe
 	*/
+	@Test
 	public void testGenererMur(){
 		Labyrinthe l1=new Labyrinthe();
 		Labyrinthe l2=new Labyrinthe();
