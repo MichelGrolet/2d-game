@@ -7,7 +7,7 @@ public class Labyrinthe {
 	* Constante qui determine la taille de la grille
 	* qui est un carre
 	*/
-	private static int TAILLE = 20;
+	private static int TAILLE = 21;
 
 	/**
 	* Tableau de Case a deux dimensions
@@ -68,8 +68,53 @@ public class Labyrinthe {
 	* @param choix le pattern choisi
 	*/
 	public void genererMur(int choix){
+		//Contour haut du labyrinthe
 		for(int i=0;i<TAILLE;i++){
-			
+			this.cases[i][0]=new Mur(i,0);
+		}
+
+		//Contour bas du labyrinthe
+		for(int i=0;i<TAILLE;i++){
+			this.cases[i][TAILLE-1]=new Mur(i,TAILLE-1);
+		}
+
+		//Contour gauche du labyrinthe
+		for(int j=0;j<TAILLE;j++){
+			this.cases[0][j]=new Mur(0,j);
+		}
+
+		//Contour droite du labyrinthe
+		for(int j=0;j<TAILLE;j++){
+			this.cases[TAILLE-1][j]=new Mur(TAILLE-1,j);
+		}
+
+		switch(choix){
+			//Schema horizontal
+			case 0:
+				for(int j=2;j<TAILLE-2;j++){
+					for(int i=2;i<TAILLE-2;i++){
+						this.cases[i][j]=new Mur(i,j);
+					}
+				}
+				break;
+
+			//Schema vertical
+			case 1:
+				for(int i=2;i<TAILLE-2;i+=2){
+					for(int j=2;j<TAILLE-2;j+=2){
+						this.cases[i][j]=new Mur(i,j);
+					}
+				}
+				break;
+
+			//Schema point
+			case 2:
+				for(int i=2;i<TAILLE-2;i++){
+					for(int j=2;j<TAILLE-2;j++){
+						this.cases[i][j]=new Mur(i,j);
+					}
+				}
+				break;
 		}
 	}
 }
