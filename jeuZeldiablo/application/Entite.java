@@ -112,4 +112,12 @@ public class Entite {
 		}
     	 return bonneCase;
      }
+     
+     public boolean etreMort() {
+    	 boolean res = false;
+    	 if(pv<=0) {
+    		 res = true;
+    	 }
+    	 return res;
+     }
 }
