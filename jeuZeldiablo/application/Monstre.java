@@ -5,8 +5,6 @@ import java.util.Random;
 import java.util.Timer;
 
 public class Monstre extends Entite {
-    private int x,y;
-
     /**
      * construit un monstre aux coordonnees donnees en parametre
      * @param x abscisse du monstre
