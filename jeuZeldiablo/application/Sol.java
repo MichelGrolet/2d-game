@@ -12,5 +12,8 @@ public class Sol extends Case{
     */
     public Sol(int x,int y){
         super(x,y);
+        
+        //Instancie a libre
+        this.libre=true;
     }
 }
