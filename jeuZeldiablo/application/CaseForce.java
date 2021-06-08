@@ -42,7 +42,7 @@ public class CaseForce extends CaseSpeciale{
     * @param g Graphics2D
     */
     public void dessiner(Graphics2D g) {
-        if(this.getActive()){
+        if(!this.getActive()){
             g.setColor(Color.WHITE);
             g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
         }
