@@ -3,7 +3,7 @@ package application;
 /**
 * Classe abstraite representant une case speciale(piege,boost,etc...)
 */
-public abstract class CasePiege extends CaseSpeciale{
+public class CasePiege extends CaseSpeciale{
     private static final int DEGATS=4;
 
     /**
@@ -20,8 +20,8 @@ public abstract class CasePiege extends CaseSpeciale{
     * @param joueur le joueur qui subit l'effet
     */   
     public void declencherEffet(Personnage joueur){
-        //Si la case est activable, on active l'effet de la classe et on desactive la case
-        if(active){
+        //Si la case n'est pas activee, on active l'effet de la classe et on desactive la case
+        if(!active){
             effet(joueur);
             this.active=true;
         }

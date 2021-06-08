@@ -27,10 +27,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	 * Constructeur du personnage
 	 */
-	public JeuPerso() {
+	public JeuPerso(int niveau) {
 		this.perso = new Personnage(1,1);
 		this.lab = new Labyrinthe();
-		this.lab.genererMur(0);
+		this.lab.genererMur(niveau);
 		this.monstres = new ArrayList<>();
 		this.genererMonstres(3);
 		this.timer = 0;

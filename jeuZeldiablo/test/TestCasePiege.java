@@ -14,7 +14,7 @@ public class TestCasePiege{
     */
     @Test
     public void testConstructeur(){
-        CasePiege caseP=new CasePiege(2,5);
+        CasePiege caseP= new CasePiege(2,5);
 
         int res1=caseP.getX();
         int res2=caseP.getY();
@@ -22,7 +22,7 @@ public class TestCasePiege{
 
         assertEquals("Le x de caseP devrait etre 2",2,res1);
         assertEquals("Le y de caseP devrait etre 5",5,res2);
-        assertTrue("Devrait etre non active",res3);
+        assertFalse("Devrait etre non active",res3);
     }
 
     /**
