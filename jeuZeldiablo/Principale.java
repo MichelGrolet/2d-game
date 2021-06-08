@@ -12,7 +12,7 @@ public class Principale {
 		// classe qui lance le moteur de jeu generique
 		MoteurGraphique moteur = new MoteurGraphique(jeu, aff);
 		// lance la boucle de jeu qui tourne jusque la fin du jeu
-		moteur.lancerJeu(400, 400);
+		moteur.lancerJeu(525, 525);
 
 		// lorsque le jeu est fini
 		System.out.println("Fin du Jeu - appuyer sur entree");
