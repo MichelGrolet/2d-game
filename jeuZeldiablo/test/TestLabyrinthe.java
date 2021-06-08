@@ -64,13 +64,13 @@ public class TestLabyrinthe {
 
 		if(res1 || res2 || res3){
 			for(int j=0;j<Labyrinthe.TAILLE;j++){
-				if(l1.getCase(19,j) instanceof Sol){
+				if(l1.getCase(20,j) instanceof Sol){
 					res1=false;
 				}
-				if(l2.getCase(19,j) instanceof Sol){
+				if(l2.getCase(20,j) instanceof Sol){
 					res2=false;
 				}
-				if(l3.getCase(19,j) instanceof Sol){
+				if(l3.getCase(20,j) instanceof Sol){
 					res3=false;
 				}
 				if(!res1 && !res2 && !res3){
@@ -81,13 +81,13 @@ public class TestLabyrinthe {
 
 		if(res1 || res2 || res3){
 			for(int i=0;i<Labyrinthe.TAILLE;i++){
-				if(l1.getCase(i,19) instanceof Sol){
+				if(l1.getCase(i,20) instanceof Sol){
 					res1=false;
 				}
-				if(l2.getCase(i,19) instanceof Sol){
+				if(l2.getCase(i,20) instanceof Sol){
 					res2=false;
 				}
-				if(l3.getCase(i,19) instanceof Sol){
+				if(l3.getCase(i,20) instanceof Sol){
 					res3=false;
 				}
 				if(!res1 && !res2 && !res3){
