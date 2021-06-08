@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
-	* Personnage principal 
+	* Personnage principal
 	*/
 	private Personnage perso;
 
@@ -46,13 +46,13 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				x = this.getCasesLibres().size();
 			}
 			for (int i = 0; i < x; i++) {
-				ArrayList<Case> casesLibres = this.getCasesLibres();		
+				ArrayList<Case> casesLibres = this.getCasesLibres();
 				Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
 				this.monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
 			}
 		}
 	}
-	
+
 	/**
 	 * permet de faire apparaitre un monstre
 	 * @param m, monstre a faire apparaitre
@@ -71,13 +71,13 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		}
 		return res;
 	}
-	
+
 	/**
 	 * permet au jeu de deplacer les monstres
 	 */
 	public void deplacerMonstres() {
 		for(Monstre m : monstres) {
-			if(m.getX()==this.perso.getX()+1 || m.getX()==this.perso.getX()-1 
+			if(m.getX()==this.perso.getX()+1 || m.getX()==this.perso.getX()-1
 					|| m.getY()==this.perso.getY()+1 || m.getY()==this.perso.getY()-1) {
 				m.attaquer(this.perso);
 			}else {
@@ -101,7 +101,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		casesLibres.removeAll(casesMonstres);
 		return(casesLibres);
 	}
-	
+
 	/**
 	 * retourne la liste des monstres
 	 * @return liste de monstre
@@ -109,7 +109,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public ArrayList<Monstre> getMonstres(){
 		return(this.monstres);
 	}
-	
+
 	/**
 	 * retourne le personnage
 	 * @return le personnage

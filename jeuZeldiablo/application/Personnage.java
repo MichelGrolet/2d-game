@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+
 import moteurJeu.moteur.Commande;
 
 /**
@@ -20,39 +22,60 @@ public class Personnage extends Entite{
     	return("Le personage est en "+this.getX()+", "+this.getY());
     }
 
-	public void seDeplacer(Commande c) {
+	public void seDeplacer(Commande c, ArrayList<Case> libres) {
+		ArrayList<Case> caseValide = this.deplacementAutour(libres);
+		System.out.println(caseValide);
 		if (c.gauche)
 		{
-			this.x--;
-			if (this.x < 0)
-				this.x = 0;
+			for(Case cas : caseValide) {
+				if(cas.getX() == this.x-1 && cas.getY() == this.y) {
+					this.x--;
+					if (this.x < 0) {
+						this.x = 0;
+					}
+					break;
+				}
+			}
+			
 		}
 
 		if (c.droite)
 		{
-			this.x++;
-			if (this.x >100) {
-				this.x = 100;
+			for(Case cas : caseValide) {
+				if(cas.getX() == this.x+1 && cas.getY() == this.y) {
+					this.x++;
+					if (this.x >100) {
+						this.x = 100;
+					}
+					break;
+				}
 			}
-
 		}
 
 		if (c.haut)
 		{
-			this.y--;
-			if (this.y < 0) {
-				this.x = 0;
+			for(Case cas : caseValide) {
+				if(cas.getX() == this.x && cas.getY() == this.y-1) {
+					this.y--;
+					if (this.y < 0) {
+						this.x = 0;
+					}
+					break;
+				}
 			}
-
 		}
 
 		if (c.bas)
 		{
-			this.y++;
-			if (this.x >100) {
-				this.x = 100;
-			}
-
+			for(Case cas : caseValide) {
+				if(cas.getX() == this.x && cas.getY() == this.y+1) {
+					this.y++;
+					if (this.x >100) {
+						this.x = 100;
+					}
+					break;
+				}
+			}	
 		}
 
 	}
