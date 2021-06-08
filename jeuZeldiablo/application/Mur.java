@@ -14,6 +14,6 @@ public class Mur extends Case{
         super(x,y);
         
         //Instancie a libre
-        this.libre=true;
+        this.libre=false;
     }
 }
