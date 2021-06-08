@@ -22,7 +22,7 @@ public class CaseSpeciale{
 
         assertEquals("Le x de caseS devrait etre 2",2,res1);
         assertEquals("Le y de caseS devrait etre 5",5,res2);
-        assertTrue("Devrait etre non active",res3);
+        assertFalse("Devrait etre non active",res3);
     }
 
     /**
@@ -31,14 +31,13 @@ public class CaseSpeciale{
     @Test
     public void testDeclencher(){
         CaseSpeciale caseS=new CaseSpeciale(2,5);
+        Personnage j=new Personnage(2,5);
 
-        int res1=caseS.getX();
-        int res2=caseS.getY();
-        boolean res3=caseS.getActive();
+        caseS.declencherEffet(j);
 
-        assertEquals("Le x de caseS devrait etre 2",2,res1);
-        assertEquals("Le y de caseS devrait etre 5",5,res2);
-        assertTrue("Devrait etre non active",res3);
+        boolean res=caseS.getActive();
+
+        assertTrue("Devrait etre activee",res);
     }
 }
     

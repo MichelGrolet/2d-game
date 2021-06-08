@@ -24,4 +24,34 @@ public class CaseForce{
         assertEquals("Le y de caseF devrait etre 5",5,res2);
         assertTrue("Devrait etre non active",res3);
     }
+
+    /**
+    * Test si declencherEffet change active
+    */
+    @Test
+    public void testDeclencher(){
+        CaseForce caseF=new CaseForce(2,5);
+        Personnage j=new Personnage(2,5);
+
+        caseF.declencherEffet(j);
+
+        boolean res=caseF.getActive();
+
+        assertTrue("Devrait etre activee",res);
+    }
+
+    /**
+    * Test si le joueur subit des degats en activant le piege
+    */
+    @Test
+    public void testGagnerPuissance(){
+        CaseForce caseF=new CaseForce(2,5);
+        Personnage j=new Personnage(2,5);
+
+        caseF.declencherEffet(j);
+
+        int res=j.getPuissance();
+
+        assertEquals("Le joueur doit avoir 3 de puissance",3,res);
+    }
 }
