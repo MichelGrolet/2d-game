@@ -7,14 +7,17 @@ import org.junit.Test;
 public class TestJeu {
 	
 	@Test
-	public void testConstructerVide() {
-		Labyrinthe la = new Labyrinthe();
-		Case[][] c = new Case[10][10];
-		for(int i  =0; i<10; i++) {
-			for(int j=0; j<10; j++) {
-				c[i][j] = new Sol(i, j);
-			}
-		}
- 		assertEquals("devrait un tableau de case", c, la.getTabCase());
+	public void testGenererMonstre() {
+		JeuPerso j = new JeuPerso();
+		j.genererMonstres(1);
+		assertNotNull("le jeu devrait contenir un monstre",j.getMonstres().get(0));
+	}
+	
+	@Test
+	public void testGenererMonstreNegatif() {
+		JeuPerso j = new JeuPerso();
+		j.genererMonstres(2);
+		j.genererMonstres(-1);
+		assertNotNull("le jeu devrait contenir 2 monstres",j.getMonstres().get(1));
 	}
 }
