@@ -103,14 +103,19 @@ public class Entite {
       * @param libres, cases libres du labyrinthe
       * @return les cases libres autour de l'entite
       */
-     public ArrayList<Case> deplacementAutour(ArrayList<Case> libres){
+     public ArrayList<Case> deplacementAutour(JeuPerso j){
 		ArrayList<Case> bonneCase = new ArrayList<Case>();
-		for(int i =0; i<libres.size(); i++) {
+		for(int i =0; i<j.getCasesLibres().size(); i++) {
 			//si le x d'une case libre + ou - 1 est egal a x XOR le y d'une case + ou - 1 est egal a y (on recupere les cases a gauche, droite, haut, bas sans les diagonales)  
-			if((libres.get(i).getX()+1 == this.x || libres.get(i).getX()-1 == this.x) 
-					^ libres.get(i).getY()+1 == this.y || libres.get(i).getY()-1 == this.y) {
-				bonneCase.add(libres.get(i));
-			}
+			if(((j.getCasesLibres().get(i).getX()+1 == this.x ||
+					j.getCasesLibres().get(i).getX()-1 == this.x)
+					&& j.getCasesLibres().get(i).getY() == this.y)|| 
+			(( j.getCasesLibres().get(i).getY()+1 == this.y || 
+			j.getCasesLibres().get(i).getY()-1 == this.y ) && 
+					j.getCasesLibres().get(i).getX() == this.x)) {
+						
+				bonneCase.add(j.getCasesLibres().get(i));
+			}	
 		}
     	 return bonneCase;
      }

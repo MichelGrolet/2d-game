@@ -27,8 +27,8 @@ public class Personnage extends Entite{
      * @param c, commande jouer par l'ultilisateur
      * @param libres, liste de cases accesibles
      */
-	public void seDeplacer(Commande c, ArrayList<Case> libres) {
-		ArrayList<Case> caseValide = this.deplacementAutour(libres);
+	public void seDeplacer(Commande c, JeuPerso j) {
+		ArrayList<Case> caseValide = this.deplacementAutour(j);
 		if (c.gauche)
 		{
 			for(Case cas : caseValide) {

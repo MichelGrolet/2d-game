@@ -28,11 +28,11 @@ public class Monstre extends Entite {
             if (dist<distanceAct) {
                 prochainX = c.getX();
                 prochainY = c.getY();
+                libres.remove(c);
                 System.out.println(dist);
                 break;
             }
         }
-
         this.x = prochainX;
         this.y = prochainY;
     }
