@@ -1,0 +1,19 @@
+@startuml
+participant "j: jeuPerso" as j
+participant "caseD: CaseSpecial" as cd
+participant "joueur: personnage" as pj
+
+activate j
+j -> cd : declencherEffet(joueur)
+activate cd
+cd -> cd : effet(joueur)
+activate cd
+cd -> pj : set..()
+activate pj
+cd <-- pj
+deactivate
+deactivate cd
+cd --> j
+deactivate cd
+deactivate j
+@enduml

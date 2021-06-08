@@ -30,7 +30,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public JeuPerso() {
 		this.perso = new Personnage(1,1);
 		this.lab = new Labyrinthe();
-		this.lab.genererMur(2);
+		this.lab.genererMur(0);
 		this.monstres = new ArrayList<>();
 		this.genererMonstres(3);
 		this.timer = 0;
@@ -85,20 +85,35 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			}
 		}
 	}
-
+	/**
+	 * permet de recuperer les cases occupees par les entites
+	 * @return les cases occupes par les entites
+	 */
+	public ArrayList<Case> getCasesEntites(){
+		Case casePerso = new Case(this.perso.getX(),this.perso.getY());
+		ArrayList<Case> casesEntites = new ArrayList<>();
+		for (Monstre monstre : this.monstres) {
+			casesEntites.add(new Case(monstre.getX(), monstre.getY()));
+		}
+		casesEntites.add(casePerso);
+		return(casesEntites);
+	}
+	
 	/**
 	 * permet de connaitre les cases libres du jeu, c est a dire les cases sans joueur, monstres ou murs
 	 * @return la liste de cases libres
 	 */
 	public ArrayList<Case> getCasesLibres(){
 		ArrayList<Case> casesLibres = this.lab.getCasesLibres();
-		Case casePerso = new Case(this.perso.getX(),this.perso.getY());
-		ArrayList<Case> casesMonstres = new ArrayList<>();
-		for (Monstre monstre : this.monstres) {
-			casesMonstres.add(new Case(monstre.getX(), monstre.getY()));
-		}
-		casesLibres.remove(casePerso);
-		casesLibres.removeAll(casesMonstres);
+		ArrayList<Case> casesOccupes = this.getCasesEntites();
+		
+		for (int i = 0; i< casesLibres.size();i++) {
+			for(int j = 0; i < casesOccupes.size(); i++) {
+					if(casesLibres.get(i).getX() == casesOccupes.get(j).getX() && casesLibres.get(i).getY()==casesOccupes.get(j).getY()) {
+						casesLibres.remove(i);
+					}
+				}
+			}
 		return(casesLibres);
 	}
 
@@ -145,7 +160,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		if(!this.perso.etreMort()) {
 			this.getPersonnage().seDeplacer(commandeUser, this);
 			timer++;
-			if (this.timer == 20) {
+			if (this.timer == 10) {
 				this.deplacerMonstres();
 				this.timer = 0;
 			}
