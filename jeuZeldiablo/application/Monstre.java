@@ -19,10 +19,4 @@ public class Monstre extends Entite {
     public int getY() {
         return y;
     }
-
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

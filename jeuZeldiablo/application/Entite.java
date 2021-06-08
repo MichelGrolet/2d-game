@@ -12,6 +12,11 @@ public abstract class Entite {
 	protected int y;
 	
 	/**
+	 * point de vie de l'entite
+	 */
+	protected int pv;
+	
+	/**
 	* Constructeur qui prend des coordonnees x,y en parametres
 	* @param x entier pour la coordonnee x
 	* @param y entier pour la coordonnee y
@@ -19,6 +24,7 @@ public abstract class Entite {
 	public Entite(int x, int y){
 	    this.x = x;
 	    this.y = y;
+	    this.pv = 10;
 	}
 	
    /**
@@ -35,6 +41,14 @@ public abstract class Entite {
     */
     public int getY(){
         return this.y;
+    }
+    
+    /**
+     * Rtourne les pv de l'entite
+     * @return un entier
+     */
+    public int getPv() {
+    	return this.pv;
     }
     
     /**
@@ -59,5 +73,20 @@ public abstract class Entite {
          }
      }
      
-     public abstract String toString();
+     /**
+      * fait subir des degats à l'entite si ses pv sont superieur a 0
+      */
+     public void subirDegats() {
+    	 if(pv>0) {
+        	 this.pv = this.pv-1; 
+    	 }
+     }
+     
+     /**
+      * attaque une entite et lui fait subir des degats
+      * @param e l'entite vise
+      */
+     public void attaquer(Entite e) {
+    	 e.subirDegats();
+     }
 }
