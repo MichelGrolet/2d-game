@@ -1,12 +1,12 @@
 * Fonctionnalités version 4
 
-- [Gabin] fonctionnalité 1 : ajout des murs et des collisions contre les murs et les entités.
-  - il faut pouvoir afficher les murs et il faut que les entités ne puissent pas marcher dessus
+- [Gabin] fonctionnalité 1 : ajout des labyrinthes
+  - il faut pouvoir choisir aléatoirement un shéma de labyrinthe
   - critères de validation :
     - 1 : on doit voir des murs sur le labyrinthe
     - 2 : le personnage et les monstres ne doivent pas pouvoir apparaitre sur un mur
     - 3 : le personnage et les monstres ne doivent pas pouvoir se déplacer sur un mur
-    - 4 : deux entités ne peuvent pas etre sur la même case.
+    - 4 : on doit avoir plusieurs labyrinthes.
 
 - [Theo & Michel] fonctionnalité 2 : déplacements vers le joueur des monstres
   - déplacement vers le joueur des monstres dans le labyrinthe

@@ -1,0 +1,25 @@
+@startuml
+
+autonumber
+
+-> JeuPerso : deplacerMonstres()
+activate JeuPerso
+loop over JeuPerso
+    JeuPerso -> Monstre : seDeplacer(libres)
+    activate Monstre
+
+    Monstre -> Monstre : setX(x)
+    activate Monstre
+    Monstre --> Monstre
+    deactivate Monstre
+
+    Monstre -> Monstre : setY(x)
+    activate Monstre
+    Monstre --> Monstre
+    deactivate Monstre
+
+    Monstre --> JeuPerso
+    deactivate Monstre
+end loop
+
+@enduml

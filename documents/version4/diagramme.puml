@@ -6,6 +6,7 @@ class Labyrinthe {
     - {static} taille : int
     + Labyrinthe()
     + ArrayList<Case> GetCasesLibres()
+    + void genererMurs(int choix)
 }
 Labyrinthe "1" --> "*" Case : - cases
 
@@ -27,20 +28,24 @@ class Sol extends Case {
     + Color getCouleur();
 }
 
-class Personnage {
+abstract class Entite {
     - x : Int
     - y : Int
-    - {static} LIMIT_X : int
-    - {static} LIMIT_Y : int
-    + Personnage()
-    + void deplacer(Commande c)
-    + String toString()
+    - pv : int
+    + Entite(JeuPerso jeu)
+    + attaquer(Entite e)
+    + subirDegats()
 }
 
-class Monstre {
-    - x : int
-    - y : int
+class Personnage extends Entite {
+    + Personnage()
+    + String toString()
+    + void seDeplacer(Commande c)
+}
+
+class Monstre extends Entite {
     + Monstre(int x, int y)
+    + void seDeplacer(ArrayList<Case> libres)
 }
 
 interface Jeu {
