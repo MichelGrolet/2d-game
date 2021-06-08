@@ -131,7 +131,7 @@ public class Entite {
      public ArrayList<Case> deplacementAutour(JeuPerso j){
 		ArrayList<Case> bonneCase = new ArrayList<Case>();
 		for(int i =0; i<j.getCasesLibres().size(); i++) {
-			//si le x d'une case libre + ou - 1 est egal a x XOR le y d'une case + ou - 1 est egal a y (on recupere les cases a gauche, droite, haut, bas sans les diagonales)  
+			//si le x d'une case libre + ou - 1 est egal a x ETS le y d'une case + ou - 1 est egal a y (on recupere les cases a gauche, droite, haut, bas sans les diagonales)  
 			if(((j.getCasesLibres().get(i).getX()+1 == this.x ||
 					j.getCasesLibres().get(i).getX()-1 == this.x)
 					&& j.getCasesLibres().get(i).getY() == this.y)|| 
