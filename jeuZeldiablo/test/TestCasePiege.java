@@ -14,7 +14,7 @@ public class TestCasePiege{
     */
     @Test
     public void testConstructeur(){
-        CasePiege caseP=new CasePiege(2,5);
+        CasePiege caseP= new CasePiege(2,5);
 
         int res1=caseP.getX();
         int res2=caseP.getY();

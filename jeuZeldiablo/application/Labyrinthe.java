@@ -124,6 +124,10 @@ public class Labyrinthe {
 					}
 				}
 				break;
+			
+			//schema vide
+			case 3 :
+				break;
 		}
 	}
 }
