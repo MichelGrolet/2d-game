@@ -137,6 +137,10 @@ public class Entite {
     	 return bonneCase;
      }
      
+     /**
+      * verifie si l'entite est mort
+      * @return true si et seulement si l'entite est morte
+      */
      public boolean etreMort() {
     	 boolean res = false;
     	 if(pv<=0) {
