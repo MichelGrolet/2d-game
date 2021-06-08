@@ -19,6 +19,11 @@ public class Entite {
 	protected int pv;
 	
 	/**
+	 * point de puissance
+	 */
+	protected int puissance;
+	
+	/**
 	* Constructeur qui prend des coordonnees x,y en parametres
 	* @param x entier pour la coordonnee x
 	* @param y entier pour la coordonnee y
@@ -27,6 +32,7 @@ public class Entite {
 	    this.x = x;
 	    this.y = y;
 	    this.pv = 10;
+	    this.puissance = 1;
 	}
 	
    /**
@@ -76,11 +82,22 @@ public class Entite {
      }
      
      /**
-      * fait subir des degats � l'entite si ses pv sont superieur a 0
+      * permet de modifier la puissanece de l'entite
+      * @param p la nouvelle puissance
       */
-     public void subirDegats() {
-    	 if(pv>0) {
-        	 this.pv = this.pv-1; 
+     public void setPuissance(int p) {
+    	 this.puissance = p;
+     }
+     
+     /**
+      * fait subir des degats a l'entite si ses pv sont superieur a 0
+      * @param d les degats subit par l'entite
+      */
+     public void subirDegats(int d) {
+    	 if((pv-d)<0) {
+        	 this.pv = 0; 
+    	 }else {
+    		 this.pv = this.pv-d;
     	 }
     	 System.out.println(this.pv);
      }
@@ -94,7 +111,7 @@ public class Entite {
     			 (e.getX()==this.getX()+1 && e.getY()==this.getY())
     			 || (e.getY()==this.getY()+1 && e.getX()==this.getX()) || 
     			 (e.getY()==this.getY()-1 && e.getX()==this.getX())) {
-        	 e.subirDegats();
+        	 e.subirDegats(this.puissance);
     	 }
      }
      
