@@ -69,10 +69,15 @@ public class DessinPerso implements DessinJeu {
 	 */
 	public void dessiner(BufferedImage im) {
 		// Dessine les murs
-		ArrayList<Case> cases = jeu.getLabyrinthe().getCasesLibres();
-		for (Case c : cases) {
-			if (c.getLibre()) this.dessinerObjet("SOL", c.getX(), c.getY(), im);
-			else this.dessinerObjet("MUR", c.getX(), c.getY(), im);
+		Case[][] cases = jeu.getLabyrinthe().getTabCase();
+		for (Case[] ligne : cases) {
+			for(Case c : ligne) {
+				if (c.getLibre()) {
+					this.dessinerObjet("SOL", c.getX(), c.getY(), im);
+				}else {
+					this.dessinerObjet("MUR", c.getX(), c.getY(), im);
+				}
+			}
 		}
 
 		// Dessine les monstres
