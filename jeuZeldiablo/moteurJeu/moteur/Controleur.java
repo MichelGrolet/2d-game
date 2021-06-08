@@ -103,8 +103,15 @@ public class Controleur implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 		if(Character.isSpaceChar(e.getKeyChar())) {
 			Timer t = new Timer();
-			this.commandeEnCours.attaque = true;
-			this.commandeARetourner.attaque = true;
+			TimerTask tt1 = new TimerTask() {
+				
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					Controleur.this.commandeEnCours.attaque = true;
+					Controleur.this.commandeARetourner.attaque = true;
+				}
+			};
 			TimerTask tt = new TimerTask() {
 				
 				@Override
@@ -114,7 +121,8 @@ public class Controleur implements KeyListener {
 					Controleur.this.commandeARetourner.attaque = false;
 				}
 			};
-			t.schedule(tt, 1000);
+			t.schedule(tt1, 500);
+			t.schedule(tt, 600);
 			
 		}
 	}

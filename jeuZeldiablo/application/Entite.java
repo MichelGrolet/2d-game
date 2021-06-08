@@ -82,6 +82,7 @@ public class Entite {
     	 if(pv>0) {
         	 this.pv = this.pv-1; 
     	 }
+    	 System.out.println(this.pv);
      }
      
      /**
