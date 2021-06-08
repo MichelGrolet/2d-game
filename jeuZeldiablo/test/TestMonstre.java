@@ -7,7 +7,6 @@ import org.junit.Test;
 import application.*;
 
 public class TestMonstre {
-	
     @Test
     public void testSeDeplacerBon() {
     	JeuPerso j = new JeuPerso(0);

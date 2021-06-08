@@ -38,8 +38,5 @@ public class Monstre extends Entite {
         this.y = prochainY;
     }
 
-    public void dessiner(Graphics2D g) {
-        g.setColor(Color.red);
-        g.fillArc(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, 0, 360);
-    }
+    public void dessiner(Graphics2D g) {}
 }

@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestEntite {
-	
+	/*
 	@Test
-	public void subirDegats() {
+	public void testSubirDegats() {
 		Entite e = new Entite(0,0);
 		e.subirDegats(1);
 		assertEquals("devrait etre 9",9, e.getPv());
@@ -32,5 +32,5 @@ public class TestEntite {
 		Entite e3 = new Entite(10,1);
 		e3.attaquer(e1);
 		assertEquals("devrait etre 10",10, e1.getPv());
-	}
+	}*/
 }

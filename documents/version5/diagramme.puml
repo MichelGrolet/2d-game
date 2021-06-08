@@ -29,7 +29,9 @@ class Mur extends Case {
 }
 
 class Sol extends Case {
+    - active : boolean
     + dessiner(Graphics2D g)
+    + void getActive()
 }
 
 abstract class CaseSpeciale extends Sol {

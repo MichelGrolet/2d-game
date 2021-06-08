@@ -2,7 +2,7 @@ package application;
 
 import java.util.ArrayList;
 
-public class Entite {
+public abstract class Entite {
    /**
 	* Coordonnee x de l'entite
 	*/
