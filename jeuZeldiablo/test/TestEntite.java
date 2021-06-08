@@ -9,7 +9,7 @@ public class TestEntite {
 	@Test
 	public void subirDegats() {
 		Entite e = new Entite(0,0);
-		e.subirDegats();
+		e.subirDegats(1);
 		assertEquals("devrait etre 9",9, e.getPv());
 	}
 	

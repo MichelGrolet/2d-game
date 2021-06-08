@@ -1,0 +1,17 @@
+@startuml
+
+autonumber
+
+-> Fantome : seDeplacer()
+Fantome -> Fantome : setX(x)
+Fantome -> Fantome : setY(y)
+
+-> Orc : seDeplacer()
+Orc -> Orc : setX(x)
+Orc -> Orc : setY(y)
+
+-> Gobelin : seDeplacer()
+Gobelin -> Gobelin : setX(x)
+Gobelin -> Gobelin : setY(y)
+
+@enduml

@@ -46,9 +46,20 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				x = this.getCasesLibres().size();
 			}
 			for (int i = 0; i < x; i++) {
+				int typeM = (int) Math.floor(Math.random()*3);
 				ArrayList<Case> casesLibres = this.getCasesLibres();
 				Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
-				this.monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
+				switch (typeM) {
+				case 1 ->{
+					this.monstres.add(new Gobelin(spawnMonstre.getX(),spawnMonstre.getY()));
+					}
+				case 2 ->{
+					this.monstres.add(new Orc(spawnMonstre.getX(),spawnMonstre.getY()));
+					}
+				case 3 ->{
+					this.monstres.add(new Fantome(spawnMonstre.getX(),spawnMonstre.getY()));
+					}
+				}
 			}
 		}
 	}
@@ -85,29 +96,35 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			}
 		}
 	}
-
+	/**
+	 * permet de recuperer les cases occupees par les entites
+	 * @return les cases occupes par les entites
+	 */
+	public ArrayList<Case> getCasesEntites(){
+		Case casePerso = new Case(this.perso.getX(),this.perso.getY());
+		ArrayList<Case> casesEntites = new ArrayList<>();
+		for (Monstre monstre : this.monstres) {
+			casesEntites.add(new Case(monstre.getX(), monstre.getY()));
+		}
+		casesEntites.add(casePerso);
+		return(casesEntites);
+	}
+	
 	/**
 	 * permet de connaitre les cases libres du jeu, c est a dire les cases sans joueur, monstres ou murs
 	 * @return la liste de cases libres
 	 */
 	public ArrayList<Case> getCasesLibres(){
 		ArrayList<Case> casesLibres = this.lab.getCasesLibres();
-		Case casePerso = new Case(this.perso.getX(),this.perso.getY());
-		ArrayList<Case> casesMonstres = new ArrayList<>();
-		for (Monstre monstre : this.monstres) {
-			casesMonstres.add(new Case(monstre.getX(), monstre.getY()));
-		}
+		ArrayList<Case> casesOccupes = this.getCasesEntites();
+		
 		for (int i = 0; i< casesLibres.size();i++) {
-			if (casesLibres.get(i).getX() == casePerso.getX() && casesLibres.get(i).getY()==casePerso.getY()) {
-				casesLibres.remove(i);
-			}else {
-				for(Monstre monstre : this.monstres) {
-					if(casesLibres.get(i).getX() == monstre.getX() && casesLibres.get(i).getY()==monstre.getY()) {
+			for(int j = 0; i < casesOccupes.size(); i++) {
+					if(casesLibres.get(i).getX() == casesOccupes.get(j).getX() && casesLibres.get(i).getY()==casesOccupes.get(j).getY()) {
 						casesLibres.remove(i);
 					}
 				}
 			}
-		}
 		return(casesLibres);
 	}
 
@@ -154,7 +171,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		if(!this.perso.etreMort()) {
 			this.getPersonnage().seDeplacer(commandeUser, this);
 			timer++;
-			if (this.timer == 20) {
+			if (this.timer == 10) {
 				this.deplacerMonstres();
 				this.timer = 0;
 			}
