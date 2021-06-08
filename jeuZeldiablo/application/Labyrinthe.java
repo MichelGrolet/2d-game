@@ -51,8 +51,8 @@ public class Labyrinthe {
 	*/
 	public ArrayList<Case> getCasesLibres() {
 		ArrayList<Case> lc = new ArrayList<Case>();
-		for(int i=0; i<taille; i++) {
-			for(int j=0; j<taille; j++) {
+		for(int i=0; i<TAILLE; i++) {
+			for(int j=0; j<TAILLE; j++) {
 				//Si la case est libre, on l'ajoute a la liste a retourner
 				if (this.cases[i][j].getLibre()) {
 					lc.add(this.cases[i][j]);
