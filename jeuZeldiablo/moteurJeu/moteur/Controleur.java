@@ -22,6 +22,11 @@ public class Controleur implements KeyListener {
 	 * qu'on veut memoriser une touche appuyee
 	 */
 	private  Commande commandeARetourner;
+	
+	/**
+	 * pour savoir si le joueur est en train d'attaquer
+	 */
+	private boolean attaque;
 
 	/**
 	 * construction du controleur par defaut le controleur n'a pas de commande
@@ -48,7 +53,7 @@ public class Controleur implements KeyListener {
 	 * met a jour les commandes en fonctions des touches appuyees
 	 */
 	public void keyPressed(KeyEvent e) {
-
+		if(!attaque) {
 		switch (e.getKeyChar()) {
 		// si on appuie sur 'q',commande joueur est gauche
 		case 'q':
@@ -70,6 +75,7 @@ public class Controleur implements KeyListener {
 			this.commandeEnCours.bas = true;
 			this.commandeARetourner.bas = true;
 			break;
+		}
 		}
 
 	}
@@ -102,6 +108,8 @@ public class Controleur implements KeyListener {
 	 */
 	public void keyTyped(KeyEvent e) {
 		if(Character.isSpaceChar(e.getKeyChar())) {
+			if(!this.attaque) {
+			this.attaque = true;
 			Timer t = new Timer();
 			TimerTask tt1 = new TimerTask() {
 				
@@ -119,11 +127,12 @@ public class Controleur implements KeyListener {
 					// TODO Auto-generated method stub
 					Controleur.this.commandeEnCours.attaque = false;
 					Controleur.this.commandeARetourner.attaque = false;
+					Controleur.this.attaque = false;
 				}
 			};
 			t.schedule(tt1, 500);
 			t.schedule(tt, 600);
-			
+			}
 		}
 	}
 
