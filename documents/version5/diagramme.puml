@@ -46,6 +46,7 @@ class Entite {
     - x : Int
     - y : Int
     - pv : int
+    - points d'a
     + Entite(JeuPerso jeu)
     + void attaquer(Entite e)
     + void subirDegats()
@@ -70,7 +71,12 @@ class Monstre extends Entite {
 }
 
 class Fantome extends Monstre {
+}
 
+class Orc extends Monstre {
+}
+
+class Gobelin extends Monstre {
 }
 
 interface Jeu {
