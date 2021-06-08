@@ -1,10 +1,12 @@
 package application;
 
+import java.awt.*;
+
 /**
 * Classe representant une case du labyrinthe,
 * pouvant etre un mur ou un sol
 */
-public class Case{
+public class Case {
     /**
     * Coordonnee x de la case
     */
@@ -48,6 +50,10 @@ public class Case{
      */
     public boolean getLibre() {
     	return(this.libre);
+    }
+
+    public void dessiner(Graphics2D g) {
+
     }
 
     /**

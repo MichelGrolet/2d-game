@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
@@ -35,5 +36,10 @@ public class Monstre extends Entite {
         }
         this.x = prochainX;
         this.y = prochainY;
+    }
+
+    public void dessiner(Graphics2D g) {
+        g.setColor(Color.red);
+        g.fillArc(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, 0, 360);
     }
 }
