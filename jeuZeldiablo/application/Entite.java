@@ -52,7 +52,7 @@ public class Entite {
     }
     
     /**
-     * Rtourne les pv de l'entite
+     * retourne les pv de l'entite
      * @return un entier
      */
     public int getPv() {
@@ -60,8 +60,16 @@ public class Entite {
     }
     
     /**
-     * Permet de modifier la coordonnee x du personnage
-     * @param x la nouvelle coordonnee x pour le personnage
+     * retourne la puissance de l'entite
+     * @return un entier
+     */
+    public int getPuissance() {
+    	return this.puissance;
+    }
+    
+    /**
+     * Permet de modifier la coordonnee x de l'entite
+     * @param x la nouvelle coordonnee x pour l'entite
      */
      public void setX(int x){
          //Si le parametre est negatif, on ne change pas l'attribut
@@ -71,8 +79,8 @@ public class Entite {
      }
 
      /**
-     * Permet de modifier la coordonnee y du personnage
-     * @param y la nouvelle coordonnee y pour le personnage
+     * Permet de modifier la coordonnee y de l'entite
+     * @param y la nouvelle coordonnee y pour l'entite
      */
      public void setY(int y){
          //Si le parametre est negatif, on ne change pas l'attribut
