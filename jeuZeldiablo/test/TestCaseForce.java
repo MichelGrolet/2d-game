@@ -8,7 +8,7 @@ import java.awt.*;
 /**
 * Classe de test de CaseForce
 */
-public class CaseForce{
+public class TestCaseForce{
     /**
     * Test si le constructeur fonctionne
     */

@@ -8,7 +8,7 @@ import java.awt.*;
 /**
 * Classe de test de CaseSpeciale
 */
-public class CaseSpeciale{
+public class TestCaseSpeciale{
     /**
     * Test si le constructeur fonctionne
     */

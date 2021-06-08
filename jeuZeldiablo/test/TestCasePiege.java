@@ -8,7 +8,7 @@ import java.awt.*;
 /**
 * Classe de test de CasePiege
 */
-public class CasePiege{
+public class TestCasePiege{
     /**
     * Test si le constructeur fonctionne
     */
