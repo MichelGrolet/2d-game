@@ -30,7 +30,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public JeuPerso() {
 		this.perso = new Personnage(1,1);
 		this.lab = new Labyrinthe();
-		this.lab.genererMur(2);
+		this.lab.genererMur(0);
 		this.monstres = new ArrayList<>();
 		this.genererMonstres(3);
 		this.timer = 0;
@@ -97,8 +97,17 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		for (Monstre monstre : this.monstres) {
 			casesMonstres.add(new Case(monstre.getX(), monstre.getY()));
 		}
-		casesLibres.remove(casePerso);
-		casesLibres.removeAll(casesMonstres);
+		for (int i = 0; i< casesLibres.size();i++) {
+			if (casesLibres.get(i).getX() == casePerso.getX() && casesLibres.get(i).getY()==casePerso.getY()) {
+				casesLibres.remove(i);
+			}else {
+				for(Monstre monstre : this.monstres) {
+					if(casesLibres.get(i).getX() == monstre.getX() && casesLibres.get(i).getY()==monstre.getY()) {
+						casesLibres.remove(i);
+					}
+				}
+			}
+		}
 		return(casesLibres);
 	}
 
