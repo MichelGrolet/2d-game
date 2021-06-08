@@ -33,7 +33,7 @@ public class TestCase{
 
         int res1=caseT.getX();
         int res2=caseT.getY();
-        boolean re3=caseT.getLibre();
+        boolean res3=caseT.getLibre();
 
         assertEquals("Le x de caseT devrait etre 2",2,res1);
         assertEquals("Le y de caseT devrait etre 3",3,res2);

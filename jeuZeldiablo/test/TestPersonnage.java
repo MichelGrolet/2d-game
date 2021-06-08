@@ -11,7 +11,7 @@ import org.junit.Test;
 public class TestPersonnage{
     @Test
     public void testConstructeurNegatif() {
-        Personnage p = new Personnage();
+        Personnage p = new Personnage(0,0);
         assertTrue("edzsfre", true);
     }
 }

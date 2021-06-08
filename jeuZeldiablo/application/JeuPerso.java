@@ -23,7 +23,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 * Constructeur du personnage
 	 */
 	public JeuPerso() {
-		this.perso = new Personnage();
+		this.perso = new Personnage(0,0);
 		this.lab = new Labyrinthe();
 		this.monstres = new ArrayList<>();
 	}
@@ -103,6 +103,6 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 
 	@Override
 	public void evoluer(Commande commandeUser) {
-		this.getPersonnage().deplacer(commandeUser);
+		this.getPersonnage().seDeplacer(commandeUser);
 	}
 }

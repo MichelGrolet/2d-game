@@ -19,7 +19,7 @@ public class TestMur{
 
         int res1=mur.getX();
         int res2=mur.getY();
-        boolean re3=caseT.getLibre();
+        boolean res3=mur.getLibre();
 
         assertEquals("Le x de mur devrait etre 2",2,res1);
         assertEquals("Le y de mur devrait etre 5",5,res2);

@@ -1,6 +1,6 @@
 package application;
 
-public class Monstre {
+public class Monstre extends Entite {
     private int x,y;
 
     /**
@@ -9,8 +9,7 @@ public class Monstre {
      * @param y ordonnee du monstre
      */
     public Monstre(int x, int y) {
-        this.x = x;
-        this.y = y;
+        super(x,y);
     }
 
     public int getX() {
@@ -20,4 +19,10 @@ public class Monstre {
     public int getY() {
         return y;
     }
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
