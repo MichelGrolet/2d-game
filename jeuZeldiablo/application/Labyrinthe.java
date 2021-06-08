@@ -7,7 +7,7 @@ public class Labyrinthe {
 	* Constante qui determine la taille de la grille
 	* qui est un carre
 	*/
-	private static int taille = 10;
+	private static int TAILLE = 20;
 
 	/**
 	* Tableau de Case a deux dimensions
@@ -18,9 +18,10 @@ public class Labyrinthe {
 	 * Creation d'un labyrinthe avec uniquement des cases de types sol
 	 */
 	public Labyrinthe() {
-		this.cases = new Case[10][10];
-		for(int i=0; i<taille; i++) {
-			for(int j=0; j<taille; j++) {
+		//Creer un tableau carre de 20x20
+		this.cases = new Case[TAILLE][TAILLE];
+		for(int i=0; i<TAILLE; i++) {
+			for(int j=0; j<TAILLE; j++) {
 				cases[i][j] = new Sol(i, j);
 			}
 		}
@@ -52,11 +53,23 @@ public class Labyrinthe {
 		ArrayList<Case> lc = new ArrayList<Case>();
 		for(int i=0; i<taille; i++) {
 			for(int j=0; j<taille; j++) {
+				//Si la case est libre, on l'ajoute a la liste a retourner
 				if (this.cases[i][j].getLibre()) {
 					lc.add(this.cases[i][j]);
 				}
 			}
 		}
 		return(lc);
+	}
+
+	/**
+	* Permet de generer les murs du labyrinthe,
+	* selon le schema choisi
+	* @param choix le pattern choisi
+	*/
+	public void genererMur(int choix){
+		for(int i=0;i<TAILLE;i++){
+			
+		}
 	}
 }
