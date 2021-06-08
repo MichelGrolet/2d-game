@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Fantome extends Monstre {
 
-    private static int vitesse = 1;
-    private static int puissance = 1;
+    private final static int vitesse = 1;
+    private final static int puissance = 1;
     private int pv;
 
     /**
@@ -20,20 +20,25 @@ public class Fantome extends Monstre {
         this.pv = 5;
     }
 
-    public ArrayList<Case> DeplacementAutour(ArrayList<Case> libres) {
-        ArrayList<Case> bonneCase = new ArrayList<Case>();
-        for(int i =0; i<j.getCasesLibres().size(); i++) {
-            //si le x d'une case libre + ou - 1 est egal a x XOR le y d'une case + ou - 1 est egal a y (on recupere les cases a gauche, droite, haut, bas sans les diagonales)
-            if(((j.getCasesLibres().get(i).getX()+1 == this.x ||
-                    j.getCasesLibres().get(i).getX()-1 == this.x)
-                    && j.getCasesLibres().get(i).getY() == this.y)||
-                    (( j.getCasesLibres().get(i).getY()+1 == this.y ||
-                            j.getCasesLibres().get(i).getY()-1 == this.y ) &&
-                            j.getCasesLibres().get(i).getX() == this.x)) {
+    public ArrayList<Case> DeplacementAutour(JeuPerso j) {
+        // CasesAutour va contenir les 4 cases autour du fantome.
+        ArrayList<Case> casesAutour = new ArrayList<Case>();
+        ArrayList<Case> casesEntites = j.getCasesEntites();
+        if (this.getX()==0) {
+            casesAutour.add(j.getLabyrinthe().getCase(this.getX()+1, this.getY()+1));
+            if (this.getY()==0) {
+                casesAutour.add(j.getLabyrinthe().getCase(this.getX(), this.getY()));
+            } else if (this.getY()==Labyrinthe.TAILLE-1) casesAutour.add(j.getLabyrinthe().getCase(this.getX(), this.getY()-1));
+        } else if (this.getY()==Labyrinthe.TAILLE-1) casesAutour.add(j.getLabyrinthe().getCase(this.getX()-1, this.getY()));
 
-                bonneCase.add(j.getCasesLibres().get(i));
+        // On enleve de casesAutour les cases contenant des entites
+        for (int i = 0; i< casesAutour.size();i++) {
+            for(int k = 0; i < casesEntites.size(); i++) {
+                if(casesAutour.get(i).getX() == casesEntites.get(k).getX() && casesAutour.get(i).getY()==casesEntites.get(k).getY()) {
+                    casesAutour.remove(i);
+                }
             }
         }
-        return bonneCase;
+        return casesAutour;
     }
 }

@@ -9,6 +9,9 @@ import moteurJeu.moteur.Commande;
  *
  */
 public class Personnage extends Entite{
+
+	private int puissance;
+
    /**
     * Constructeur qui prend des coordonnees x,y en parametres
     * @param x entier pour la coordonnee x
