@@ -7,26 +7,33 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	* Personnage principal 
 	*/
-	Personnage perso;
+	private Personnage perso;
 
 	/**
 	* Le terrain dans lequel evolue les entites
 	*/
-	Labyrinthe lab;
+	private Labyrinthe lab;
 
 	/**
 	* Une liste des monstres
 	*/
-	ArrayList<Monstre> monstres;
+	private ArrayList<Monstre> monstres;
+
+	/**
+	 * permet d'identifier quand on appelle deplacerMonstres
+	 */
+	private int timer;
 
 	/**
 	 * Constructeur du personnage
 	 */
-	public JeuPerso() {
+	public JeuPerso() throws InterruptedException {
 		this.perso = new Personnage(0,0);
 		this.lab = new Labyrinthe();
 		this.lab.genererMur(2);
 		this.monstres = new ArrayList<>();
+		this.genererMonstres(3);
+		this.timer = 0;
 	}
 
 	/**
@@ -48,8 +55,6 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	
 	/**
 	 * permet de faire apparaitre un monstre
-	 * @param x, coordonne x
-	 * @param y, coordonne y
 	 * @param m, monstre a faire apparaitre
 	 * @return true si et seulement si le monstre est apparu
 	 */
@@ -64,17 +69,18 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				res = true;
 			}
 		}
-		return(res);
+		return res;
 	}
 	
 	/**
 	 * permet au jeu de deplacer les monstres
 	 */
 	public void deplacerMonstres() {
-		for(int i = 0; i <this.monstres.size();i++) {
-			this.monstres.get(i).seDeplacer(this.getCasesLibres(),this.perso);
+		for(Monstre m : monstres) {
+			m.seDeplacer(m.deplacementAutour(),this.perso);
 		}
 	}
+
 	/**
 	 * permet de connaitre les cases libres du jeu, c est a dire les cases sans joueur, monstres ou murs
 	 * @return la liste de cases libres
@@ -132,5 +138,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	@Override
 	public void evoluer(Commande commandeUser) {
 		this.getPersonnage().seDeplacer(commandeUser);
+		timer++;
+		if (this.timer == 20) {
+			this.deplacerMonstres();
+			this.timer = 0;
+		}
 	}
 }
