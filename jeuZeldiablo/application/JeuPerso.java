@@ -34,10 +34,14 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 */
 	public void genererMonstres(int x) {
 		if(x > 0) {
+			if (x > this.getCasesLibres().size()) {
+				x = this.getCasesLibres().size();
+			}
 			for (int i = 0; i < x; i++) {
 				ArrayList<Case> casesLibres = this.getCasesLibres();		
 				Case spawnMonstre = casesLibres.get((int)Math.floor(Math.random()*casesLibres.size()));
 				monstres.add(new Monstre(spawnMonstre.getX(),spawnMonstre.getY()));
+		
 			}
 		}
 		
