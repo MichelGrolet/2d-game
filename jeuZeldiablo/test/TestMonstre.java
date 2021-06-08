@@ -10,8 +10,10 @@ public class TestMonstre {
     	JeuPerso j = new JeuPerso();
     	Monstre m = new Monstre(1,1);
     	j.faireApparaitre(m);
+    	m.seDeplacer(j.getCasesLibres(), j.getPersonnage());
     	
-    
+    	
+    	
     	
     }
 }
