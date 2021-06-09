@@ -23,6 +23,11 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 * permet d'identifier quand on appelle deplacerMonstres
 	 */
 	private int timer;
+	
+	/**
+	 * une liste des objets
+	 */
+	private ArrayList<Objet> objets;
 
 	/**
 	 * Constructeur du personnage
@@ -186,6 +191,12 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 					if(this.monstres.get(i).etreMort()) {
 						this.monstres.remove(this.monstres.get(i));
 					}
+				}
+			}
+			if(commandeUser.ramasser) {
+				for(int i=0; i<this.objets.size(); i++) {
+					this.getPersonnage().ramasserObjet(this.objets.get(i));
+					this.objets.remove(this.objets.get(i));
 				}
 			}
 		}

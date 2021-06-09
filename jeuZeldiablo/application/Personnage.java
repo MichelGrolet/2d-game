@@ -11,7 +11,7 @@ import moteurJeu.moteur.Commande;
  */
 public class Personnage extends Entite{
 
-
+	private ArrayList<Objet> inventaire;
 
    /**
     * Constructeur qui prend des coordonnees x,y en parametres
@@ -21,6 +21,7 @@ public class Personnage extends Entite{
     public Personnage(int x, int y){
     	super(x, y);
     	this.puissance = 2;
+    	this.inventaire = new ArrayList<Objet>();
     }
 
     public String toString() {
@@ -34,6 +35,13 @@ public class Personnage extends Entite{
 		g.setColor(Color.black);
 		g.drawString(""+this.getPv(), x* DessinPerso.TAILLE_CASE+(DessinPerso.TAILLE_CASE/2), y* DessinPerso.TAILLE_CASE+(DessinPerso.TAILLE_CASE/2));
 	}
+    
+    public void ramasserObjet(Objet o) {
+    	if(this.x==o.getX() && this.y==o.getY()) {
+        	o.setPersonnage(this);
+        	this.inventaire.add(o);
+    	}
+    }
 
     /**
      *  permet au personnage de se deplacer
