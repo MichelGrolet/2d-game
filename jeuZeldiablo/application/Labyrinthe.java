@@ -18,7 +18,7 @@ public class Labyrinthe {
 	 * Creation d'un labyrinthe avec uniquement des cases de types sol
 	 */
 	public Labyrinthe() {
-		//Creer un tableau carre de 20x20
+		//Creer un tableau carre de 21x21
 		this.cases = new Case[TAILLE][TAILLE];
 		for(int i=0; i<TAILLE; i++) {
 			for(int j=0; j<TAILLE; j++) {
@@ -90,8 +90,8 @@ public class Labyrinthe {
 
 		//Si le parametre est mauvais, on choisi aleatoirement
 		int alea;
-		if(choix<0 || choix>2){
-			alea=((int)Math.floor(Math.random()*3));
+		if(choix<0 || choix>3){
+			alea=((int)Math.floor(Math.random()*4));
 		}
 		else{
 			alea=choix;
@@ -126,8 +126,52 @@ public class Labyrinthe {
 				}
 				break;
 			
-			//schema vide
+			//schema elabore
 			case 3 :
+				char[][] pattern=            {
+											 {'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'},
+											 {'m','s','f','s','m','s','s','s','s','m','m','s','s','s','m','m','m','m','s','s','m'},
+											 {'m','p','s','s','s','s','s','m','s','s','m','s','m','s','s','m','m','m','s','m','m'},
+											 {'m','m','m','m','m','s','m','m','m','s','p','s','m','s','m','s','m','m','s','m','m'},
+											 {'m','m','s','s','s','s','s','m','m','s','s','s','m','s','m','s','s','m','s','m','m'},
+											 {'m','s','s','s','m','m','s','s','m','m','s','m','m','s','m','m','s','s','s','s','m'},
+											 {'m','s','m','m','m','s','s','s','s','m','s','p','m','s','m','s','s','s','m','m','m'},
+											 {'m','s','s','m','m','f','m','m','s','s','s','m','m','s','s','s','m','s','m','s','m'},
+											 {'m','m','s','s','m','s','m','s','s','m','m','m','s','s','s','m','m','s','m','s','m'},
+											 {'m','s','s','m','m','s','s','s','s','m','m','s','s','f','m','m','s','s','s','s','m'},
+											 {'m','s','m','m','m','m','s','s','m','m','m','s','m','m','m','s','s','m','m','s','m'},
+											 {'m','s','s','m','m','s','s','m','m','p','m','s','m','m','s','s','p','m','s','s','m'},
+											 {'m','s','s','s','m','s','s','m','m','s','s','s','m','m','s','s','m','m','s','m','m'},
+											 {'m','s','m','s','s','s','m','m','m','m','s','s','m','m','m','s','m','s','s','m','m'},
+											 {'m','s','m','m','s','s','s','m','m','s','s','m','m','s','s','s','m','m','s','s','m'},
+											 {'m','s','s','m','m','f','m','m','m','s','m','m','m','m','p','s','m','m','m','s','m'},
+											 {'m','m','s','m','m','s','s','m','s','s','s','m','m','s','s','m','m','s','m','m','m'},
+											 {'m','s','s','s','m','s','m','m','m','s','s','m','s','s','m','m','m','s','s','m','m'},
+											 {'m','s','m','m','m','s','m','m','s','s','m','m','s','m','m','s','s','s','m','m','m'},
+											 {'m','s','s','s','s','s','f','m','m','s','s','s','s','s','s','s','m','s','s','f','m'},
+											 {'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'}
+											 };
+				for(int i=0;i<TAILLE;i++){
+					for(int j=0;j<TAILLE;j++){
+						switch(pattern[i][j]){
+							case 'm':
+								this.cases[i][j]=new Mur(i,j);
+								break;
+
+							case 's':
+								this.cases[i][j]=new Sol(i,j);
+								break;
+
+							case 'f':
+								this.cases[i][j]=new CaseForce(i,j);
+								break;
+
+							case 'p':
+								this.cases[i][j]=new CasePiege(i,j);
+								break;
+						}
+					}
+				}
 				break;
 		}
 	}
