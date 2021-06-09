@@ -52,9 +52,7 @@ public class Case {
     	return(this.libre);
     }
 
-    public void dessiner(Graphics2D g) {
-
-    }
+    public void dessiner(Graphics2D g) {}
 
     /**
     * Retourne la coordonnee x de la case

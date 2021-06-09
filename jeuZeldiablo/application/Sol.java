@@ -52,13 +52,7 @@ public class Sol extends Case{
     */
     public void dessiner(Graphics2D g) {
     	try {
-    		BufferedImage im;
-    		int x =(int) Math.floor(Math.random());;
-    		if (x==0) {
-    			 im = ImageIO.read(new File("./sprites/floor1.png"));
-    		}else {
-    			 im = ImageIO.read(new File("./sprites/floor2.png"));
-    		}
+    		BufferedImage im = ImageIO.read(new File("./sprites/floor1.png"));
     		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
     	}catch(FileNotFoundException e){
     		e.getStackTrace();

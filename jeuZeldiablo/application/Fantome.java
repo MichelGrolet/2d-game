@@ -1,7 +1,13 @@
 package application;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 
 public class Fantome extends Monstre {
 
@@ -39,7 +45,13 @@ public class Fantome extends Monstre {
     }
 
     public void dessiner(Graphics2D g) {
-        g.setColor(Color.decode("#847363"));
-        g.fillArc(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, 0, 360);
-    }
+    	try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/ghost.png"));
+    		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+	}
 }
