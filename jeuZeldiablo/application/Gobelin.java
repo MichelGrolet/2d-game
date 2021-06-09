@@ -1,6 +1,12 @@
 package application;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Gobelin extends Monstre {
 
@@ -22,7 +28,13 @@ public class Gobelin extends Monstre {
      * permet de dessiner le gobelin dans le jeu
      */
     public void dessiner(Graphics2D g) {
-        g.setColor(Color.decode("#397000"));
-        g.fillArc(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, 0, 360);
+    	try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/goblin.png"));
+    		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
     }
 }
