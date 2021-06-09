@@ -36,7 +36,7 @@ public class Personnage extends Entite{
 
     public void dessiner(Graphics2D g) {
     	try {
-    		BufferedImage im = ImageIO.read(new File("./sprites/perso.png"));
+    		BufferedImage im = ImageIO.read(new File("./sprites/perso2.png"));
     		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
     	}catch(FileNotFoundException e){
     		e.getStackTrace();
@@ -45,9 +45,30 @@ public class Personnage extends Entite{
     	}
 	}
     
+    public void dessinerInventaire(Graphics2D g) {
+    	try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/perso2.png"));
+			g.drawImage(im,(Labyrinthe.TAILLE+2) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+4*(DessinPerso.TAILLE_CASE),null);
+			g.drawRect((Labyrinthe.TAILLE+1) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE), DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
+			g.drawRect((Labyrinthe.TAILLE+2) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE), DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
+			g.drawRect((Labyrinthe.TAILLE+3) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE), DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);   
+			for (Objet o : this.inventaire) {
+				o.dessiner(g);
+			}
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+	}
+}
+    
     public void ramasserObjet(Objet o) {
         	o.setPersonnage(this);
         	this.inventaire.add(o);
+    }
+    
+    public ArrayList<Objet> getInventaire(){
+    	return this.inventaire;
     }
 
     /**

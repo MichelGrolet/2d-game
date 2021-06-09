@@ -64,5 +64,8 @@ public class DessinPerso implements DessinJeu {
 		for (Objet o : jeu.getObjets()) {
 			o.dessiner(crayon);
 		}
+		
+		//Dessiner l'inventaire
+		jeu.getPersonnage().dessinerInventaire(crayon);
 	}
 }
