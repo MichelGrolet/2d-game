@@ -120,7 +120,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		ArrayList<Case> casesOccupes = this.getCasesEntites();
 		
 		for (int i = 0; i< casesLibres.size();i++) {
-			for(int j = 0; i < casesOccupes.size(); i++) {
+			for(int j = 0; j < casesOccupes.size(); j++) {
 					if(casesLibres.get(i).getX() == casesOccupes.get(j).getX() && casesLibres.get(i).getY()==casesOccupes.get(j).getY()) {
 						casesLibres.remove(i);
 					}
