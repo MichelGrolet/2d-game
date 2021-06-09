@@ -36,7 +36,7 @@ public class Personnage extends Entite{
 		g.drawString(""+this.getPv(), x* DessinPerso.TAILLE_CASE+(DessinPerso.TAILLE_CASE/2), y* DessinPerso.TAILLE_CASE+(DessinPerso.TAILLE_CASE/2));
 	}
     
-    public void rammasserObjet(Objet o) {
+    public void ramasserObjet(Objet o) {
     	if(this.x==o.getX() && this.y==o.getY()) {
         	o.setPersonnage(this);
         	this.inventaire.add(o);

@@ -134,6 +134,23 @@ public class Controleur implements KeyListener {
 			t.schedule(tt, 600);
 			}
 		}
+		if(e.getKeyChar()=='e') {
+			this.commandeEnCours.ramasser = true;
+			this.commandeARetourner.ramasser = true;
+			Timer nt = new Timer();
+			TimerTask ntt = new TimerTask() {
+
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					Controleur.this.commandeEnCours.ramasser = false;
+					Controleur.this.commandeARetourner.ramasser = false;
+				}
+				
+			};
+			nt.schedule(ntt, 100);
+		}
+		
 	}
 
 }
