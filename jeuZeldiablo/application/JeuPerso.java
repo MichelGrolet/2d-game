@@ -40,7 +40,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		this.genererMonstres(3);
 		this.timer = 0;
 		this.objets = new ArrayList<>();
-		objets.add(new Amulette(10, 1));
+		objets.add(new Amulette(11, 1));
 	}
 
 	/**
