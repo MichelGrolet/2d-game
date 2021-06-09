@@ -28,6 +28,7 @@ public abstract class Entite {
 	* @param x entier pour la coordonnee x
 	* @param y entier pour la coordonnee y
 	*/
+	
 	public Entite(int x, int y){
 	    this.x = x;
 	    this.y = y;

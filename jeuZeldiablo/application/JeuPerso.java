@@ -93,7 +93,9 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 					|| m.getY()==this.perso.getY()+1 || m.getY()==this.perso.getY()-1) {
 				m.attaquer(this.perso);
 			}else {
-				m.seDeplacer(m.deplacementAutour(this), this.perso);
+				for (int i = 0; i < m.getVitesse(); i++) {
+					m.seDeplacer(m.deplacementAutour(this), this.perso);
+				}
 			}
 		}
 	}

@@ -4,8 +4,6 @@ import java.awt.*;
 
 public class Gobelin extends Monstre {
 
-    private static int vitesse = 2;
-    private static int puissance = 1;
     private int pv;
 
     /**
@@ -16,7 +14,7 @@ public class Gobelin extends Monstre {
      */
     public Gobelin(int x, int y) {
         super(x, y);
-
+        this.vitesse = 2;
         this.pv = 5;
     }
 

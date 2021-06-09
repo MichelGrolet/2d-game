@@ -5,10 +5,6 @@ import java.util.ArrayList;
 
 public class Fantome extends Monstre {
 
-    private final static int vitesse = 1;
-    private final static int puissance = 1;
-    private int pv;
-
     /**
      * construit un monstre aux coordonnees donnees en parametre
      *
@@ -17,7 +13,6 @@ public class Fantome extends Monstre {
      */
     public Fantome(int x, int y) {
         super(x, y);
-
         this.pv = 5;
     }
 
