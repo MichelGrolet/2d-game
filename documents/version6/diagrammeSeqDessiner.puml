@@ -1,0 +1,24 @@
+@startuml
+participant "d: DessinPerso" as d
+participant "p: Personnage" as p
+participant "ImageIO" as io
+participant "g: Graphics2D" as g
+participant "im: BufferedImage" as im
+
+-> d : dessiner(im)
+activate d
+d -> p : dessiner(g)
+activate p
+p -> io : read()
+activate io
+p <-- io: im
+deactivate io
+p -> g: drawImage(im, x, y, null)
+activate g
+p <-- g:
+deactivate
+d <-- p
+deactivate p
+<-- d
+deactivate d
+@enduml
