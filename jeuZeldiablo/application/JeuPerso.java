@@ -173,7 +173,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	@Override
 	public boolean etreFini() {
 		// TODO Auto-generated method stub
-		return false;
+		return this.perso.etreMort() || this.objets.isEmpty();
 	}
 
 	public ArrayList<Objet> getObjets() {
@@ -182,7 +182,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 
 	@Override
 	public void evoluer(Commande commandeUser) {
-		if(!this.perso.etreMort()) {
+		if(!this.etreFini()) {
 			this.getPersonnage().seDeplacer(commandeUser, this.getPersonnage().deplacementAutour(this));
 			Sol s = (Sol) this.lab.getCase(this.getPersonnage().getX(), this.getPersonnage().getY());
 			s.declencherEffet(this.getPersonnage());
