@@ -1,6 +1,12 @@
 package application;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 /**
 * Classe representant un mur
@@ -20,7 +26,13 @@ public class Mur extends Case{
     }
     
     public void dessiner(Graphics2D g) {
-        g.setColor(Color.black);
-        g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
+    	try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/wall.png"));
+    		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
     }
 }

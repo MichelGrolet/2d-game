@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
+
 import moteurJeu.moteur.*;
 
 /**
@@ -38,6 +41,7 @@ public class DessinPerso implements DessinJeu {
 	 */
 	public void dessiner(BufferedImage im) {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
+		
 
 		// Dessine les murs
 		Case[][] cases = jeu.getLabyrinthe().getTabCase();

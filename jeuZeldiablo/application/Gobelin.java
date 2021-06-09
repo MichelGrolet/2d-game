@@ -17,7 +17,10 @@ public class Gobelin extends Monstre {
         this.vitesse = 2;
         this.pv = 5;
     }
-
+    
+    /**
+     * permet de dessiner le gobelin dans le jeu
+     */
     public void dessiner(Graphics2D g) {
         g.setColor(Color.decode("#397000"));
         g.fillArc(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, 0, 360);
