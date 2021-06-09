@@ -4,11 +4,7 @@ import java.awt.*;
 
 public class Orc extends Monstre {
 
-    private static int vitesse = 1;
-    private static int puissance = 2;
-    private int pv;
-
-    /**
+	/**
      * construit un monstre aux coordonnees donnees en parametre
      *
      * @param x abscisse du monstre
@@ -16,7 +12,7 @@ public class Orc extends Monstre {
      */
     public Orc(int x, int y) {
         super(x, y);
-
+        this.puissance = 2;
         this.pv = 10;
     }
 
