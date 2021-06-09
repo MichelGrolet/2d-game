@@ -151,24 +151,13 @@ public class Labyrinthe {
 											 {'m','s','s','s','s','s','f','m','m','s','s','s','s','s','s','s','m','s','s','f','m'},
 											 {'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'}
 											 };
-				for(int j=0;i<TAILLE;i++){
-					for(int i=0;j<TAILLE;j++){
-						switch(pattern[i][j]){
-							case 'm':
-								this.cases[i][j]=new Mur(i,j);
-								break;
-
-							case 's':
-								this.cases[i][j]=new Sol(i,j);
-								break;
-
-							case 'f':
-								this.cases[i][j]=new CaseForce(i,j);
-								break;
-
-							case 'p':
-								this.cases[i][j]=new CasePiege(i,j);
-								break;
+				for(int j=0;j<TAILLE;j++){
+					for(int i=0;i<TAILLE;i++){
+						switch (pattern[i][j]) {
+							case 'm' -> this.cases[i][j] = new Mur(i, j);
+							case 's' -> this.cases[i][j] = new Sol(i, j);
+							case 'f' -> this.cases[i][j] = new CaseForce(i, j);
+							case 'p' -> this.cases[i][j] = new CasePiege(i, j);
 						}
 					}
 				}
