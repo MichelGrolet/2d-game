@@ -46,10 +46,8 @@ public class Personnage extends Entite{
 	}
     
     public void ramasserObjet(Objet o) {
-    	if(this.x==o.getX() && this.y==o.getY()) {
         	o.setPersonnage(this);
         	this.inventaire.add(o);
-    	}
     }
 
     /**
