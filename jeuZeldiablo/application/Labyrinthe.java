@@ -7,7 +7,7 @@ public class Labyrinthe {
 	* Constante qui determine la taille de la grille
 	* qui est un carre
 	*/
-	public static int TAILLE = 21;
+	public static int TAILLE = 15;
 
 	/**
 	* Tableau de Case a deux dimensions
@@ -90,7 +90,7 @@ public class Labyrinthe {
 
 		//Si le parametre est mauvais, on choisi aleatoirement
 		int alea;
-		if(choix<0 || choix>3){
+		if(choix<0 || choix>5){
 			alea=((int)Math.floor(Math.random()*4));
 		}
 		else{
@@ -128,36 +128,123 @@ public class Labyrinthe {
 			
 			//schema elabore
 			case 3 :
-				char[][] pattern=            {
-											 {'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'},
-											 {'m','s','f','s','m','s','s','s','s','m','m','s','s','s','m','m','m','m','s','s','m'},
-											 {'m','p','s','s','s','s','s','m','s','s','m','s','m','s','s','m','m','m','s','m','m'},
-											 {'m','m','m','m','m','s','m','m','m','s','p','s','m','s','m','s','m','m','s','m','m'},
-											 {'m','m','s','s','s','s','s','m','m','s','s','s','m','s','m','s','s','m','s','m','m'},
-											 {'m','s','s','s','m','m','s','s','m','m','s','m','m','s','m','m','s','s','s','s','m'},
-											 {'m','s','m','m','m','s','s','s','s','m','s','p','m','s','m','s','s','s','m','m','m'},
-											 {'m','s','s','m','m','f','m','m','s','s','s','m','m','s','s','s','m','s','m','s','m'},
-											 {'m','m','s','s','m','s','m','s','s','m','m','m','s','s','s','m','m','s','m','s','m'},
-											 {'m','s','s','m','m','s','s','s','s','m','m','s','s','f','m','m','s','s','s','s','m'},
-											 {'m','s','m','m','m','m','s','s','m','m','m','s','m','m','m','s','s','m','m','s','m'},
-											 {'m','s','s','m','m','s','s','m','m','p','m','s','m','m','s','s','p','m','s','s','m'},
-											 {'m','s','s','s','m','s','s','m','m','s','s','s','m','m','s','s','m','m','s','m','m'},
-											 {'m','s','m','s','s','s','m','m','m','m','s','s','m','m','m','s','m','s','s','m','m'},
-											 {'m','s','m','m','s','s','s','m','m','s','s','m','m','s','s','s','m','m','s','s','m'},
-											 {'m','s','s','m','m','f','m','m','m','s','m','m','m','m','p','s','m','m','m','s','m'},
-											 {'m','m','s','m','m','s','s','m','s','s','s','m','m','s','s','m','m','s','m','m','m'},
-											 {'m','s','s','s','m','s','m','m','m','s','s','m','s','s','m','m','m','s','s','m','m'},
-											 {'m','s','m','m','m','s','m','m','s','s','m','m','s','m','m','s','s','s','m','m','m'},
-											 {'m','s','s','s','s','s','f','m','m','s','s','s','s','s','s','s','m','s','s','f','m'},
-											 {'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'}
-											 };
+				char[][] pattern1=          {
+											{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'},
+											{'m','s','f','s','m','s','s','s','s','m','m','s','p','s','m'},
+											{'m','p','s','s','s','s','s','m','s','s','m','s','m','s','m'},
+											{'m','m','m','m','m','s','m','m','m','s','p','s','m','s','m'},
+											{'m','m','s','s','s','s','s','m','m','s','s','s','m','s','m'},
+											{'m','s','s','s','m','m','s','s','m','m','s','m','m','s','m'},
+											{'m','s','m','m','m','s','s','s','s','m','s','p','m','s','m'},
+											{'m','s','s','m','m','f','m','m','s','s','s','m','m','s','m'},
+											{'m','m','s','s','m','s','m','s','s','m','m','m','s','s','m'},
+											{'m','s','s','m','m','s','s','s','s','m','m','s','s','f','m'},
+											{'m','s','m','m','m','m','s','s','m','m','m','s','m','m','m'},
+											{'m','s','s','m','m','s','s','m','m','f','m','s','m','m','m'},
+											{'m','p','s','s','m','s','s','m','m','s','s','s','m','m','m'},
+											{'m','s','m','s','s','s','m','m','m','m','s','s','m','m','m'},
+											{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'}
+											};
 				for(int j=0;j<TAILLE;j++){
 					for(int i=0;i<TAILLE;i++){
-						switch (pattern[i][j]) {
-							case 'm' -> this.cases[i][j] = new Mur(i, j);
-							case 's' -> this.cases[i][j] = new Sol(i, j);
-							case 'f' -> this.cases[i][j] = new CaseForce(i, j);
-							case 'p' -> this.cases[i][j] = new CasePiege(i, j);
+						switch(pattern1[j][i]){
+							case 'm':
+								this.cases[i][j]=new Mur(i,j);
+								break;
+
+							case 's':
+								this.cases[i][j]=new Sol(i,j);
+								break;
+
+							case 'f':
+								this.cases[i][j]=new CaseForce(i,j);
+								break;
+
+							case 'p':
+								this.cases[i][j]=new CasePiege(i,j);
+								break;
+						}
+					}
+				}
+				break;
+
+			case 4 :
+				char[][] pattern2=          {
+											{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'},
+											{'m','s','m','m','m','m','m','m','m','s','s','s','p','s','m'},
+											{'m','s','s','s','s','s','s','s','s','s','m','s','m','s','m'},
+											{'m','s','m','m','m','p','m','m','m','s','p','s','m','s','m'},
+											{'m','s','s','s','s','s','s','m','s','s','p','s','s','s','m'},
+											{'m','m','p','m','m','m','s','m','m','m','s','m','m','s','m'},
+											{'m','m','s','m','m','s','s','s','s','m','s','p','m','s','m'},
+											{'m','s','s','m','m','f','m','m','s','s','s','m','m','s','m'},
+											{'m','p','m','m','s','s','m','s','s','m','m','m','s','s','m'},
+											{'m','s','s','s','s','s','s','s','s','m','p','s','s','f','m'},
+											{'m','m','m','m','m','m','s','s','m','m','m','s','m','s','m'},
+											{'m','f','m','p','m','m','s','m','m','f','s','s','s','s','m'},
+											{'m','s','m','s','m','s','s','s','s','s','s','p','m','m','m'},
+											{'m','s','s','s','s','s','m','m','m','m','s','s','s','s','m'},
+											{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'}
+											};
+				for(int j=0;j<TAILLE;j++){
+					for(int i=0;i<TAILLE;i++){
+						switch(pattern2[j][i]){
+							case 'm':
+								this.cases[i][j]=new Mur(i,j);
+								break;
+
+							case 's':
+								this.cases[i][j]=new Sol(i,j);
+								break;
+
+							case 'f':
+								this.cases[i][j]=new CaseForce(i,j);
+								break;
+
+							case 'p':
+								this.cases[i][j]=new CasePiege(i,j);
+								break;
+						}
+					}
+				}
+				break;
+
+			case 5 :
+				char[][] pattern3=          {
+											{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'},
+											{'m','s','s','s','s','m','m','m','m','p','s','s','s','m','m'},
+											{'m','s','m','m','s','s','s','f','s','s','m','m','s','m','m'},
+											{'m','s','m','m','m','p','m','m','m','s','m','m','s','m','m'},
+											{'m','s','s','m','m','s','s','s','s','s','s','s','s','s','m'},
+											{'m','m','s','m','m','m','m','m','m','m','m','m','m','s','m'},
+											{'m','s','s','m','m','s','s','s','s','m','s','p','s','s','m'},
+											{'m','s','m','m','m','f','m','m','p','s','s','m','m','s','m'},
+											{'m','s','m','m','m','s','m','s','s','m','m','m','m','s','m'},
+											{'m','s','s','m','s','s','s','s','s','s','m','p','s','s','m'},
+											{'m','m','s','m','m','m','p','s','m','s','m','s','m','s','m'},
+											{'m','s','s','p','s','m','p','m','m','s','s','s','m','f','m'},
+											{'m','s','m','m','s','s','s','m','s','s','m','s','m','s','m'},
+											{'m','s','s','f','s','s','m','m','m','m','m','s','s','s','m'},
+											{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'}
+											};
+				for(int j=0;j<TAILLE;j++){
+					for(int i=0;i<TAILLE;i++){
+						switch(pattern3[j][i]){
+							case 'm':
+								this.cases[i][j]=new Mur(i,j);
+								break;
+
+							case 's':
+								this.cases[i][j]=new Sol(i,j);
+								break;
+
+							case 'f':
+								this.cases[i][j]=new CaseForce(i,j);
+								break;
+
+							case 'p':
+								this.cases[i][j]=new CasePiege(i,j);
+								break;
 						}
 					}
 				}
