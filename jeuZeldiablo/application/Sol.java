@@ -1,6 +1,12 @@
 package application;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 /**
 * Classe representant du sol
@@ -45,7 +51,19 @@ public class Sol extends Case{
     * @param g Graphics2D
     */
     public void dessiner(Graphics2D g) {
-        g.setColor(Color.WHITE);
-        g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
-    }
+    	try {
+    		BufferedImage im;
+    		int x =(int) Math.floor(Math.random());;
+    		if (x==0) {
+    			 im = ImageIO.read(new File("./sprites/floor1.png"));
+    		}else {
+    			 im = ImageIO.read(new File("./sprites/floor2.png"));
+    		}
+    		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+	}
 }
