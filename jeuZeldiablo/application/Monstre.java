@@ -6,13 +6,20 @@ import java.util.Random;
 import java.util.Timer;
 
 public class Monstre extends Entite {
-    /**
+	
+	/**
+	 * représente la vitesse de la deplacement du monstre
+	 */
+	protected int vitesse;
+	
+	/**
      * construit un monstre aux coordonnees donnees en parametre
      * @param x abscisse du monstre
      * @param y ordonnee du monstre
      */
     public Monstre(int x, int y) {
         super(x,y);
+        this.vitesse = 1;
     }
 
     /**
@@ -36,6 +43,14 @@ public class Monstre extends Entite {
         }
         this.x = prochainX;
         this.y = prochainY;
+    }
+    
+    /**
+     * retourne la vitesse
+     * @return vitesse
+     */
+    public int getVitesse() {
+    	return this.vitesse;
     }
 
     public void dessiner(Graphics2D g) {}
