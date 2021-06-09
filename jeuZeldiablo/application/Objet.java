@@ -1,10 +1,11 @@
 package application;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Objet {
-    private int x, y;
-    private Personnage p;
+    protected int x, y;
+    protected Personnage p;
 
     public Objet(int x, int y) {
         this.x = x;
@@ -23,7 +24,7 @@ public class Objet {
         this.p = p;
     }
 
-    public void dessiner(BufferedImage im) {
+    public void dessiner(Graphics2D g) {
 
     }
 }

@@ -39,6 +39,8 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		this.monstres = new ArrayList<>();
 		this.genererMonstres(3);
 		this.timer = 0;
+		this.objets = new ArrayList<>();
+		objets.add(new Amulette(2, 1));
 	}
 
 	/**
@@ -172,6 +174,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public boolean etreFini() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public ArrayList<Objet> getObjets() {
+		return objets;
 	}
 
 	@Override
