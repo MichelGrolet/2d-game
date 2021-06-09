@@ -40,7 +40,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		this.genererMonstres(3);
 		this.timer = 0;
 		this.objets = new ArrayList<>();
-		objets.add(new Amulette(2, 1));
+		objets.add(new Amulette(10, 1));
 	}
 
 	/**
@@ -173,7 +173,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	@Override
 	public boolean etreFini() {
 		// TODO Auto-generated method stub
-		return false;
+		return this.perso.etreMort() || this.objets.isEmpty();
 	}
 
 	public ArrayList<Objet> getObjets() {
@@ -182,7 +182,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 
 	@Override
 	public void evoluer(Commande commandeUser) {
-		if(!this.perso.etreMort()) {
+		if(!this.etreFini()) {
 			this.getPersonnage().seDeplacer(commandeUser, this.getPersonnage().deplacementAutour(this));
 			Sol s = (Sol) this.lab.getCase(this.getPersonnage().getX(), this.getPersonnage().getY());
 			s.declencherEffet(this.getPersonnage());
@@ -201,8 +201,11 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			}
 			if(commandeUser.ramasser) {
 				for(int i=0; i<this.objets.size(); i++) {
-					this.getPersonnage().ramasserObjet(this.objets.get(i));
-					this.objets.remove(this.objets.get(i));
+					if(this.getPersonnage().getX()==this.getObjets().get(i).getX()
+							&& this.getPersonnage().getY()==this.getObjets().get(i).getY()) {
+						this.getPersonnage().ramasserObjet(this.objets.get(i));
+						this.objets.remove(this.objets.get(i));
+					}
 				}
 			}
 		}
