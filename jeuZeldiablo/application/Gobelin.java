@@ -10,8 +10,6 @@ import javax.imageio.ImageIO;
 
 public class Gobelin extends Monstre {
 
-    private int pv;
-
     /**
      * construit un monstre aux coordonnees donnees en parametre
      *
