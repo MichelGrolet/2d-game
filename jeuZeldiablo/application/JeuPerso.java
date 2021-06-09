@@ -201,8 +201,11 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 			}
 			if(commandeUser.ramasser) {
 				for(int i=0; i<this.objets.size(); i++) {
-					this.getPersonnage().ramasserObjet(this.objets.get(i));
-					this.objets.remove(this.objets.get(i));
+					if(this.getPersonnage().getX()==this.objets.get(i).getX() 
+							&& this.getPersonnage().getY()==this.objets.get(i).getY()) {
+						this.getPersonnage().ramasserObjet(this.objets.get(i));
+						this.objets.remove(this.objets.get(i));
+					}
 				}
 			}
 		}

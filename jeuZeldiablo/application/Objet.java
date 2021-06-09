@@ -10,6 +10,7 @@ public class Objet {
     public Objet(int x, int y) {
         this.x = x;
         this.y = y;
+        this.p = null;
     }
 
     public int getX() {
