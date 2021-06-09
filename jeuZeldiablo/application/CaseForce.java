@@ -1,6 +1,12 @@
 package application;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 /**
 * Classe abstraite representant une case speciale(piege,boost,etc...)
@@ -43,8 +49,14 @@ public class CaseForce extends CaseSpeciale{
     */
     public void dessiner(Graphics2D g) {
         if(!this.getActive()){
-            g.setColor(Color.WHITE);
-            g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
+        	try {
+        		BufferedImage im = ImageIO.read(new File("./sprites/floor.png"));
+        		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+        	}catch(FileNotFoundException e){
+        		e.getStackTrace();
+        	}catch(IOException f) {
+        		f.getStackTrace();
+        	}
         }
         else{
             g.setColor(Color.PINK);
