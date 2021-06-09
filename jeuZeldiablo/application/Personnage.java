@@ -11,7 +11,7 @@ import moteurJeu.moteur.Commande;
  */
 public class Personnage extends Entite{
 
-	private int puissance;
+
 
    /**
     * Constructeur qui prend des coordonnees x,y en parametres
@@ -20,6 +20,7 @@ public class Personnage extends Entite{
     */
     public Personnage(int x, int y){
     	super(x, y);
+    	this.puissance = 2;
     }
 
     public String toString() {
