@@ -24,10 +24,13 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 */
 	private int timer;
 	
+	boolean attaque;
+	
 	/**
 	 * une liste des objets
 	 */
 	private ArrayList<Objet> objets;
+
 
 	/**
 	 * Constructeur du personnage
@@ -199,6 +202,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 					}
 				}
 			}
+			attaque = commandeUser.attaque;
 			if(commandeUser.ramasser) {
 				for(int i=0; i<this.objets.size(); i++) {
 					if(this.getPersonnage().getX()==this.getObjets().get(i).getX()

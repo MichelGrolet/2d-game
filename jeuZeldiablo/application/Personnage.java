@@ -51,6 +51,28 @@ public class Personnage extends Entite{
     	}
 	}
     
+    public void dessinerMort(Graphics2D g) {
+    	try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/persodead.png"));
+    		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+	}
+    
+    public void dessinerAttaque(Graphics2D g) {
+    	try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/perso2fight.png"));
+    		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+	}
+    
     public void dessinerInventaire(Graphics2D g) {
     	try {
     		BufferedImage im = ImageIO.read(new File("./sprites/perso2.png"));
