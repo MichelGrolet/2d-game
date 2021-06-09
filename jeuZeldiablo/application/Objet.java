@@ -25,7 +25,7 @@ public class Objet {
         this.p = p;
     }
 
-    public void dessiner(Graphics2D g) {
-
-    }
+    public void dessiner(Graphics2D g) {}
+    
+    public void dessinerInventaire(Graphics2D g,int x) {}
 }

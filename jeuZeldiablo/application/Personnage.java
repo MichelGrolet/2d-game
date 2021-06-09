@@ -19,11 +19,17 @@ public class Personnage extends Entite{
 
 	private ArrayList<Objet> inventaire;
 
-   /**
-    * Constructeur qui prend des coordonnees x,y en parametres
-    * @param x entier pour la coordonnee x
-    * @param y entier pour la coordonnee y
-    */
+   
+	
+	public final static int CASE_INVENTAIRE1 = (Labyrinthe.TAILLE+1)* DessinPerso.TAILLE_CASE;
+	public final static int CASE_INVENTAIRE2 = (Labyrinthe.TAILLE+2)* DessinPerso.TAILLE_CASE;
+	public final static int CASE_INVENTAIRE3 = (Labyrinthe.TAILLE+3)* DessinPerso.TAILLE_CASE;
+	
+	/**
+	    * Constructeur qui prend des coordonnees x,y en parametres
+	    * @param x entier pour la coordonnee x
+	    * @param y entier pour la coordonnee y
+	    */
     public Personnage(int x, int y){
     	super(x, y);
     	this.puissance = 2;
@@ -49,11 +55,11 @@ public class Personnage extends Entite{
     	try {
     		BufferedImage im = ImageIO.read(new File("./sprites/perso2.png"));
 			g.drawImage(im,(Labyrinthe.TAILLE+2) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+4*(DessinPerso.TAILLE_CASE),null);
-			g.drawRect((Labyrinthe.TAILLE+1) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE), DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
-			g.drawRect((Labyrinthe.TAILLE+2) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE), DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
-			g.drawRect((Labyrinthe.TAILLE+3) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE), DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);   
-			for (Objet o : this.inventaire) {
-				o.dessiner(g);
+			g.drawRect(CASE_INVENTAIRE1-5, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE)-5, DessinPerso.TAILLE_CASE+5, DessinPerso.TAILLE_CASE+5);
+			g.drawRect(CASE_INVENTAIRE2, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE)-5, DessinPerso.TAILLE_CASE+5, DessinPerso.TAILLE_CASE+5);
+			g.drawRect(CASE_INVENTAIRE3+5, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE)-5, DessinPerso.TAILLE_CASE+5, DessinPerso.TAILLE_CASE+5);   
+			for (int i = 0; i<this.inventaire.size();i++) {
+				this.inventaire.get(i).dessinerInventaire(g,i);
 			}
     	}catch(FileNotFoundException e){
     		e.getStackTrace();

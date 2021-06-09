@@ -24,4 +24,22 @@ public class Amulette extends Objet {
     		f.getStackTrace();
     	}
 	}
+    
+    public void dessinerInventaire(Graphics2D g,int x) {
+    	try {
+    		int position = 0;
+        	switch(x) {
+        	case 0 : position = Personnage.CASE_INVENTAIRE1;break;
+        	case 1 : position = Personnage.CASE_INVENTAIRE2;break;
+        	case 2 : position = Personnage.CASE_INVENTAIRE3;break;
+        	default : break;
+        	}
+    		BufferedImage im = ImageIO.read(new File("./sprites/amulet.png"));
+    		g.drawImage(im,position, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE),null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+    }
 }
