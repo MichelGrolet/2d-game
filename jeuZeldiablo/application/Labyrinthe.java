@@ -153,7 +153,7 @@ public class Labyrinthe {
 											 };
 				for(int j=0;j<TAILLE;j++){
 					for(int i=0;i<TAILLE;i++){
-						switch(pattern[i][j]){
+						switch(pattern[j][i]){
 							case 'm':
 								this.cases[i][j]=new Mur(i,j);
 								break;
