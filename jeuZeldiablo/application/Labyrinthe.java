@@ -151,8 +151,8 @@ public class Labyrinthe {
 											 {'m','s','s','s','s','s','f','m','m','s','s','s','s','s','s','s','m','s','s','f','m'},
 											 {'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'}
 											 };
-				for(int i=0;i<TAILLE;i++){
-					for(int j=0;j<TAILLE;j++){
+				for(int j=0;i<TAILLE;i++){
+					for(int i=0;j<TAILLE;j++){
 						switch(pattern[i][j]){
 							case 'm':
 								this.cases[i][j]=new Mur(i,j);
