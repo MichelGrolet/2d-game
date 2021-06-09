@@ -32,21 +32,26 @@ class Sol extends Case {
     - active : boolean
     + dessiner(Graphics2D g)
     + void getActive()
+    + void declencherEffet(Personnage p)
 }
 
 abstract class CaseSpeciale extends Sol {
     + {abstract} void effet()
-    + declencherEffet()
+    + void declencherEffet(Personnage p)
      + void dessiner(Graphics2D g)
 }
 
 class CasePiege extends CaseSpeciale {
-     + void effet()
+    - {static} int DEGATS
+    + void effet()
+    + void declencherEffet(Personnage p)
      + void dessiner(Graphics2D g)
 }
 
 class CaseForce extends CaseSpeciale {
+    - {static} int BOOST
      + void effet()
+    + void declencherEffet(Personnage p)
      + void dessiner(Graphics2D g)
 }
 
@@ -59,6 +64,7 @@ class Entite {
     + void attaquer(Entite e)
     + void subirDegats()
     + boolean etreMort()
+    + int getPuissance()
     + int getPv()
     + int getX()
     + int getY()
@@ -78,6 +84,7 @@ class Personnage extends Entite {
 
 class Monstre extends Entite {
     - vitesse : int
+    + int getVitesse()
     + Monstre(int x, int y)
     + void seDeplacer(ArrayList<Case> libres, Personnage p)
 }
@@ -141,11 +148,22 @@ class Objet {
     + int getX()
     + int getY()
     + void setPersonnage(Personnage p)
-    + void dessiner(BufferedImage im)
+    + void dessiner(Graphics2D g)
+    + void dessinerInventaire(Graphics2D g)
+}
+
+class CreerPattern {
+    - char[][] : pattern1
+    - char[][] : pattern2
+    - char[][] : pattern3
+    + CreerPattern(pattern1, pattern2, pattern3)
+    + void genererPattern()
+    + void main()
 }
 
 class Amulette extends Objet {
-    + void dessiner(BufferedImage im)
+    + void dessiner(Graphics2D g)
+    + void dessinerInventaire(Graphics2D g)
 }
 
 Personnage "0..*" -> "1" Objet : - inventaire
