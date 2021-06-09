@@ -1,0 +1,20 @@
+@startuml
+
+autonumber
+participant "p: Personnage" as p
+participant "o: Objet" as o
+participant "inventaire: Arraylist<Objet>" as i
+-> p : ramasserObjet(o)
+activate p
+p -> o : setPersonnage(p)
+activate o
+o --> p :
+deactivate o
+p -> i : add(o)
+activate i
+i --> p:
+deactivate i
+<-- p :
+deactivate p
+
+@enduml

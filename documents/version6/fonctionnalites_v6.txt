@@ -14,4 +14,14 @@
     - l'objet peut être dans l'inventaire
     - on doit pouvoir ramasser l'amulette
 
-- [] fonctionnalité 3 : 
+- [Theo] fonctionnalité 3 : Ajout des sprites
+  - Ajouter des sprites pour tous les éléments : personnage, monstres, murs, sol, objets, pièges.
+  - Critères de validation :
+    - chaque objet doit avoir son sprite
+    - les sprites doivent etre visibles sur le terrain
+
+RESPONSABLES CLASSES
+  - Louis : Personnage
+  - Michel : Objet - Amulette
+  - Theo  : Methodes dessiner dans plusieurs classes
+  - Gabin : Labyrinthe

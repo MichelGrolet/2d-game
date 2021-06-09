@@ -73,6 +73,7 @@ class Personnage extends Entite {
     + Personnage()
     + String toString()
     + void seDeplacer(Commande c)
+    + void ramasserObjet(Objet o)
 }
 
 class Monstre extends Entite {
@@ -122,7 +123,8 @@ class JeuPerso implements Jeu {
 }
 JeuPerso "1" --> "1" Labyrinthe : - labyrinthe
 JeuPerso "1" --> "1" Personnage : - pj
-JeuPerso "1" --> "*" Monstre : - monstres
+JeuPerso "1" --> "0..*" Monstre : - monstres
+JeuPerso "1" --> "0..*" Objet : - objets
 
 class DessinPerso implements DessinJeu {
     - {static} int tailleCase
@@ -131,5 +133,22 @@ class DessinPerso implements DessinJeu {
     + void dessiner(BufferedImage im)
 }
 DessinPerso "1" -> "1" JeuPerso : - jeu
+
+class Objet {
+    - x : int
+    - y : int
+    + Objet(int x, int y)
+    + int getX()
+    + int getY()
+    + void setPersonnage(Personnage p)
+    + void dessiner(BufferedImage im)
+}
+
+class Amulette extends Objet {
+    + void dessiner(BufferedImage im)
+}
+
+Personnage "0..*" -> "1" Objet : - inventaire
+Objet "0..1" -> "1" Personnage : p
 
 @enduml
