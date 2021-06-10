@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 public abstract class Entite {
@@ -36,68 +37,8 @@ public abstract class Entite {
 	    this.puissance = 1;
 	}
 	
-   /**
-    * Retourne la coordonnee x de l'entite
-    * @return un entier
-    */
-    public int getX(){
-        return this.x;
-    }
-
-    /**
-    * Retourne la coordonnee y de l'entite
-    * @return un entier
-    */
-    public int getY(){
-        return this.y;
-    }
-    
-    /**
-     * retourne les pv de l'entite
-     * @return un entier
-     */
-    public int getPv() {
-    	return this.pv;
-    }
-    
-    /**
-     * retourne la puissance de l'entite
-     * @return un entier
-     */
-    public int getPuissance() {
-    	return this.puissance;
-    }
-    
-    /**
-     * Permet de modifier la coordonnee x de l'entite
-     * @param x la nouvelle coordonnee x pour l'entite
-     */
-     public void setX(int x){
-         //Si le parametre est negatif, on ne change pas l'attribut
-         if(x>=0){
-             this.x=x;
-         }
-     }
-
-     /**
-     * Permet de modifier la coordonnee y de l'entite
-     * @param y la nouvelle coordonnee y pour l'entite
-     */
-     public void setY(int y){
-         //Si le parametre est negatif, on ne change pas l'attribut
-         if(y>=0){
-             this.y=y;
-         }
-     }
-     
-     /**
-      * permet de modifier la puissanece de l'entite
-      * @param p la nouvelle puissance
-      */
-     public void setPuissance(int p) {
-    	 this.puissance = p;
-     }
-     
+	 // methodes utiles
+	
      /**
       * fait subir des degats a l'entite si ses pv sont superieur a 0
       * @param d les degats subit par l'entite
@@ -157,4 +98,71 @@ public abstract class Entite {
     	 }
     	 return res;
      }
+     
+     public abstract void dessiner(Graphics2D g);
+     //getters
+     
+     /**
+      * Retourne la coordonnee x de l'entite
+      * @return un entier
+      */
+      public int getX(){
+          return this.x;
+      }
+
+      /**
+      * Retourne la coordonnee y de l'entite
+      * @return un entier
+      */
+      public int getY(){
+          return this.y;
+      }
+      
+      /**
+       * retourne les pv de l'entite
+       * @return un entier
+       */
+      public int getPv() {
+      	return this.pv;
+      }
+      
+      /**
+       * retourne la puissance de l'entite
+       * @return un entier
+       */
+      public int getPuissance() {
+      	return this.puissance;
+      }
+      
+      //setters
+      
+      /**
+       * Permet de modifier la coordonnee x de l'entite
+       * @param x la nouvelle coordonnee x pour l'entite
+       */
+       public void setX(int x){
+           //Si le parametre est negatif, on ne change pas l'attribut
+           if(x>=0){
+               this.x=x;
+           }
+       }
+
+       /**
+       * Permet de modifier la coordonnee y de l'entite
+       * @param y la nouvelle coordonnee y pour l'entite
+       */
+       public void setY(int y){
+           //Si le parametre est negatif, on ne change pas l'attribut
+           if(y>=0){
+               this.y=y;
+           }
+       }
+       
+       /**
+        * permet de modifier la puissanece de l'entite
+        * @param p la nouvelle puissance
+        */
+       public void setPuissance(int p) {
+      	 this.puissance = p;
+       }
 }

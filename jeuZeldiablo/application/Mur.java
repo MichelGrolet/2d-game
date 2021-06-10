@@ -25,6 +25,10 @@ public class Mur extends Case{
         this.libre=false;
     }
     
+    /**
+     * permet de dessiner le mur
+     * @param g, ou on dessine
+     */
     public void dessiner(Graphics2D g) {
     	try {
     		BufferedImage im = ImageIO.read(new File("./sprites/wall.png"));

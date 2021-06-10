@@ -87,7 +87,8 @@ public class CreerPattern implements Serializable{
 											{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'}
 											};
 
-        char[][] c3={{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'},
+        char[][] c3={
+        									{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'},
 											{'m','s','s','s','s','m','m','m','m','p','s','s','s','m','m'},
 											{'m','s','m','m','s','s','s','f','s','s','m','m','s','m','m'},
 											{'m','s','m','m','m','p','m','m','m','s','m','m','s','m','m'},

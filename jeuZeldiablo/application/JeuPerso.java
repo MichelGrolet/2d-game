@@ -172,18 +172,29 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public String toString() {
 		return this.perso.toString()+"\n";
 	}
-
+	
 	@Override
+	/**
+	 * permet de savoir si les conditions pour finir sont remplis
+	 * @return true si et seulement le jeu est fini
+	 */
 	public boolean etreFini() {
-		// TODO Auto-generated method stub
 		return this.perso.etreMort() || this.objets.isEmpty();
 	}
 
+	/**
+	 * retourne la liste d'objets
+	 * @return la liste d'objets
+	 */
 	public ArrayList<Objet> getObjets() {
 		return objets;
 	}
 
 	@Override
+	/**
+	 * permet de faire evoluer le jeu
+	 * @param la commande fait par l'utilisateur
+	 */
 	public void evoluer(Commande commandeUser) {
 		if(!this.etreFini()) {
 			this.getPersonnage().seDeplacer(commandeUser, this.getPersonnage().deplacementAutour(this));

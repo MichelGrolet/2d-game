@@ -10,9 +10,7 @@ import javax.imageio.ImageIO;
 import moteurJeu.moteur.*;
 
 /**
- * un afficheur graphique associe au JeuTest fourni
- *
- * @author vthomas
+ * un afficheur graphique
  */
 public class DessinPerso implements DessinJeu {
 

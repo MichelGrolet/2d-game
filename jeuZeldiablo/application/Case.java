@@ -70,6 +70,11 @@ public class Case {
         return this.y;
     }
     
+    /**
+     * compare deux cases
+     * @param c, la case a comparer
+     * @return true si et seulement si les deux cases sont identiques
+     */
     public boolean equals(Case c) {
     	return(c.getX( )== this.x && c.getY() == this.y);
     }
