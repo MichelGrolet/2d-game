@@ -72,5 +72,14 @@ public class DessinPerso implements DessinJeu {
 		
 		//Dessiner l'inventaire
 		jeu.getPersonnage().dessinerInventaire(crayon);
+		
+		//Dessiner fin du jeu
+		if(jeu.etreFini()) {
+			if(jeu.getPersonnage().etreMort()) {
+				jeu.dessinFinPerdu(crayon);
+			}else {
+				jeu.dessinFinGagner(crayon);
+			}
+		}
 	}
 }
