@@ -46,7 +46,7 @@ public class Personnage extends Entite{
      */
     public void dessiner(Graphics2D g) {
     	try {
-    		BufferedImage im = ImageIO.read(new File("./sprites/perso2.png"));
+    		BufferedImage im = ImageIO.read(new File("./sprites/perso.png"));
     		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
     	}catch(FileNotFoundException e){
     		e.getStackTrace();

@@ -60,8 +60,14 @@ public class CasePiege extends CaseSpeciale{
         	}
         }
         else{
-            g.setColor(Color.GRAY);
-            g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
+            try {
+                BufferedImage im = ImageIO.read(new File("./sprites/trap.png"));
+                g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+            }catch(FileNotFoundException e){
+                e.getStackTrace();
+            }catch(IOException f) {
+                f.getStackTrace();
+            }
         }
     }
 }

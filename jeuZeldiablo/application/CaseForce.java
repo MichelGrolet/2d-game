@@ -60,8 +60,14 @@ public class CaseForce extends CaseSpeciale{
         	}
         }
         else{
-            g.setColor(Color.PINK);
-            g.fillRect(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE);
+            try {
+                BufferedImage im = ImageIO.read(new File("./sprites/force.png"));
+                g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+            }catch(FileNotFoundException e){
+                e.getStackTrace();
+            }catch(IOException f) {
+                f.getStackTrace();
+            }
         }
     }
 }
