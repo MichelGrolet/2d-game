@@ -50,7 +50,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		this.lab = new Labyrinthe();
 		this.lab.genererMur();
 		this.monstres = new ArrayList<>();
-		this.genererMonstres(3);
+		this.genererMonstres(5);
 		this.timer = 0;
 		this.objets = new ArrayList<>();
 		objets.add(new Amulette(10, 13));
@@ -100,6 +100,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				this.monstres.add(m);
 				res = true;
 			}
+			i++;
 		}
 		return res;
 	}
