@@ -1,6 +1,12 @@
 package test;
 
 import application.*;
+import entite.Entite;
+import entite.Monstre;
+import entite.Personnage;
+import objet.Amulette;
+import objet.Objet;
+
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;

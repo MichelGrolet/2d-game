@@ -1,4 +1,4 @@
-package application;
+package labyrinthe;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -7,6 +7,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+
+import entite.*;
+import application.*;
+import objet.*;
 
 /**
 * Classe representant du sol

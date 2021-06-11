@@ -1,9 +1,21 @@
 package application;
 
 import moteurJeu.moteur.Commande;
+import objet.Amulette;
+import objet.Objet;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import entite.Fantome;
+import entite.Gobelin;
+import entite.Monstre;
+import entite.Orc;
+import entite.Personnage;
+import labyrinthe.Case;
+import labyrinthe.Labyrinthe;
+import labyrinthe.Sol;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

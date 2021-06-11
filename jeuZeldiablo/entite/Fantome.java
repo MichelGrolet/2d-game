@@ -1,13 +1,13 @@
-package application;
+package entite;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
-
 import javax.imageio.ImageIO;
+
+import application.*;
+import labyrinthe.*;
 
 public class Fantome extends Monstre {
 

@@ -1,4 +1,4 @@
-package application;
+package labyrinthe;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -7,19 +7,22 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import entite.*;
+import application.*;
+import objet.*;
 
 /**
 * Classe abstraite representant une case speciale(piege,boost,etc...)
 */
-public class CaseForce extends CaseSpeciale{
-    private static final int BOOST=2;
+public class CasePiege extends CaseSpeciale{
+    private static final int DEGATS=4;
 
     /**
     * Constructeur heritant de celui de CaseSpeciale
     * @param x coordonnee x de la case
     * @param y coordonnee y de la case
     */
-    public CaseForce(int x,int y){
+    public CasePiege(int x,int y){
         super(x,y);
     }
 
@@ -28,7 +31,7 @@ public class CaseForce extends CaseSpeciale{
     * @param joueur le joueur qui subit l'effet
     */   
     public void declencherEffet(Personnage joueur){
-        //Si elle n'est active, on active l'effet de la classe et on desactive la case
+        //Si la case n'est pas activee, on active l'effet de la classe et on desactive la case
         if(!active){
             effet(joueur);
             this.active=true;
@@ -40,7 +43,7 @@ public class CaseForce extends CaseSpeciale{
     * @param joueur le joueur qui subit l'effet
     */
     public void effet(Personnage joueur){
-        joueur.setPuissance(joueur.getPuissance()+BOOST);
+        joueur.subirDegats(DEGATS);
     }
 
     /**
@@ -61,7 +64,7 @@ public class CaseForce extends CaseSpeciale{
         }
         else{
             try {
-                BufferedImage im = ImageIO.read(new File("./sprites/force.png"));
+                BufferedImage im = ImageIO.read(new File("./sprites/trap.png"));
                 g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
             }catch(FileNotFoundException e){
                 e.getStackTrace();

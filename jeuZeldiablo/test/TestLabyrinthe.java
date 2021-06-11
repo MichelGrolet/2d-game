@@ -1,6 +1,9 @@
 package test;
 
 import application.*;
+import labyrinthe.Labyrinthe;
+import labyrinthe.Sol;
+
 import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;

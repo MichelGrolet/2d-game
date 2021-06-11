@@ -1,6 +1,8 @@
 package test;
 
 import application.*;
+import entite.Orc;
+
 import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
@@ -12,14 +14,14 @@ public class TestJeuPerso {
 	
 	@Test
 	public void testGenererMonstre() throws FileNotFoundException, ClassNotFoundException, IOException {
-		JeuPerso j = new JeuPerso(0);
+		JeuPerso j = new JeuPerso();
 		j.genererMonstres(1);
 		assertNotNull("le jeu devrait contenir un monstre",j.getMonstres().get(0));
 	}
 	
 	@Test
 	public void testGenererMonstreNegatif() throws FileNotFoundException, ClassNotFoundException, IOException {
-		JeuPerso j = new JeuPerso(0);
+		JeuPerso j = new JeuPerso();
 		System.out.println(j.getCasesLibres().size());
 		j.genererMonstres(-1);
 		assertNotNull("le jeu devrait contenir 0 monstres",j.getMonstres().get(0));
@@ -28,7 +30,7 @@ public class TestJeuPerso {
 	
 	@Test
 	public void faireApparaitreBon() throws FileNotFoundException, ClassNotFoundException, IOException {
-		JeuPerso j = new JeuPerso(0);
+		JeuPerso j = new JeuPerso();
 		Orc m = new Orc(2,1);
 		boolean res = j.faireApparaitre(m);
 		

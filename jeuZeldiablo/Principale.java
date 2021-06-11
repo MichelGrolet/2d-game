@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 import application.*;
+import labyrinthe.Labyrinthe;
+
 import java.io.*;
 import moteurJeu.moteur.MoteurGraphique;
 

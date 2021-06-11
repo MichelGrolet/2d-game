@@ -1,4 +1,4 @@
-package application;
+package labyrinthe;
 
 import java.io.*;
 import java.util.ArrayList;
