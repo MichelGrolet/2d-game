@@ -1,7 +1,8 @@
 package moteurJeu.moteur;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
+import java.io.*;
+
 
 /**
  * classe MoteurGraphique represente un moteur de jeu generique. On lui passe un
@@ -52,7 +53,9 @@ public class MoteurGraphique {
 	 * @throws ClassNotFoundException 
 	 * @throws FileNotFoundException 
 	 */
+
 	public void lancerJeu(int width, int height) throws InterruptedException, FileNotFoundException, ClassNotFoundException, IOException {
+
 
 		// creation de l'interface graphique
 		this.gui = new InterfaceGraphique(this.dessin, width, height);

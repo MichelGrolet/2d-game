@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import java.io.*;
 
 /**
  * cree une interface graphique avec son controleur et son afficheur.
@@ -72,6 +73,7 @@ public class InterfaceGraphique {
 	 * @throws FileNotFoundException 
 	 */
 	public void dessiner() throws FileNotFoundException, ClassNotFoundException, IOException {
+
 		this.panel.dessinerJeu();
 	}
 

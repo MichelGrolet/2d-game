@@ -3,8 +3,8 @@ package moteurJeu.moteur;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+
 
 import javax.swing.JPanel;
 
@@ -73,6 +73,7 @@ public class PanelDessin extends JPanel {
 	 * @throws ClassNotFoundException 
 	 * @throws FileNotFoundException 
 	 */
+
 	public void dessinerJeu() throws FileNotFoundException, ClassNotFoundException, IOException {
 		// generer la nouvelle image
 		this.dessin.dessiner(this.imageSuivante);
