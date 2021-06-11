@@ -107,11 +107,11 @@ public class Labyrinthe {
 
 		//On le charge
 		ObjectInputStream fich=new ObjectInputStream(new FileInputStream(nomFichier));
-		char[][] pattern1=(char[][])(fich.readObject());
+		char[][] pattern=(char[][])(fich.readObject());
 		fich.close();
 		for(int j=0;j<TAILLE;j++){
 			for(int i=0;i<TAILLE;i++){
-				switch(pattern1[j][i]){
+				switch(pattern[j][i]){
 					case 'm':
 						this.cases[i][j]=new Mur(i,j);
 						break;
@@ -128,7 +128,9 @@ public class Labyrinthe {
 						this.cases[i][j]=new CasePiege(i,j);
 						break;
 				}
+				System.out.print(pattern[i][j]);
 			}
+			System.out.println();
 		}
 	}
 
