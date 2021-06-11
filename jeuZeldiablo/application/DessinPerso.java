@@ -58,7 +58,7 @@ public class DessinPerso implements DessinJeu {
 		// Dessine le personnage
 		if(jeu.getPersonnage().etreMort()) {
 			jeu.getPersonnage().dessinerMort(crayon);
-		}else if(jeu.attaque){
+		}else if(jeu.getPersonnage().getAttaque()){
 			jeu.getPersonnage().dessinerAttaque(crayon);
 		}else {
 			jeu.getPersonnage().dessiner(crayon);
@@ -78,7 +78,11 @@ public class DessinPerso implements DessinJeu {
 			if(jeu.getPersonnage().etreMort()) {
 				jeu.dessinFinPerdu(crayon);
 			}else {
-				jeu.dessinFinGagner(crayon);
+				if (jeu.getLabyrinthe().getNiveau() == 3) {
+					jeu.dessinFinGagner(crayon);
+				} else {
+					jeu.changerNiveau();
+				}
 			}
 		}
 	}

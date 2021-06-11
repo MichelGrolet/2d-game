@@ -17,7 +17,15 @@ import moteurJeu.moteur.Commande;
  */
 public class Personnage extends Entite{
 
+	/**
+	 * iventaire su personnage
+	 */
 	private ArrayList<Objet> inventaire;
+	
+	/**
+	 * atribut qui permet de savoir quand un personnage attaque
+	 */
+	private boolean attaque;
 
    
 	
@@ -38,6 +46,14 @@ public class Personnage extends Entite{
 
     public String toString() {
     	return("Le personage est en "+this.getX()+", "+this.getY());
+    }
+    
+    public boolean getAttaque() {
+    	return attaque;
+    }
+    
+    public void SetAttaque(boolean b) {
+    	attaque = b;
     }
     
     /**
