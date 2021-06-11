@@ -1,6 +1,11 @@
 package application;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Orc extends Monstre {
 
@@ -17,7 +22,13 @@ public class Orc extends Monstre {
     }
 
     public void dessiner(Graphics2D g) {
-        g.setColor(Color.decode("#592b00"));
-        g.fillArc(x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, DessinPerso.TAILLE_CASE, 0, 360);
+        try {
+            BufferedImage im = ImageIO.read(new File("./sprites/orc.png"));
+            g.drawImage(im,this.x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+        }catch(FileNotFoundException e){
+            e.getStackTrace();
+        }catch(IOException f) {
+            f.getStackTrace();
+        }
     }
 }

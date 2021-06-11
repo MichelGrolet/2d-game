@@ -1,6 +1,16 @@
 package application;
 
-import moteurJeu.moteur.*;
+import moteurJeu.moteur.Commande;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
@@ -35,10 +45,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	 * Constructeur du personnage
 	 */
-	public JeuPerso(int niveau) {
+	public JeuPerso(int niveau) throws FileNotFoundException,IOException,ClassNotFoundException{
 		this.perso = new Personnage(1,1);
 		this.lab = new Labyrinthe();
-		this.lab.genererMur(niveau);
+		this.lab.genererMur();
 		this.monstres = new ArrayList<>();
 		this.genererMonstres(3);
 		this.timer = 0;
@@ -181,6 +191,34 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public boolean etreFini() {
 		return this.perso.etreMort() || this.objets.isEmpty();
 	}
+	
+	public void dessinFinPerdu(Graphics2D g) {
+		try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/gameover.png"));
+    		g.drawImage(im,40, 300,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+	}
+	
+	public void dessinFinGagner(Graphics2D g) {
+		try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/victory.png"));
+    		g.drawImage(im,40, 300,null);
+			JButton b = new JButton("Passer au niveau suivant");
+			b.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JeuPerso.this.changerNiveau();
+				}
+			});
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+	}
 
 	/**
 	 * retourne la liste d'objets
@@ -224,5 +262,9 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				}
 			}
 		}
+	}
+
+	public void changerNiveau() {
+
 	}
 }
