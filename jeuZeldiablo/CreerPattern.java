@@ -1,4 +1,4 @@
-package application;
+
 
 import java.io.*;
 
@@ -39,11 +39,11 @@ public class CreerPattern implements Serializable{
         fich1.close();
 
         ObjectOutputStream fich2=new ObjectOutputStream(new FileOutputStream("p2.txt"));
-        fich2.writeObject(pattern1);
+        fich2.writeObject(pattern2);
         fich2.close();
 
         ObjectOutputStream fich3=new ObjectOutputStream(new FileOutputStream("p3.txt"));
-        fich3.writeObject(pattern1);
+        fich3.writeObject(pattern3);
         fich3.close();
     }
 
