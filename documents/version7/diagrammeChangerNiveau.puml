@@ -1,0 +1,11 @@
+@startuml
+participant "j: JeuPerso" as j
+participant "l: Labyrinthe" as l
+
+-> j : evoluer(c : Commande)
+activate j
+j -> j : changerNiveau()
+
+j -> l : genererMur()
+<-- l
+@enduml
