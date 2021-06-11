@@ -1,5 +1,6 @@
 package application;
 
+import java.io.*;
 import moteurJeu.moteur.*;
 import java.util.ArrayList;
 
@@ -35,10 +36,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	 * Constructeur du personnage
 	 */
-	public JeuPerso(int niveau) {
+	public JeuPerso(int niveau) throws FileNotFoundException,IOException,ClassNotFoundException{
 		this.perso = new Personnage(1,1);
 		this.lab = new Labyrinthe();
-		this.lab.genererMur(niveau);
+		this.lab.genererMur();
 		this.monstres = new ArrayList<>();
 		this.genererMonstres(3);
 		this.timer = 0;
