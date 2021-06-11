@@ -1,0 +1,36 @@
+@startuml
+participant "Dp: DessinPerso" as dp
+participant "jeu: JeuPerso" as j
+participant "p: Personnage" as pe
+
+-> dp: dessiner(im)
+activate dp
+dp -> j: etrefini()
+activate j
+j --> dp: fin
+deactivate j
+alt fin
+ dp -> j: getPersonnage()
+ activate j
+ j --> dp: p
+ deactivate j
+ dp -> p: etrMort()
+ activate p
+ p --> dp: mort()
+ deactivate p
+ alt mort
+  dp -> j: dessinerFinPerdue()
+  activate j
+  j --> dp:
+  deactivate j
+ else non mort
+  dp -> j: dessinerFinGagner()
+  activate j
+  j --> dp:
+  deactivate j
+ end
+else
+end
+<-- dp:
+deactivate dp
+@enduml
