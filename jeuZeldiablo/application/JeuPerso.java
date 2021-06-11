@@ -194,7 +194,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public void dessinFinPerdu(Graphics2D g) {
 		try {
     		BufferedImage im = ImageIO.read(new File("./sprites/gameover.png"));
-    		g.drawImage(im,300, 300,null);
+    		g.drawImage(im,40, 300,null);
     	}catch(FileNotFoundException e){
     		e.getStackTrace();
     	}catch(IOException f) {
@@ -205,7 +205,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	public void dessinFinGagner(Graphics2D g) {
 		try {
     		BufferedImage im = ImageIO.read(new File("./sprites/victory.png"));
-    		g.drawImage(im,300, 300,null);
+    		g.drawImage(im,40, 300,null);
     	}catch(FileNotFoundException e){
     		e.getStackTrace();
     	}catch(IOException f) {
