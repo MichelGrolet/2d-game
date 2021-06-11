@@ -1,24 +1,25 @@
-* Fonctionnalités version 5
+* Fonctionnalités version 6
 
 - [gabin] fonctionnalité 1 : Création d'un bon labyrinthe avec un pattern intéressant
   - labyrinthe intéressant à jouer stocké dans le tableau cases[][].
   - critères de validation :
-    - on doit pouvoir choisir parmi plusieurs labyrinthes améliorés
-    - il faut qu'on puisse aller partout
+    - 1 : on doit pouvoir choisir parmi plusieurs labyrinthes améliorés
+    - 2 : il faut que la totalité du labyrinthe soit accesible
 
 - [michel & louis] fonctionnalité 2 : Implémenter des objets
   - Ajouter un objet amulette qui permet de gagner quand elle est attrapée
   - créer un inventaire simple
   - critères de validation :
-    - l'objet apparaît dans le labyrinthe
-    - l'objet peut être dans l'inventaire
-    - on doit pouvoir ramasser l'amulette
+    - 1 : l'objet apparaît dans le labyrinthe
+    - 2 : l'objet peut être stocké dans l'inventaire
+    - 3 : on doit pouvoir ramasser l'amulette
 
 - [Theo] fonctionnalité 3 : Ajout des sprites
   - Ajouter des sprites pour tous les éléments : personnage, monstres, murs, sol, objets, pièges.
   - Critères de validation :
-    - chaque objet doit avoir son sprite
-    - les sprites doivent etre visibles sur le terrain
+    - 1 : Chaque objet doit avoir son sprite
+    - 2 : les sprites doivent etre visibles sur le terrain
+    - 3 : rajouter éventuellemnt des sprites différents pour montrer les actions (un différent sprite pour attaquer par exemple)
 
 RESPONSABLES CLASSES
   - Louis : Personnage

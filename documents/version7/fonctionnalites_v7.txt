@@ -1,21 +1,28 @@
 * Fonctionnalités version 7
 
-- [Louis et Michel] fonctionnalité 1 : Affichage Fin du jeu
-- afficher "fin du jeu" quand le personnage meurt ou quand le personnage récupère l'amulette
-    - Critères de validation :
-        - Texte "fin du jeu" quand le personnage meurt ou quand le personnage récupère l'amulette
-        - Le texte ne doit pas apparaitre dans d'autres circonstances
+ [Louis et Michel] Fonctionnalité 1 : Affichage Fin du jeu
+  - afficher "fin du jeu" quand le personnage meurt ou quand le personnage récupère l'amulette
+  - Critères de validation :
+    - 1 : Texte "fin du jeu" quand le personnage meurt ou quand le personnage récupère l'amulette
+    - 2 : Le texte ne doit pas apparaitre dans d'autres circonstances
 
-- [Gabin] fonctionnalité 2 : Téléportation entre les labyrinthes
-    - Critères de validation :
-        - affichage d'une case de téléportation
-        - téléportation quand on est sur la case de téléportation
-        - arrivée dans un autre pattern de labyrinthe
+[Gabin] Fonctionnalité 2 : Téléportation entre les labyrinthes
+  - le personnage doit changer de niveau quand il récupère l’amulette
+  - Critères de validation :
+    - 1 : affichage d'une case de téléportation
+    - 2 : téléportation quand on est sur la case de téléportation
+    - 3 : arrivée dans un autre pattern de labyrinthe
 
-- Préparation oral : Théo
-
+-[Théo] Finitions du projet 
+  - Dernieres modifications, création des documents de rendu, etc
+  - Critères de validation :
+    - 1 : ajout de la javadoc manquante dans certaines classes
+    - 2 : création du document de rendu
+    - 3 : Powerpoint
+    - 4 : ajout d’éléments graphiques (infos et détails supplémentaires affichés)
+    
 RESPONSABLES CLASSES
-  - Louis : JeuPerso
-  - Michel : DessinPerso
-  - Theo  : Methodes dessiner dans plusieurs classes
+  - Louis :  JeuPerso
+  - Michel : methodes dessiner
+  - Theo  : /
   - Gabin : Labyrinthe
