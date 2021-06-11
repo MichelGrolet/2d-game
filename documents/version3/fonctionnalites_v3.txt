@@ -1,24 +1,26 @@
 * Fonctionnalités version 3
 
-- fonctionnalité 1 : création du terrain et affichage responsables : Louis Gabin
+- fonctionnalité 1 : création du terrain et affichage responsables : Louis 
   - creation du terrain de jeu qui corrrespond a un labyrinthe.
   - critères de validation :
       - 1 : on doit pouvoir ouvrir une interface ou on voit le labyrinthe.
       - 2 : il y a des murs et des passages vides
       - 3 : le terrain mesure 10 x 10 cases
-  - création d'une case
+  
+ - fonctionnalité 2 : création d'une case Gabin
   - création de Mur et Sol
   - getters
   - critères de validation :
     - 1 : la case doit s'afficher dans le labyrinthe
-    - 2 : pattern défini
-    - 3 : case d'une couleur
+    - 2 : le pattern est défini préalablement
+    - 3 : la case est d'une bonne couleur
 
-- fonctionnalité 2 : création et génération des monstres responsables : Michel Théo
+- fonctionnalité 3 : création et génération des monstres responsables : Michel Théo
   - critères de validation :
-    - 1 : la case doit s'afficher dans le labyrinthe
-    - 2 : pattern défini
-    - 3 : case d'une couleu
+    - 1 : les monstres doivent s'afficher dans le niveau
+    - 2 : ils doivent apparaitre sur une case innocupée
+    - 3 : ils doivent apparaitre sur une case accesible
+    - 4 : plusieurs monsres doivent apparaitre
 
 
   
