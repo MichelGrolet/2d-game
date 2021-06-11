@@ -107,7 +107,11 @@ public class Personnage extends Entite{
      */
     public void dessinerInventaire(Graphics2D g) {
     	try {
+    		//dessine le fond 
+    		g.setColor(Color.decode("#d6d4d6"));
+    		g.fillRect(Labyrinthe.TAILLE*DessinPerso.TAILLE_CASE,0,(Labyrinthe.TAILLE+5)*DessinPerso.TAILLE_CASE,Labyrinthe.TAILLE*DessinPerso.TAILLE_CASE);
     		//dessine les pv
+    		g.setColor(Color.BLACK);
     		g.drawRect(CASE_INVENTAIRE1-5, Labyrinthe.TAILLE+3*(DessinPerso.TAILLE_CASE)-5,DessinPerso.TAILLE_CASE*3+15, DessinPerso.TAILLE_CASE-30);
     		g.setColor(Color.RED);
     		g.fillRect(CASE_INVENTAIRE1-4, Labyrinthe.TAILLE+3*(DessinPerso.TAILLE_CASE)-4,(int)((DessinPerso.TAILLE_CASE*3+14)*(((double)this.pv)/10)), DessinPerso.TAILLE_CASE-31);
