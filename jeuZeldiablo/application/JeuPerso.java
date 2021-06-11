@@ -274,8 +274,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		switch (lab.getNiveau()) {
 			case 2:
 				objets.add(new Amulette(13, 13));
+				break;
 			case 3:
 				objets.add(new Amulette(4, 9));
+				break;
 		}
 	}
 }
