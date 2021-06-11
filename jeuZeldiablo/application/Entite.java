@@ -49,7 +49,6 @@ public abstract class Entite {
     	 }else {
     		 this.pv = this.pv-d;
     	 }
-    	 System.out.println(this.pv);
      }
      
      /**
