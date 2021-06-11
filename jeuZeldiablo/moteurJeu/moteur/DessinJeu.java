@@ -1,5 +1,6 @@
 package moteurJeu.moteur;
 
+import java.io.*;
 import java.awt.image.BufferedImage;
 
 /**
@@ -16,6 +17,6 @@ public interface DessinJeu {
 	 * @param image
 	 *            image sur laquelle dessiner
 	 */
-	public abstract void dessiner(BufferedImage image);
+	public abstract void dessiner(BufferedImage image) throws FileNotFoundException,IOException,ClassNotFoundException;
 
 }

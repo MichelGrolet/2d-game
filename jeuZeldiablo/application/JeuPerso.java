@@ -17,7 +17,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	* Personnage principal
 	*/
-	private final Personnage perso;
+	private Personnage perso;
 
 	/**
 	* Le terrain dans lequel evolue les entites
@@ -263,7 +263,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 * Regenere les coordonnees du personnage,
 	 * Regenere les murs les monstres le timer et les objets
 	 */
-	public void changerNiveau() {
+	public void changerNiveau() throws FileNotFoundException,IOException,ClassNotFoundException{
 		this.perso = new Personnage(1, 1);
 		this.lab.genererMur();
 		this.monstres = new ArrayList<>();
