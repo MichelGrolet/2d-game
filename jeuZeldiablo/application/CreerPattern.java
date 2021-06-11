@@ -34,15 +34,16 @@ public class CreerPattern implements Serializable{
     * Stocke les tableau dans des fichiers texte
     */
     public void genererPattern() throws FileNotFoundException,IOException{
-        ObjectOutputStream fich1=new ObjectOutputStream(new FileOutputStream("../p1.txt"));
+		//On creer trois fichiers texte avec chacun un pattern
+        ObjectOutputStream fich1=new ObjectOutputStream(new FileOutputStream("../patterns/p1.txt"));
         fich1.writeObject(pattern1);
         fich1.close();
 
-        ObjectOutputStream fich2=new ObjectOutputStream(new FileOutputStream("../p2.txt"));
+        ObjectOutputStream fich2=new ObjectOutputStream(new FileOutputStream("../patterns/p2.txt"));
         fich2.writeObject(pattern2);
         fich2.close();
 
-        ObjectOutputStream fich3=new ObjectOutputStream(new FileOutputStream("../p3.txt"));
+        ObjectOutputStream fich3=new ObjectOutputStream(new FileOutputStream("../patterns/p3.txt"));
         fich3.writeObject(pattern3);
         fich3.close();
     }
@@ -104,6 +105,7 @@ public class CreerPattern implements Serializable{
 											{'m','s','s','f','s','s','m','m','m','m','m','s','s','s','m'},
 											{'m','m','m','m','m','m','m','m','m','m','m','m','m','m','m'}
 											};
+											
         CreerPattern c=new CreerPattern(c1,c2,c3);
 
         c.genererPattern();

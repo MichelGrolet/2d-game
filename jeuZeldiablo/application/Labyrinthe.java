@@ -24,7 +24,7 @@ public class Labyrinthe {
 	 * Creation d'un labyrinthe avec uniquement des cases de types sol
 	 */
 	public Labyrinthe() {
-		//Creer un tableau carre de 21x21
+		//Creer un tableau carre de TAILLE x TAILLE
 		this.cases = new Case[TAILLE][TAILLE];
 		for(int i=0; i<TAILLE; i++) {
 			for(int j=0; j<TAILLE; j++) {
@@ -58,7 +58,7 @@ public class Labyrinthe {
 	* Retourne une liste contenant les cases libres
 	* @return une liste de cases
 	*/
-	public ArrayList<Case> getCasesLibres() {
+	public ArrayList<Case> getCasesLibres(){
 		ArrayList<Case> lc = new ArrayList<Case>();
 		for(int i=0; i<TAILLE; i++) {
 			for(int j=0; j<TAILLE; j++) {
@@ -74,7 +74,6 @@ public class Labyrinthe {
 	/**
 	* Permet de generer les murs du labyrinthe,
 	* selon le schema choisi
-	* @param choix le pattern choisi
 	*/
 	public void genererMur() throws FileNotFoundException,IOException,ClassNotFoundException{
 		//On passe au niveau suivant
@@ -112,18 +111,22 @@ public class Labyrinthe {
 		for(int j=0;j<TAILLE;j++){
 			for(int i=0;i<TAILLE;i++){
 				switch(pattern[j][i]){
+					//Mur
 					case 'm':
 						this.cases[i][j]=new Mur(i,j);
 						break;
 
+					//Sol
 					case 's':
 						this.cases[i][j]=new Sol(i,j);
 						break;
 
+					//Case force
 					case 'f':
 						this.cases[i][j]=new CaseForce(i,j);
 						break;
 
+					//Piege
 					case 'p':
 						this.cases[i][j]=new CasePiege(i,j);
 						break;
