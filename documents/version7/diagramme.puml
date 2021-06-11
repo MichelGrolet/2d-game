@@ -1,12 +1,22 @@
 @startuml
 
-class Main
+class Principale {
+    + {static} void main()
+}
+
+class CreerPattern {
+    - char[][] : pattern1
+    - char[][] : pattern2
+    - char[][] : pattern3
+    + CreerPattern(pattern1, pattern2, pattern3)
+    + void genererPattern()
+    + {static} void main()
+}
 
 abstract class Monstre extends Entite {
     - vitesse : int
     + int getVitesse()
-    + Monstre(in
-    t x, int y)
+    + Monstre(int x, int y)
     + void seDeplacer(ArrayList<Case> libres, Personnage p)
 }
 
@@ -28,11 +38,13 @@ class Gobelin extends Monstre {
 
 class Labyrinthe {
     - {static} taille : int
+    - {static} niveau : int
     + Labyrinthe()
     + Case getCase(int x, int y)
     + ArrayList<Case> getCasesLibres()
     + void genererMurs(int choix)
     + Case[][] getTabCase()
+    + int getNiveau()
 }
 Labyrinthe "1" --> "*" Case : - cases
 
@@ -42,13 +54,14 @@ class Case {
     - libre : boolean
     + Case(int x, int y)
     + boolean : getLibre()
-    + boolean equals()
+    + boolean equals(Case c)
     + int : getX()
     + int : getY()
     + void dessiner(Graphics2D g)
 }
 
 class Mur extends Case {
+    + Mur(int x, int y)
     + dessiner(Graphics2D g)
 }
 
@@ -60,6 +73,7 @@ class Sol extends Case {
 }
 
 abstract class CaseSpeciale extends Sol {
+    + CaseSpeciale(int x, int y)
     + {abstract} void effet()
     + void declencherEffet(Personnage p)
      + void dessiner(Graphics2D g)
@@ -67,19 +81,19 @@ abstract class CaseSpeciale extends Sol {
 
 class CasePiege extends CaseSpeciale {
     - {static} int DEGATS
-    + void effet()
+    + CasePiege(int x, int y)
+    + void effet(Personnage p)
     + void declencherEffet(Personnage p)
-     + void dessiner(Graphics2D g)
+    + void dessiner(Graphics2D g)
 }
 
 class CaseForce extends CaseSpeciale {
     - {static} int BOOST
-     + void effet()
+    + CaseForce(int x, int y)
+    + void effet(Personnage p)
     + void declencherEffet(Personnage p)
-     + void dessiner(Graphics2D g)
+    + void dessiner(Graphics2D g)
 }
-
-class CaseTeleporteur extends CaseSpeciale
 
 abstract class Entite {
     - x : Int
@@ -117,9 +131,12 @@ class JeuPerso implements Jeu {
     + void deplacerMonstres()
     + void genererMonstres(int nbMonstres)
     + ArrayList<Case> getCasesLibres()
+    + ArrayList<Case> getCasesEntites()
     + Labyrinthe getLabyrinthe()
     + ArrayList<Monstre> getMonstres()
     + boolean faireApparaitre(Monstre m)
+    + void dessinFinGagner(Graphics2D g)
+    + void dessinFinPerdu(Graphics2D g)
     + void changerNiveau()
 }
 JeuPerso "1" --> "1" Labyrinthe : - labyrinthe
@@ -139,16 +156,8 @@ abstract class Objet {
 }
 Objet "0..1" -> "1" Personnage : p
 
-class CreerPattern {
-    - char[][] : pattern1
-    - char[][] : pattern2
-    - char[][] : pattern3
-    + CreerPattern(pattern1, pattern2, pattern3)
-    + void genererPattern()
-    + void main()
-}
-
 class Amulette extends Objet {
+    + Amulette(int x, int y)
     + void dessiner(Graphics2D g)
     + void dessinerInventaire(Graphics2D g)
 }
