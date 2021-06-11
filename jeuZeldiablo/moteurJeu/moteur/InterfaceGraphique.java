@@ -1,5 +1,8 @@
 package moteurJeu.moteur;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import javax.swing.JFrame;
 import java.io.*;
 
@@ -65,8 +68,12 @@ public class InterfaceGraphique {
 
 	/**
 	 * demande la mise a jour du dessin
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 * @throws FileNotFoundException 
 	 */
-	public void dessiner() throws FileNotFoundException,IOException,ClassNotFoundException{
+	public void dessiner() throws FileNotFoundException, ClassNotFoundException, IOException {
+
 		this.panel.dessinerJeu();
 	}
 
