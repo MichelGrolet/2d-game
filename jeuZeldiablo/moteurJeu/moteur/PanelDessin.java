@@ -3,6 +3,7 @@ package moteurJeu.moteur;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.*;
 
 import javax.swing.JPanel;
 
@@ -68,7 +69,7 @@ public class PanelDessin extends JPanel {
 	 * demande de mettre a jour le rendu de l'image sur le Panel. Creer une
 	 * nouvelle image vide sur laquelle dessiner
 	 */
-	public void dessinerJeu() {
+	public void dessinerJeu() throws FileNotFoundException,IOException,ClassNotFoundException{
 		// generer la nouvelle image
 		this.dessin.dessiner(this.imageSuivante);
 

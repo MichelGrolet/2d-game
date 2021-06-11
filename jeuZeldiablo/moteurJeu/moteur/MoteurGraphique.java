@@ -1,5 +1,7 @@
 package moteurJeu.moteur;
 
+import java.io.*;
+
 /**
  * classe MoteurGraphique represente un moteur de jeu generique. On lui passe un
  * jeu et un afficheur et il permet d'executer un jeu.
@@ -46,7 +48,7 @@ public class MoteurGraphique {
 	/**
 	 * permet de lancer le jeu
 	 */
-	public void lancerJeu(int width, int height) throws InterruptedException {
+	public void lancerJeu(int width, int height) throws InterruptedException,FileNotFoundException,IOException,ClassNotFoundException{
 
 		// creation de l'interface graphique
 		this.gui = new InterfaceGraphique(this.dessin, width, height);

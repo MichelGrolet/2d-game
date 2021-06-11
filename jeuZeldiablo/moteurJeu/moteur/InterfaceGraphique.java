@@ -1,6 +1,7 @@
 package moteurJeu.moteur;
 
 import javax.swing.JFrame;
+import java.io.*;
 
 /**
  * cree une interface graphique avec son controleur et son afficheur.
@@ -65,7 +66,7 @@ public class InterfaceGraphique {
 	/**
 	 * demande la mise a jour du dessin
 	 */
-	public void dessiner() {
+	public void dessiner() throws FileNotFoundException,IOException,ClassNotFoundException{
 		this.panel.dessinerJeu();
 	}
 
