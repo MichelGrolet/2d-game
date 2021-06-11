@@ -91,11 +91,22 @@ public class Personnage extends Entite{
      */
     public void dessinerInventaire(Graphics2D g) {
     	try {
+    		//dessine les pv
+    		g.drawRect(CASE_INVENTAIRE1-5, Labyrinthe.TAILLE+3*(DessinPerso.TAILLE_CASE)-5,DessinPerso.TAILLE_CASE*3+15, DessinPerso.TAILLE_CASE-30);
+    		g.setColor(Color.RED);
+    		g.fillRect(CASE_INVENTAIRE1-4, Labyrinthe.TAILLE+3*(DessinPerso.TAILLE_CASE)-4,(int)((DessinPerso.TAILLE_CASE*3+14)*(((double)this.pv)/10)), DessinPerso.TAILLE_CASE-31);
+    		
+    		//dessine le perso
+    		g.setColor(Color.BLACK);
     		BufferedImage im = ImageIO.read(new File("./sprites/perso2.png"));
 			g.drawImage(im,(Labyrinthe.TAILLE+2) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+4*(DessinPerso.TAILLE_CASE),null);
+			
+			//dessine les cases d'inventaire
 			g.drawRect(CASE_INVENTAIRE1-5, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE)-5, DessinPerso.TAILLE_CASE+5, DessinPerso.TAILLE_CASE+5);
 			g.drawRect(CASE_INVENTAIRE2, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE)-5, DessinPerso.TAILLE_CASE+5, DessinPerso.TAILLE_CASE+5);
-			g.drawRect(CASE_INVENTAIRE3+5, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE)-5, DessinPerso.TAILLE_CASE+5, DessinPerso.TAILLE_CASE+5);   
+			g.drawRect(CASE_INVENTAIRE3+5, Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE)-5, DessinPerso.TAILLE_CASE+5, DessinPerso.TAILLE_CASE+5);  
+			
+			//dessine les objets dans l'inventaire
 			for (int i = 0; i<this.inventaire.size();i++) {
 				this.inventaire.get(i).dessinerInventaire(g,i);
 			}
