@@ -106,7 +106,7 @@ public class Labyrinthe {
 		}
 
 		//On le charge
-		ObjectInputStream fich=new ObjectInputStream(new FileInputStream(nomFichier));
+		ObjectInputStream fich=new ObjectInputStream(new FileInputStream("patterns/"+nomFichier));
 		char[][] pattern=(char[][])(fich.readObject());
 		fich.close();
 		for(int j=0;j<TAILLE;j++){
