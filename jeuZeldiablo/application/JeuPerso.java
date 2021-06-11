@@ -1,16 +1,17 @@
 package application;
 
-import java.io.*;
-import moteurJeu.moteur.*;
+import moteurJeu.moteur.Commande;
 
-import java.awt.Graphics2D;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import javax.imageio.ImageIO;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
@@ -206,6 +207,12 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		try {
     		BufferedImage im = ImageIO.read(new File("./sprites/victory.png"));
     		g.drawImage(im,40, 300,null);
+			JButton b = new JButton("Passer au niveau suivant");
+			b.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JeuPerso.this.changerNiveau();
+				}
+			});
     	}catch(FileNotFoundException e){
     		e.getStackTrace();
     	}catch(IOException f) {
@@ -255,5 +262,9 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				}
 			}
 		}
+	}
+
+	public void changerNiveau() {
+
 	}
 }
