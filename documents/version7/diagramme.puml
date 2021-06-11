@@ -1,0 +1,175 @@
+@startuml
+
+class Main
+
+abstract class Monstre extends Entite {
+    - vitesse : int
+    + int getVitesse()
+    + Monstre(in
+    t x, int y)
+    + void seDeplacer(ArrayList<Case> libres, Personnage p)
+}
+
+class Fantome extends Monstre {
+    + Fantome(int x, int y)
+    + ArrayList<Case> deplacementAutour(ArrayList<Case> libres)
+    + void dessiner(Graphics2D g)
+}
+
+class Orc extends Monstre {
+    + Orc(int x, int y)
+    + void dessiner(Graphics2D g)
+}
+
+class Gobelin extends Monstre {
+    + Gobelin(int x, int y)
+    + void dessiner(Graphics2D g)
+}
+
+class Labyrinthe {
+    - {static} taille : int
+    + Labyrinthe()
+    + Case getCase(int x, int y)
+    + ArrayList<Case> getCasesLibres()
+    + void genererMurs(int choix)
+    + Case[][] getTabCase()
+}
+Labyrinthe "1" --> "*" Case : - cases
+
+class Case {
+    - x : int
+    - y : int
+    - libre : boolean
+    + Case(int x, int y)
+    + boolean : getLibre()
+    + boolean equals()
+    + int : getX()
+    + int : getY()
+    + void dessiner(Graphics2D g)
+}
+
+class Mur extends Case {
+    + dessiner(Graphics2D g)
+}
+
+class Sol extends Case {
+    - active : boolean
+    + dessiner(Graphics2D g)
+    + void getActive()
+    + void declencherEffet(Personnage p)
+}
+
+abstract class CaseSpeciale extends Sol {
+    + {abstract} void effet()
+    + void declencherEffet(Personnage p)
+     + void dessiner(Graphics2D g)
+}
+
+class CasePiege extends CaseSpeciale {
+    - {static} int DEGATS
+    + void effet()
+    + void declencherEffet(Personnage p)
+     + void dessiner(Graphics2D g)
+}
+
+class CaseForce extends CaseSpeciale {
+    - {static} int BOOST
+     + void effet()
+    + void declencherEffet(Personnage p)
+     + void dessiner(Graphics2D g)
+}
+
+class CaseTeleporteur extends CaseSpeciale
+
+abstract class Entite {
+    - x : Int
+    - y : Int
+    - pv : int
+    - puissance : int
+    + Entite(JeuPerso jeu)
+    + void attaquer(Entite e)
+    + void subirDegats()
+    + boolean etreMort()
+    + int getPuissance()
+    + int getPv()
+    + int getX()
+    + int getY()
+    + void setX(int x)
+    + void setY(int y)
+    + void setPv(int x)
+    + void setPuissance(int x)
+    + ArrayList<Case> deplacementAutour(ArrayList<Case> libres)
+    + {abstract} dessiner(Graphics2D g)
+}
+
+interface Jeu {
+    + void evoluer()
+    + boolean etreFini()
+}
+
+class JeuPerso implements Jeu {
+    - timer : int
+    + JeuPerso()
+    + String toString()
+    + void evoluer(Commande commande)
+    + boolean etreFini()
+    + Personnage getPj()
+    + void deplacerMonstres()
+    + void genererMonstres(int nbMonstres)
+    + ArrayList<Case> getCasesLibres()
+    + Labyrinthe getLabyrinthe()
+    + ArrayList<Monstre> getMonstres()
+    + boolean faireApparaitre(Monstre m)
+    + void changerNiveau()
+}
+JeuPerso "1" --> "1" Labyrinthe : - labyrinthe
+JeuPerso "1" --> "1" Personnage : - pj
+JeuPerso "1" --> "0..*" Monstre : - monstres
+JeuPerso "1" --> "0..*" Objet : - objets
+
+abstract class Objet {
+    - x : int
+    - y : int
+    + Objet(int x, int y)
+    + int getX()
+    + int getY()
+    + void setPersonnage(Personnage p)
+    + void dessiner(Graphics2D g)
+    + void dessinerInventaire(Graphics2D g)
+}
+Objet "0..1" -> "1" Personnage : p
+
+class CreerPattern {
+    - char[][] : pattern1
+    - char[][] : pattern2
+    - char[][] : pattern3
+    + CreerPattern(pattern1, pattern2, pattern3)
+    + void genererPattern()
+    + void main()
+}
+
+class Amulette extends Objet {
+    + void dessiner(Graphics2D g)
+    + void dessinerInventaire(Graphics2D g)
+}
+
+class Personnage extends Entite {
+    + Personnage()
+    + String toString()
+    + void seDeplacer(Commande c)
+    + void ramasserObjet(Objet o)
+}
+Personnage "0..*" -> "1" Objet : - inventaire
+
+class DessinPerso implements DessinJeu {
+    - {static} int tailleCase
+    + DessinPerso(Jeu j)
+    + void dessinerObjet(String s, int x, int y, BufferedImage im)
+    + void dessiner(BufferedImage im)
+}
+DessinPerso "1" -> "1" JeuPerso : - jeu
+
+interface DessinJeu {
+    + void dessiner()
+}
+@enduml
