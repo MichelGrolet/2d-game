@@ -128,9 +128,7 @@ public class Labyrinthe {
 						this.cases[i][j]=new CasePiege(i,j);
 						break;
 				}
-				System.out.print(pattern[i][j]);
 			}
-			System.out.println();
 		}
 	}
 
