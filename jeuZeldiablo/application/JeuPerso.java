@@ -1,7 +1,16 @@
 package application;
 
+import java.io.*;
 import moteurJeu.moteur.*;
+
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 
 public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
@@ -35,10 +44,10 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	 * Constructeur du personnage
 	 */
-	public JeuPerso(int niveau) {
+	public JeuPerso(int niveau) throws FileNotFoundException,IOException,ClassNotFoundException{
 		this.perso = new Personnage(1,1);
 		this.lab = new Labyrinthe();
-		this.lab.genererMur(niveau);
+		this.lab.genererMur();
 		this.monstres = new ArrayList<>();
 		this.genererMonstres(3);
 		this.timer = 0;
@@ -180,6 +189,28 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 */
 	public boolean etreFini() {
 		return this.perso.etreMort() || this.objets.isEmpty();
+	}
+	
+	public void dessinFinPerdu(Graphics2D g) {
+		try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/gameover.png"));
+    		g.drawImage(im,300, 300,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+	}
+	
+	public void dessinFinGagner(Graphics2D g) {
+		try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/victory.png"));
+    		g.drawImage(im,300, 300,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
 	}
 
 	/**

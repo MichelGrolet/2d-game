@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
 import application.*;
+import java.io.*;
 import moteurJeu.moteur.MoteurGraphique;
 
 public class Principale {
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException,FileNotFoundException,IOException,ClassNotFoundException{
 		// creation du jeu particulier et de son afficheur
 		JeuPerso jeu = new JeuPerso(5);
 		DessinPerso aff = new DessinPerso(jeu);
