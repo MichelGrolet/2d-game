@@ -78,7 +78,11 @@ public class DessinPerso implements DessinJeu {
 			if(jeu.getPersonnage().etreMort()) {
 				jeu.dessinFinPerdu(crayon);
 			}else {
-				jeu.dessinFinGagner(crayon);
+				if (jeu.getLabyrinthe().getNiveau() == 3) {
+					jeu.dessinFinGagner(crayon);
+				} else {
+					jeu.changerNiveau();
+				}
 			}
 		}
 	}

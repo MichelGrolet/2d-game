@@ -27,7 +27,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	* Une liste des monstres
 	*/
-	private final ArrayList<Monstre> monstres;
+	private ArrayList<Monstre> monstres;
 
 	/**
 	 * permet d'identifier quand on appelle deplacerMonstres
@@ -53,7 +53,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		this.genererMonstres(3);
 		this.timer = 0;
 		this.objets = new ArrayList<>();
-		objets.add(new Amulette(11, 1));
+		objets.add(new Amulette(10, 13));
 	}
 
 	/**
@@ -207,12 +207,6 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		try {
     		BufferedImage im = ImageIO.read(new File("./sprites/victory.png"));
     		g.drawImage(im,40, 300,null);
-			JButton b = new JButton("Passer au niveau suivant");
-			b.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					JeuPerso.this.changerNiveau();
-				}
-			});
     	}catch(FileNotFoundException e){
     		e.getStackTrace();
     	}catch(IOException f) {
@@ -264,7 +258,23 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 		}
 	}
 
+	/**
+	 * Permet de passer au nouveau suivant.
+	 * Regenere les coordonnees du personnage,
+	 * Regenere les murs les monstres le timer et les objets
+	 */
 	public void changerNiveau() {
-
+		this.perso = new Personnage(1, 1);
+		this.lab.genererMur();
+		this.monstres = new ArrayList<>();
+		this.genererMonstres(3);
+		this.timer = 0;
+		this.objets = new ArrayList<>();
+		switch (lab.getNiveau()) {
+			case 2:
+				objets.add(new Amulette(13, 13));
+			case 3:
+				objets.add(new Amulette(4, 9));
+		}
 	}
 }
