@@ -37,6 +37,5 @@ public abstract class CaseSpeciale extends Sol{
     * Dessine la case
     * @param g Graphics2D
     */
-    public void dessiner(Graphics2D g) {
-    }
+    public void dessiner(Graphics2D g) {}
 }

@@ -50,6 +50,7 @@ public class CaseForce extends CaseSpeciale{
     public void dessiner(Graphics2D g) {
         if(!this.getActive()){
         	try {
+        		//on recupere l'image dans les fichiers
         		BufferedImage im = ImageIO.read(new File("./sprites/floor.png"));
         		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
         	}catch(FileNotFoundException e){

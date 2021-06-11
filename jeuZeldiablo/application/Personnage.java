@@ -39,7 +39,11 @@ public class Personnage extends Entite{
     public String toString() {
     	return("Le personage est en "+this.getX()+", "+this.getY());
     }
-
+    
+    /**
+     * permet de dessiner le personnage vivant
+     * @param g, ou on dessine
+     */
     public void dessiner(Graphics2D g) {
     	try {
     		BufferedImage im = ImageIO.read(new File("./sprites/perso2.png"));
@@ -51,6 +55,40 @@ public class Personnage extends Entite{
     	}
 	}
     
+    /**
+     * permet de dessiner le personnage mort
+     * @param g, ou on dessine
+     */
+    public void dessinerMort(Graphics2D g) {
+    	try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/persodead.png"));
+    		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+	}
+    
+    /**
+     * permet de dessiner le personnage quand il attaque
+     * @param g, ou on dessine
+     */
+    public void dessinerAttaque(Graphics2D g) {
+    	try {
+    		BufferedImage im = ImageIO.read(new File("./sprites/perso2fight.png"));
+    		g.drawImage(im,x * DessinPerso.TAILLE_CASE, y * DessinPerso.TAILLE_CASE,null);
+    	}catch(FileNotFoundException e){
+    		e.getStackTrace();
+    	}catch(IOException f) {
+    		f.getStackTrace();
+    	}
+	}
+    
+    /**
+     * permet de dessiner l'inventaire du personnage
+     * @param g, ou on dessine
+     */
     public void dessinerInventaire(Graphics2D g) {
     	try {
     		BufferedImage im = ImageIO.read(new File("./sprites/perso2.png"));
@@ -68,11 +106,19 @@ public class Personnage extends Entite{
 	}
 }
     
+    /**
+     * permet de rammasser un objet
+     * @param o, objet a ramasser
+     */
     public void ramasserObjet(Objet o) {
         	o.setPersonnage(this);
         	this.inventaire.add(o);
     }
     
+    /**
+     * permet de recuperer l'inventaire
+     * @return l'inventaire
+     */
     public ArrayList<Objet> getInventaire(){
     	return this.inventaire;
     }

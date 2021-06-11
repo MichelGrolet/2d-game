@@ -24,6 +24,7 @@ public class Gobelin extends Monstre {
     
     /**
      * permet de dessiner le gobelin dans le jeu
+     * @param g, la ou on dessine
      */
     public void dessiner(Graphics2D g) {
     	try {

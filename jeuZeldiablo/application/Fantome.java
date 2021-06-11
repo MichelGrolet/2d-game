@@ -21,7 +21,12 @@ public class Fantome extends Monstre {
         super(x, y);
         this.pv = 5;
     }
-
+    
+    /**
+     * recupere les cases autour de l'entite ou elle peut se deplacer
+     * @param libres, cases libres du labyrinthe
+     * @return les cases libres autour de l'entite
+     */
     public ArrayList<Case> deplacementAutour(JeuPerso j) {
         // CasesAutour va contenir les 4 cases autour du fantome.
         ArrayList<Case> casesAutour = new ArrayList<Case>();
@@ -40,7 +45,6 @@ public class Fantome extends Monstre {
             casesAutour.add(j.getLabyrinthe().getCase(this.getX(), this.getY()+1));
             casesAutour.add(j.getLabyrinthe().getCase(this.getX(), this.getY()-1));
         }
-        System.out.println(this.getX()+" "+this.getY()+"dknnjnnnnnnnnnnnnnnnnnnnnn"+casesAutour.size());
         return casesAutour;
     }
 
