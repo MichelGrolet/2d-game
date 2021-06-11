@@ -163,10 +163,21 @@ class Amulette extends Objet {
 }
 
 class Personnage extends Entite {
+    - {static} int CASE_INVENTAIRE1
+    - {static} int CASE_INVENTAIRE2
+    - {static} int CASE_INVENTAIRE3
+    - boolean attaquer
     + Personnage()
     + String toString()
     + void seDeplacer(Commande c)
     + void ramasserObjet(Objet o)
+    + void dessiner(Graphics2D g)
+    + void dessinerAttaque(Graphics2D g)
+    + void dessinerInventaire(Graphics2D g)
+    + void dessinerMort(Graphics2D g)
+    + boolean getAttaque()
+    + ArrayList<Objet> getInventaire()
+    + void setAttaque(int attaque)
 }
 Personnage "0..*" -> "1" Objet : - inventaire
 
