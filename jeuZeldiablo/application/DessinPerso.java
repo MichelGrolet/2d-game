@@ -58,7 +58,7 @@ public class DessinPerso implements DessinJeu {
 		// Dessine le personnage
 		if(jeu.getPersonnage().etreMort()) {
 			jeu.getPersonnage().dessinerMort(crayon);
-		}else if(jeu.attaque){
+		}else if(jeu.getPersonnage().getAttaque()){
 			jeu.getPersonnage().dessinerAttaque(crayon);
 		}else {
 			jeu.getPersonnage().dessiner(crayon);

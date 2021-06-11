@@ -243,6 +243,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 				this.deplacerMonstres();
 				this.timer = 0;
 			}
+			this.perso.SetAttaque(commandeUser.attaque);
 			if(commandeUser.attaque) {
 				for(int i=0; i<this.monstres.size(); i++) {
 					this.getPersonnage().attaquer(this.monstres.get(i));
@@ -251,7 +252,6 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 					}
 				}
 			}
-			attaque = commandeUser.attaque;
 			if(commandeUser.ramasser) {
 				for(int i=0; i<this.objets.size(); i++) {
 					if(this.getPersonnage().getX()==this.getObjets().get(i).getX()
