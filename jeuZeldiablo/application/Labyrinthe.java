@@ -18,7 +18,7 @@ public class Labyrinthe {
 	/**
 	* Numero du niveau courant
 	*/
-	private int niveau;
+	private static int niveau=0;
 	
 	/**
 	 * Creation d'un labyrinthe avec uniquement des cases de types sol
@@ -130,5 +130,13 @@ public class Labyrinthe {
 				}
 			}
 		}
+	}
+
+	/**
+	* Renvoie le numero du niveau courant
+	* @return un entier
+	*/
+	public int getNiveau(){
+		return this.niveau;
 	}
 }
