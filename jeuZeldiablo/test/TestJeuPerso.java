@@ -33,7 +33,7 @@ public class TestJeuPerso {
 		boolean res = j.faireApparaitre(m);
 		
 		assertTrue("la methode aurait du fonctionne",res);
-		assertEquals("l orc devrai etre en x = 2", 2,j.getMonstres().get(5).getX());
-		assertEquals("l orc devrai etre en y = 1", 1,j.getMonstres().get(5).getY());
+		assertEquals("l orc devrai etre en x = 2", 2,j.getMonstres().get(3).getX());
+		assertEquals("l orc devrai etre en y = 1", 1,j.getMonstres().get(3).getY());
 	}
 }
