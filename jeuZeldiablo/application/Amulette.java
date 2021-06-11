@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 /**
- * classe qui représent une amulette
+ * classe qui represent une amulette
  */
 public class Amulette extends Objet {
 	
