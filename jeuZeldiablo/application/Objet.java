@@ -52,6 +52,10 @@ public abstract class Objet {
     public void setPersonnage(Personnage p) {
         this.p = p;
     }
+    
+    public Personnage getPersonnage() {
+    	return this.p;
+    }
 
     public abstract void dessiner(Graphics2D g);
     
