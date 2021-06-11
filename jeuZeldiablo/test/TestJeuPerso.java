@@ -2,42 +2,38 @@ package test;
 
 import application.*;
 import static org.junit.Assert.*;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.junit.Test;
 
 public class TestJeuPerso {
 	
 	@Test
-	public void testGenererMonstre() {
+	public void testGenererMonstre() throws FileNotFoundException, ClassNotFoundException, IOException {
 		JeuPerso j = new JeuPerso(0);
 		j.genererMonstres(1);
 		assertNotNull("le jeu devrait contenir un monstre",j.getMonstres().get(0));
 	}
 	
 	@Test
-	public void testGenererMonstreNegatif() {
+	public void testGenererMonstreNegatif() throws FileNotFoundException, ClassNotFoundException, IOException {
 		JeuPerso j = new JeuPerso(0);
 		System.out.println(j.getCasesLibres().size());
-		j.genererMonstres(2);
 		j.genererMonstres(-1);
-		assertNotNull("le jeu devrait contenir 2 monstres",j.getMonstres().get(1));
+		assertNotNull("le jeu devrait contenir 0 monstres",j.getMonstres().get(0));
 	}
 	
-	@Test
-	public void testGenererMonstrePlusDePlaces() {
-		JeuPerso j = new JeuPerso(0);
-		j.genererMonstres(100);
-		assertEquals("le jeu devrait contenir 68 monstres correpsondant aux cases libres",j.getMonstres().size(),68);
-	}
 	
 	@Test
-	public void faireApparaitreBon() {
+	public void faireApparaitreBon() throws FileNotFoundException, ClassNotFoundException, IOException {
 		JeuPerso j = new JeuPerso(0);
 		Orc m = new Orc(2,1);
 		boolean res = j.faireApparaitre(m);
 		
 		assertTrue("la methode aurait du fonctionne",res);
-		assertEquals("l orc devrai etre en x = 2", 2,j.getCasesEntites().get(0).getX());
-		assertEquals("l orc devrai etre en y = 1", 2,j.getCasesEntites().get(0).getY());
-
+		assertEquals("l orc devrai etre en x = 2", 2,j.getMonstres().get(5).getX());
+		assertEquals("l orc devrai etre en y = 1", 1,j.getMonstres().get(5).getY());
 	}
 }

@@ -102,7 +102,7 @@ public class Personnage extends Entite{
     		
     		//dessine le perso
     		g.setColor(Color.BLACK);
-    		BufferedImage im = ImageIO.read(new File("./sprites/perso2.png"));
+    		BufferedImage im = ImageIO.read(new File("./sprites/perso.png"));
 			g.drawImage(im,(Labyrinthe.TAILLE+2) * DessinPerso.TAILLE_CASE, Labyrinthe.TAILLE+4*(DessinPerso.TAILLE_CASE),null);
 			
 			//dessine les cases d'inventaire
