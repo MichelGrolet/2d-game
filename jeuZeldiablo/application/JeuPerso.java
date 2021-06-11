@@ -45,7 +45,7 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	/**
 	 * Constructeur du personnage
 	 */
-	public JeuPerso(int niveau) throws FileNotFoundException,IOException,ClassNotFoundException{
+	public JeuPerso() throws FileNotFoundException,IOException,ClassNotFoundException{
 		this.perso = new Personnage(1,1);
 		this.lab = new Labyrinthe();
 		this.lab.genererMur();
