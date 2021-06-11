@@ -79,15 +79,15 @@ public class Labyrinthe {
 	public void genererMur() throws FileNotFoundException,IOException,ClassNotFoundException{
 		//On passe au niveau suivant
 		//On s'assure de ne pas depasser le niveau 3
-		if(this.niveau<3){
-			this.niveau++;
+		if(niveau<3){
+			niveau++;
 		}
 
 		//Variable de chargement du bon fichier
 		String nomFichier;
 
 		//On recupere le bon niveau le bon niveau
-		switch(this.niveau){
+		switch(niveau){
 			case 1 :
 				nomFichier="p1.txt";
 				break;

@@ -2,6 +2,9 @@ package test;
 
 import application.*;
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 /**
@@ -41,5 +44,17 @@ public class TestPersonnage{
 		Entite e3 = new Monstre(10,1);
 		e3.attaquer(e1);
 		assertEquals("devrait etre 10",10, e1.getPv());
+	}
+	
+	@Test
+	public void ramasserObjet() {
+		Personnage p = new Personnage(0,0);
+		Amulette a = new Amulette(0,0);
+		p.ramasserObjet(a);
+		ArrayList<Objet> o = new ArrayList<>();
+		o.add(a);
+		assertEquals("devrait avoir un objet", o, p.getInventaire());
+		Amulette a2 = new Amulette(1,0);
+		assertEquals("l'inventaire ne doit pas changer",o, p.getInventaire());
 	}
 }
