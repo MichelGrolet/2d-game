@@ -42,7 +42,7 @@ class Labyrinthe {
     + Labyrinthe()
     + Case getCase(int x, int y)
     + ArrayList<Case> getCasesLibres()
-    + void genererMurs(int choix)
+    + void genererMurs()
     + Case[][] getTabCase()
     + int getNiveau()
 }

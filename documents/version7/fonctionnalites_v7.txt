@@ -1,6 +1,6 @@
 * Fonctionnalités version 7
 
-- [Louis] fonctionnalité 1 : Affichage Fin du jeu
+- [Louis et Michel] fonctionnalité 1 : Affichage Fin du jeu
 - afficher "fin du jeu" quand le personnage meurt ou quand le personnage récupère l'amulette
     - Critères de validation :
         - Texte "fin du jeu" quand le personnage meurt ou quand le personnage récupère l'amulette
@@ -12,9 +12,7 @@
         - téléportation quand on est sur la case de téléportation
         - arrivée dans un autre pattern de labyrinthe
 
-- [Theo & Michel] fonctionnalité 3 : Ajout des derniers sprites
-    - Critères de validation :
-        Touts les objets du labyrinthe doivent avoir un sprite.
+- Préparation oral : Théo
 
 RESPONSABLES CLASSES
   - Louis : JeuPerso
