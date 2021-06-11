@@ -34,7 +34,6 @@ public class JeuPerso implements moteurJeu.moteur.Jeu{
 	 */
 	private int timer;
 	
-	boolean attaque;
 	
 	/**
 	 * une liste des objets
