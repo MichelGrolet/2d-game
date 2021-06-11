@@ -1,7 +1,10 @@
-package application;
+package entite;
 
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+
+import application.JeuPerso;
+import labyrinthe.Case;
 
 public abstract class Entite {
    /**

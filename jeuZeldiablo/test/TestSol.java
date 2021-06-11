@@ -1,8 +1,11 @@
 package test;
 
 import application.*;
+import labyrinthe.Sol;
+
 import static org.junit.Assert.*;
 import org.junit.Test;
+
 import java.awt.*;
 
 /**

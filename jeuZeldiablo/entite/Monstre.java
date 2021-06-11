@@ -1,9 +1,11 @@
-package application;
+package entite;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
+
+import labyrinthe.Case;
 
 public class Monstre extends Entite {
 	

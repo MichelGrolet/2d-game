@@ -1,8 +1,12 @@
 package test;
 
 import application.*;
+import entite.Personnage;
+import labyrinthe.CaseForce;
+
 import static org.junit.Assert.*;
 import org.junit.Test;
+
 import java.awt.*;
 
 /**

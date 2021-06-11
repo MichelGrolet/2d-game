@@ -1,6 +1,8 @@
-package application;
+package labyrinthe;
 
 import java.awt.*;
+
+import entite.Personnage;
 
 /**
 * Classe abstraite representant une case speciale(piege,boost,etc...)

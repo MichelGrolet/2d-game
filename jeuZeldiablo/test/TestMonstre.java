@@ -8,11 +8,12 @@ import java.io.IOException;
 import org.junit.Test;
 
 import application.*;
+import entite.Monstre;
 
 public class TestMonstre {
     @Test
     public void testSeDeplacerBon() throws FileNotFoundException, ClassNotFoundException, IOException {
-    	JeuPerso j = new JeuPerso(0);
+    	JeuPerso j = new JeuPerso();
     	Monstre m = new Monstre(2,0);
     	j.faireApparaitre(m);
 

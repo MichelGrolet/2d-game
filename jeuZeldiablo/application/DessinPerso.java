@@ -8,7 +8,10 @@ import java.io.*;
 
 import javax.imageio.ImageIO;
 
+import entite.Monstre;
+import labyrinthe.Case;
 import moteurJeu.moteur.*;
+import objet.Objet;
 
 /**
  * un afficheur graphique

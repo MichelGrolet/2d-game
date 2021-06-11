@@ -1,7 +1,9 @@
-package application;
+package objet;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+
+import entite.Personnage;
 
 /**
  * classe qui représente un objet

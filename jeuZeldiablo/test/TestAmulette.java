@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import application.*;
+import objet.Amulette;
 
 public class TestAmulette {
 	@Test

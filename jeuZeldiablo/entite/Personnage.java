@@ -1,4 +1,4 @@
-package application;
+package entite;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -9,7 +9,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+import application.DessinPerso;
+import labyrinthe.Case;
+import labyrinthe.Labyrinthe;
 import moteurJeu.moteur.Commande;
+import objet.Objet;
 
 /**
  * Classe qui represente un personnage
