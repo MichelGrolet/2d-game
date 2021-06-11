@@ -2,13 +2,16 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.junit.Test;
 
 import application.*;
 
 public class TestMonstre {
     @Test
-    public void testSeDeplacerBon() {
+    public void testSeDeplacerBon() throws FileNotFoundException, ClassNotFoundException, IOException {
     	JeuPerso j = new JeuPerso(0);
     	Monstre m = new Monstre(2,0);
     	j.faireApparaitre(m);

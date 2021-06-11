@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.io.*;
 
 import javax.imageio.ImageIO;
 
@@ -37,7 +38,7 @@ public class DessinPerso implements DessinJeu {
 	/**
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
-	public void dessiner(BufferedImage im) {
+	public void dessiner(BufferedImage im) throws FileNotFoundException,IOException,ClassNotFoundException{
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		
 
