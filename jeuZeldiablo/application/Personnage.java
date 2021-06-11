@@ -130,6 +130,9 @@ public class Personnage extends Entite{
 			for (int i = 0; i<this.inventaire.size();i++) {
 				this.inventaire.get(i).dessinerInventaire(g,i);
 			}
+			
+			//dessine les degats
+			g.drawString("Puissance : "+this.puissance, CASE_INVENTAIRE2-13,Labyrinthe.TAILLE+6*(DessinPerso.TAILLE_CASE)-20);
     	}catch(FileNotFoundException e){
     		e.getStackTrace();
     	}catch(IOException f) {
